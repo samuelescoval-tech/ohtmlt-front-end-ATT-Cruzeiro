@@ -2,7 +2,7 @@
 
 Projeto acadêmico de **Desenvolvimento Front-End**, da **Universidade Cruzeiro do Sul**. A OHTMLT é uma organização fictícia voltada à inclusão e ao aprendizado digital, com propostas para iniciantes e pessoas interessadas em compartilhar conhecimentos.
 
-**Estado: em reconstrução — etapa 2 implementada.** A aplicação tem três páginas HTML estáticas com apresentação, projetos demonstrativos e formulário com validação nativa. O Design System aplica cores, tipografia, espaçamentos e estilos básicos. Grid, menus interativos, JavaScript, SPA e persistência serão desenvolvidos nas próximas etapas.
+**Estado: em reconstrução — etapa 3 implementada.** A aplicação tem três páginas HTML estáticas com apresentação, projetos demonstrativos e formulário com validação nativa. O Design System aplica cores, tipografia, espaçamentos e estilos básicos. O layout usa Grid de doze colunas, Flexbox e cinco breakpoints. Menus interativos, JavaScript, SPA e persistência serão desenvolvidos nas próximas etapas.
 
 [Repositório no GitHub](https://github.com/samuelescoval-tech/ohtmlt-front-end-ATT-Cruzeiro)
 
@@ -61,16 +61,19 @@ ohtmlt-front-end-ATT-Cruzeiro/
 ├── projetos.html
 ├── cadastro.html
 ├── css/
-│   └── base.css
+│   ├── base.css
+│   └── layout.css
 ├── assets/
 │   └── imagens/
 │       └── inclusao-digital.svg
 └── docs/
     ├── DESIGN-SYSTEM.md
+    ├── LAYOUT.md
     ├── TESTES.md
     └── evidencias/
         ├── etapa-1/
-        └── etapa-2/
+        ├── etapa-2/
+        └── etapa-3/
 ```
 
 A imagem SVG foi criada para este projeto e é usada na apresentação e como ícone das páginas. Não depende de serviços externos. As evidências de navegador são arquivos PNG; os relatórios são JSON. Não há bibliotecas, frameworks ou fontes externas. Nenhuma licença de distribuição foi definida.
@@ -79,11 +82,17 @@ A imagem SVG foi criada para este projeto e é usada na apresentação e como í
 
 [`css/base.css`](css/base.css) define 12 cores distintas, cinco tamanhos tipográficos e oito passos de espaçamento baseados em 4 px. A base usa fontes do sistema, links sublinhados, foco visível, ações primária e secundária, aviso demonstrativo, selo e borda de erro após interação. A cor de sucesso está reservada para uma futura confirmação; nenhum cadastro é salvo nesta etapa.
 
-As [regras de uso](docs/DESIGN-SYSTEM.md) explicam quando aplicar cada cor e estilo, com exemplos presentes no código e medidas de contraste. Ainda não há Grid, Flexbox, breakpoints ou animações.
+As [regras de uso](docs/DESIGN-SYSTEM.md) explicam quando aplicar cada cor e estilo, com exemplos presentes no código e medidas de contraste. Não há animações nesta base.
+
+## Layout responsivo
+
+[`css/layout.css`](css/layout.css) organiza o conteúdo em doze colunas, com limites explícitos de 480, 768, 992, 1200 e 1440 px. Os três projetos aparecem em uma, duas ou três colunas conforme a largura. Cabeçalho, navegação, ações, rodapé e conteúdo interno dos projetos usam Flexbox. A área do cadastro permanece limitada a 44 rem; os campos se reorganizam preservando a ordem de teclado.
+
+Consulte [as regras de layout, os seletores e as medidas](docs/LAYOUT.md). A navegação continua sempre visível; menus expansíveis serão acrescentados na etapa de componentes.
 
 ## Verificação
 
-Em 28/09/2026, após a aplicação do CSS, as três páginas passaram novamente no W3C Nu HTML Checker sem erros ou avisos. No Chrome, 54 verificações cobriram a base anterior, os estilos, o teclado, os estados dos controles, o texto ampliado a 200% e a largura de 320 px. As 22 combinações de contraste medidas passaram nos limites adotados. A etapa 1 mantém seus relatórios próprios com 37 verificações.
+Em 28/09/2026, após o layout responsivo, as três páginas passaram novamente no W3C Nu HTML Checker sem erros ou avisos. No Chrome, 123 verificações foram aprovadas, incluindo 57 combinações das três páginas em 19 larguras, com medidas imediatamente antes, no limite e depois de cada breakpoint. O texto ampliado a 200%, a ordem de teclado e as 22 combinações de contraste também passaram. Os relatórios das etapas anteriores foram preservados.
 
 Consulte [os casos, a correção observada e as evidências](docs/TESTES.md). Esses resultados não equivalem a uma auditoria completa de acessibilidade ou compatibilidade entre navegadores.
 
@@ -91,4 +100,4 @@ Consulte [os casos, a correção observada e as evidências](docs/TESTES.md). Es
 
 `main` contém a base documental e receberá versões aprovadas; `develop` integra as etapas de desenvolvimento; `feature/*` organiza mudanças verificadas em pull requests. O padrão de commits é semântico. Ainda não há release, tag de versão ou deploy.
 
-A próxima etapa é o **layout responsivo**: Grid de doze colunas, Flexbox e cinco breakpoints explícitos, com verificações das larguras próximas a cada limite. A exigência de framework na terceira experiência e os enunciados detalhados de acessibilidade, otimização e deploy na quarta experiência ainda precisam ser confirmados.
+A próxima etapa é a de **componentes visuais**: menus, evolução dos cards, estados dos controles, alertas e modal, incluindo teclado e foco. A exigência de framework na terceira experiência e os enunciados detalhados de acessibilidade, otimização e deploy na quarta experiência ainda precisam ser confirmados.

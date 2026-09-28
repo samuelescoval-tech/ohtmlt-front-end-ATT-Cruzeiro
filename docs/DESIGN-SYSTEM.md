@@ -2,9 +2,9 @@
 
 ## Estado e finalidade
 
-A etapa 2 aplica uma base visual comum às três páginas estáticas. As variáveis e os estilos estão em [`css/base.css`](../css/base.css), carregado depois dos metadados de cada HTML. A paleta, a hierarquia e as regras abaixo são as escolhas desta implementação.
+A base visual comum às três páginas estáticas foi aplicada na etapa 2 e integrada ao layout responsivo na etapa 3. Cores, tipografia e aparência estão em [`css/base.css`](../css/base.css); containers, colunas e breakpoints estão em [`css/layout.css`](../css/layout.css), carregado em seguida. A paleta, a hierarquia e as regras abaixo são as escolhas desta implementação.
 
-O objetivo é manter a leitura, a identificação das ações e o foco consistentes. A base já oferece os estilos de ações primária e secundária, links, campos, aviso e selo. Grid, breakpoints, menus expansíveis, cards completos, modal e feedback JavaScript serão desenvolvidos em etapas posteriores.
+O objetivo é manter a leitura, a identificação das ações e o foco consistentes. A base já oferece os estilos de ações primária e secundária, links, campos, aviso e selo. Grid, Flexbox e cinco breakpoints já estão implementados; suas regras estão em [LAYOUT.md](LAYOUT.md). Menus expansíveis, evolução dos cards, modal e feedback JavaScript pertencem às próximas etapas.
 
 ## Cores e regras de uso
 
@@ -18,7 +18,7 @@ O objetivo é manter a leitura, a identificação das ações e o foco consisten
 | `--cor-superficie` | `#FFFFFF` | Campos, grupos do formulário, rodapé e fundo da ação secundária. Também é a cor do texto sobre azul e verde. |
 | `--cor-texto` | `#172B4D` | Texto principal, conteúdo dos campos e texto sobre o amarelo do aviso. |
 | `--cor-texto-suave` | `#4B5563` | Ajuda, legenda da imagem, rodapé e texto do botão desabilitado. Não reduzir sua opacidade. |
-| `--cor-borda` | `#6B7280` | Limites visíveis dos campos e grupos, separação dos artigos e do rodapé. |
+| `--cor-borda` | `#6B7280` | Limites visíveis dos campos, grupos e cards de projetos, além da separação do rodapé. |
 | `--cor-erro` | `#B42318` | Borda de `input:user-invalid`, depois da interação que torna o campo inválido. A mensagem nativa do navegador informa o problema em texto. |
 | `--cor-sucesso` | `#166534` | Reserva para confirmação textual de uma operação concluída. Ainda não aplicada a mensagens: nesta versão nenhum cadastro é salvo. |
 | `--cor-foco` | `#1D4ED8` | Contorno de foco sobre os fundos claros. No cabeçalho, usar o amarelo de destaque para manter contraste. |
@@ -52,11 +52,11 @@ A hierarquia usa cinco tamanhos. A entrelinha é 1,6 no corpo, 1,2 nos títulos 
 | `--espaco-7` | `3rem` | 48 px |
 | `--espaco-8` | `4rem` | 64 px |
 
-A escala usa múltiplos de 4 px como referência, expressos em rem. Aplicações existentes: 8 px entre rótulo e entrada; 12 × 24 px de preenchimento nas ações; 24 px entre parágrafos; 32 px entre seções; 48 px de respiro vertical no conteúdo principal. O passo de 64 px está disponível para a evolução do layout.
+A escala usa múltiplos de 4 px como referência, expressos em rem. Aplicações existentes: 8 px entre rótulo e entrada; 12 × 24 px de preenchimento nas ações; 24 px entre parágrafos corridos; 32 px antes das seções de projetos e cadastro; 48 px de respiro vertical no conteúdo principal. Em telas a partir de 1440 px, esse respiro usa o passo de 64 px. Nas grades, os intervalos respondem aos breakpoints documentados.
 
 O raio base é `--raio: 0.5rem`. As bordas de 1 e 2 px e o contorno de foco de 3 px são espessuras de indicação, não intervalos de espaçamento. O foco tem afastamento de 4 px. Links usam `text-underline-offset: 0.2em`, que acompanha a tipografia.
 
-A base limita o conteúdo a 64 rem, o formulário a 44 rem e os parágrafos e artigos a 70 ch. Imagens mantêm proporção e não excedem a área disponível. Os títulos dos grupos usam `max-inline-size: 100%` e `overflow-wrap: anywhere` para acomodar texto ampliado. Esta etapa ainda não estabelece colunas, Flexbox ou media queries.
+O layout limita o container a 64, 76 ou 80 rem conforme a largura, e a área do cadastro a 44 rem. Os parágrafos corridos têm limite de 70 ch; os textos dos cards são limitados pela coluna disponível. Imagens mantêm proporção e não excedem a área disponível. Os títulos dos grupos usam `max-inline-size: 100%` e `overflow-wrap: anywhere` para acomodar texto ampliado. Consulte [os seletores e breakpoints](LAYOUT.md).
 
 ## Regras por elemento
 
@@ -140,7 +140,7 @@ Foram adotados 4,5:1 para todos os textos medidos, incluindo títulos, e 3:1 par
 | Navegação em hover | 6.52:1 | 4.5:1 |
 | Foco no cabeçalho | 6.52:1 | 3:1 |
 | Selo demonstrativo | 7.12:1 | 4.5:1 |
-| Link no conteúdo | 10.76:1 | 4.5:1 |
+| Link no conteúdo | 11.55:1 | 4.5:1 |
 | Aviso de demonstração | 7.97:1 | 4.5:1 |
 | Texto do campo | 14.10:1 | 4.5:1 |
 | Ajuda do campo | 7.56:1 | 4.5:1 |
@@ -149,10 +149,10 @@ Foram adotados 4,5:1 para todos os textos medidos, incluindo títulos, e 3:1 par
 | Borda do campo inválido | 6.57:1 | 3:1 |
 | Botão desabilitado (estado aplicado no teste) | 7.04:1 | 4.5:1 |
 
-As 22 combinações verificadas passaram. A cor de sucesso é apenas uma reserva; não há mensagem de sucesso para medir nesta etapa. O botão desabilitado foi medido como estado de teste, embora controles inativos tenham exceção nos critérios de contraste. O relatório completo está em [contraste.json](evidencias/etapa-2/contraste.json).
+As 22 combinações foram medidas novamente após a etapa 3 e passaram. Os links dos projetos agora ficam sobre superfície branca. A cor de sucesso é apenas uma reserva; não há mensagem de sucesso para medir nesta etapa. O botão desabilitado foi medido como estado de teste, embora controles inativos tenham exceção nos critérios de contraste. O relatório completo está em [contraste.json](evidencias/etapa-3/contraste.json).
 
 Esses resultados cobrem as combinações registradas, não uma auditoria completa de conformidade. O teste de ampliação alterou o tamanho raiz para 200%; não substitui testes de zoom, dispositivos físicos ou leitores de tela. Não há animação ou transição nesta base, inclusive quando o navegador informa preferência por movimento reduzido.
 
 ## Evidências e evolução
 
-Os testes, a correção de quebra dos títulos do formulário e as capturas estão em [TESTES.md](TESTES.md). A próxima etapa desenvolverá o layout com Grid de doze colunas, Flexbox e cinco breakpoints, preservando as decisões documentadas aqui.
+Os testes, a correção de quebra dos títulos do formulário e as capturas estão em [TESTES.md](TESTES.md). O layout implementado está documentado em [LAYOUT.md](LAYOUT.md). A próxima etapa ampliará os componentes visuais e suas interações.

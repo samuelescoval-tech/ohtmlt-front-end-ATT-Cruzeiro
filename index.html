@@ -7,43 +7,54 @@
   <title>Início | OHTMLT</title>
   <link rel="icon" href="assets/imagens/inclusao-digital.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
 </head>
 <body>
   <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
   <header>
-    <p><strong>OHTMLT</strong> — Organização HTML para Todos</p>
-    <nav aria-label="Navegação principal">
-      <ul>
-        <li><a href="index.html" aria-current="page">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-      </ul>
-    </nav>
+    <div class="container cabecalho-conteudo">
+      <p class="marca"><strong>OHTMLT</strong> — Organização HTML para Todos</p>
+      <nav aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  <main id="conteudo" tabindex="-1">
-    <h1>Aprender tecnologia, ampliar possibilidades</h1>
-    <p>A OHTMLT propõe um espaço de aprendizado digital para quem deseja dar os primeiros passos com computadores e com a criação de páginas para a web.</p>
-    <figure>
-      <img src="assets/imagens/inclusao-digital.svg" width="224" height="126" alt="Ilustração de duas pessoas aprendendo juntas diante de um computador.">
-      <figcaption>Aprendizado digital com colaboração e troca de conhecimentos.</figcaption>
-    </figure>
-    <section aria-labelledby="quem-somos">
-      <h2 id="quem-somos">Quem somos</h2>
-      <p>A Organização HTML para Todos é uma ONG fictícia criada para este projeto acadêmico. Sua missão proposta é tornar o aprendizado digital mais acessível, com linguagem clara e atividades práticas.</p>
-      <p>O público da proposta inclui pessoas que estão começando a usar a tecnologia e voluntários interessados em compartilhar conhecimentos.</p>
-    </section>
-    <section aria-labelledby="como-participar">
-      <h2 id="como-participar">Como participar</h2>
-      <p>Conheça as propostas de oficinas e experimente o formulário de interesse com dados fictícios. Este site não oferece inscrições em atividades reais.</p>
-      <ul class="acoes">
-        <li><a class="botao botao--secundario" href="projetos.html">Conhecer os projetos</a></li>
-        <li><a class="botao" href="cadastro.html">Experimentar o cadastro demonstrativo</a></li>
-      </ul>
-    </section>
+  <main id="conteudo" class="container" tabindex="-1">
+    <div class="grade apresentacao">
+      <div class="col-6">
+        <h1>Aprender tecnologia, ampliar possibilidades</h1>
+        <p>A OHTMLT propõe um espaço de aprendizado digital para quem deseja dar os primeiros passos com computadores e com a criação de páginas para a web.</p>
+      </div>
+      <figure class="col-6">
+        <img src="assets/imagens/inclusao-digital.svg" width="224" height="126" alt="Ilustração de duas pessoas aprendendo juntas diante de um computador.">
+        <figcaption>Aprendizado digital com colaboração e troca de conhecimentos.</figcaption>
+      </figure>
+    </div>
+    <div class="grade secoes-inicio">
+      <section class="col-6" aria-labelledby="quem-somos">
+        <h2 id="quem-somos">Quem somos</h2>
+        <p>A Organização HTML para Todos é uma ONG fictícia criada para este projeto acadêmico. Sua missão proposta é tornar o aprendizado digital mais acessível, com linguagem clara e atividades práticas.</p>
+        <p>O público da proposta inclui pessoas que estão começando a usar a tecnologia e voluntários interessados em compartilhar conhecimentos.</p>
+      </section>
+      <section class="col-6" aria-labelledby="como-participar">
+        <h2 id="como-participar">Como participar</h2>
+        <p>Conheça as propostas de oficinas e experimente o formulário de interesse com dados fictícios. Este site não oferece inscrições em atividades reais.</p>
+        <ul class="acoes">
+          <li><a class="botao botao--secundario" href="projetos.html">Conhecer os projetos</a></li>
+          <li><a class="botao" href="cadastro.html">Experimentar o cadastro demonstrativo</a></li>
+        </ul>
+      </section>
+    </div>
   </main>
   <footer>
-    <p>OHTMLT — Organização HTML para Todos.</p>
-    <p>Organização fictícia. Projeto acadêmico de Desenvolvimento Front-End da Universidade Cruzeiro do Sul.</p>
+    <div class="container rodape-conteudo">
+      <p>OHTMLT — Organização HTML para Todos.</p>
+      <p>Organização fictícia. Projeto acadêmico de Desenvolvimento Front-End da Universidade Cruzeiro do Sul.</p>
+    </div>
   </footer>
 </body>
 </html>

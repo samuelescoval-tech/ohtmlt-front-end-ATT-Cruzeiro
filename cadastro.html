@@ -7,64 +7,75 @@
   <title>Cadastro demonstrativo | OHTMLT</title>
   <link rel="icon" href="assets/imagens/inclusao-digital.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
 </head>
 <body>
   <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
   <header>
-    <p><strong>OHTMLT</strong> — Organização HTML para Todos</p>
-    <nav aria-label="Navegação principal">
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
-      </ul>
-    </nav>
+    <div class="container cabecalho-conteudo">
+      <p class="marca"><strong>OHTMLT</strong> — Organização HTML para Todos</p>
+      <nav aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  <main id="conteudo" tabindex="-1">
-    <h1>Cadastro demonstrativo de interessados</h1>
-    <p id="aviso-demonstracao" class="aviso"><strong>Use somente dados fictícios.</strong> Este formulário é uma demonstração acadêmica: não realiza inscrições nem mantém uma lista de cadastros.</p>
-    <p id="instrucao-envio">Todos os campos são obrigatórios. O navegador verifica os formatos antes do envio. Se estiverem válidos, esta versão retorna à mesma página e inclui os valores na URL; não use informações pessoais reais.</p>
-    <section aria-labelledby="formulario">
-      <h2 id="formulario">Preencha seus dados de demonstração</h2>
-      <form id="form-cadastro" action="cadastro.html#formulario" method="get" autocomplete="off" aria-describedby="aviso-demonstracao instrucao-envio">
-        <fieldset>
-          <legend>Identificação</legend>
-          <p>
-            <label for="nome">Nome (obrigatório)</label>
-            <input type="text" id="nome" name="nome" required maxlength="100" pattern=".*\S.*" inputmode="text" aria-describedby="ajuda-nome" title="Digite um nome; somente espaços não são aceitos.">
-            <small id="ajuda-nome">Digite um nome fictício. O campo não aceita somente espaços.</small>
-          </p>
-          <p>
-            <label for="cpf">CPF (obrigatório)</label>
-            <input type="text" id="cpf" name="cpf" required pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" maxlength="14" inputmode="text" aria-describedby="ajuda-cpf" title="Use o formato 000.000.000-00.">
-            <small id="ajuda-cpf">Formato: 000.000.000-00. Digite os pontos e o hífen. A verificação confere apenas o formato, não os dígitos verificadores nem a existência do CPF.</small>
-          </p>
-        </fieldset>
-        <fieldset>
-          <legend>Contato e localização</legend>
-          <p>
-            <label for="email">E-mail (obrigatório)</label>
-            <input type="email" id="email" name="email" required maxlength="254" inputmode="email" aria-describedby="ajuda-email">
-            <small id="ajuda-email">Use um endereço fictício, como pessoa@example.com. A verificação não comprova que o endereço existe.</small>
-          </p>
-          <p>
-            <label for="telefone">Telefone celular (obrigatório)</label>
-            <input type="tel" id="telefone" name="telefone" required pattern="\([0-9]{2}\)[0-9]{5}-[0-9]{4}" maxlength="14" inputmode="text" aria-describedby="ajuda-telefone" title="Use o formato (11)99999-9999, sem espaços.">
-            <small id="ajuda-telefone">Formato: (11)99999-9999, sem espaços. Digite os parênteses e o hífen; a pontuação não é inserida automaticamente.</small>
-          </p>
-          <p>
-            <label for="cep">CEP (obrigatório)</label>
-            <input type="text" id="cep" name="cep" required pattern="[0-9]{5}-[0-9]{3}" maxlength="9" inputmode="text" aria-describedby="ajuda-cep" title="Use o formato 00000-000.">
-            <small id="ajuda-cep">Formato: 00000-000. Digite o hífen. Não há consulta de endereço.</small>
-          </p>
-        </fieldset>
-        <p><button type="submit" class="botao">Verificar e enviar demonstração</button></p>
-      </form>
-    </section>
+  <main id="conteudo" class="container" tabindex="-1">
+    <div class="cadastro-conteudo">
+      <h1>Cadastro demonstrativo de interessados</h1>
+      <p id="aviso-demonstracao" class="aviso"><strong>Use somente dados fictícios.</strong> Este formulário é uma demonstração acadêmica: não realiza inscrições nem mantém uma lista de cadastros.</p>
+      <p id="instrucao-envio">Todos os campos são obrigatórios. O navegador verifica os formatos antes do envio. Se estiverem válidos, esta versão retorna à mesma página e inclui os valores na URL; não use informações pessoais reais.</p>
+      <section aria-labelledby="formulario">
+        <h2 id="formulario">Preencha seus dados de demonstração</h2>
+        <form id="form-cadastro" action="cadastro.html#formulario" method="get" autocomplete="off" aria-describedby="aviso-demonstracao instrucao-envio">
+          <fieldset>
+            <legend>Identificação</legend>
+            <div class="grade campos">
+              <p class="col-6">
+                <label for="nome">Nome (obrigatório)</label>
+                <input type="text" id="nome" name="nome" required maxlength="100" pattern=".*\S.*" inputmode="text" aria-describedby="ajuda-nome" title="Digite um nome; somente espaços não são aceitos.">
+                <small id="ajuda-nome">Digite um nome fictício. O campo não aceita somente espaços.</small>
+              </p>
+              <p class="col-6">
+                <label for="cpf">CPF (obrigatório)</label>
+                <input type="text" id="cpf" name="cpf" required pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" maxlength="14" inputmode="text" aria-describedby="ajuda-cpf" title="Use o formato 000.000.000-00.">
+                <small id="ajuda-cpf">Formato: 000.000.000-00. Digite os pontos e o hífen. A verificação confere apenas o formato, não os dígitos verificadores nem a existência do CPF.</small>
+              </p>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Contato e localização</legend>
+            <div class="grade campos">
+              <p class="col-12">
+                <label for="email">E-mail (obrigatório)</label>
+                <input type="email" id="email" name="email" required maxlength="254" inputmode="email" aria-describedby="ajuda-email">
+                <small id="ajuda-email">Use um endereço fictício, como pessoa@example.com. A verificação não comprova que o endereço existe.</small>
+              </p>
+              <p class="col-6">
+                <label for="telefone">Telefone celular (obrigatório)</label>
+                <input type="tel" id="telefone" name="telefone" required pattern="\([0-9]{2}\)[0-9]{5}-[0-9]{4}" maxlength="14" inputmode="text" aria-describedby="ajuda-telefone" title="Use o formato (11)99999-9999, sem espaços.">
+                <small id="ajuda-telefone">Formato: (11)99999-9999, sem espaços. Digite os parênteses e o hífen; a pontuação não é inserida automaticamente.</small>
+              </p>
+              <p class="col-6">
+                <label for="cep">CEP (obrigatório)</label>
+                <input type="text" id="cep" name="cep" required pattern="[0-9]{5}-[0-9]{3}" maxlength="9" inputmode="text" aria-describedby="ajuda-cep" title="Use o formato 00000-000.">
+                <small id="ajuda-cep">Formato: 00000-000. Digite o hífen. Não há consulta de endereço.</small>
+              </p>
+            </div>
+          </fieldset>
+          <p><button type="submit" class="botao">Verificar e enviar demonstração</button></p>
+        </form>
+      </section>
+    </div>
   </main>
   <footer>
-    <p>OHTMLT — Organização HTML para Todos.</p>
-    <p>Organização fictícia. Projeto acadêmico de Desenvolvimento Front-End da Universidade Cruzeiro do Sul.</p>
+    <div class="container rodape-conteudo">
+      <p>OHTMLT — Organização HTML para Todos.</p>
+      <p>Organização fictícia. Projeto acadêmico de Desenvolvimento Front-End da Universidade Cruzeiro do Sul.</p>
+    </div>
   </footer>
 </body>
 </html>

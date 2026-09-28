@@ -1,0 +1,281 @@
+{
+  "data": "2026-09-28T21:03:57.824Z",
+  "metodo": "Luminância relativa sRGB, (Lmaior + 0.05) / (Lmenor + 0.05), cores computadas no Chrome; comparação sem arredondamento.",
+  "criterios": {
+    "texto": 4.5,
+    "controlesEFoco": 3
+  },
+  "limites": "Verificações das combinações declaradas abaixo; não constituem auditoria completa de acessibilidade. Estado desabilitado aplicado temporariamente ao botão existente pelo teste.",
+  "paleta": [
+    {
+      "variavel": "--cor-primaria",
+      "valor": "#0B3C5D"
+    },
+    {
+      "variavel": "--cor-primaria-hover",
+      "valor": "#072A42"
+    },
+    {
+      "variavel": "--cor-secundaria",
+      "valor": "#146356"
+    },
+    {
+      "variavel": "--cor-destaque",
+      "valor": "#F4B942"
+    },
+    {
+      "variavel": "--cor-fundo",
+      "valor": "#F5F7FA"
+    },
+    {
+      "variavel": "--cor-superficie",
+      "valor": "#FFFFFF"
+    },
+    {
+      "variavel": "--cor-texto",
+      "valor": "#172B4D"
+    },
+    {
+      "variavel": "--cor-texto-suave",
+      "valor": "#4B5563"
+    },
+    {
+      "variavel": "--cor-borda",
+      "valor": "#6B7280"
+    },
+    {
+      "variavel": "--cor-erro",
+      "valor": "#B42318"
+    },
+    {
+      "variavel": "--cor-sucesso",
+      "valor": "#166534"
+    },
+    {
+      "variavel": "--cor-foco",
+      "valor": "#1D4ED8"
+    }
+  ],
+  "combinacoes": [
+    {
+      "caso": "Texto no fundo geral",
+      "seletor": ".apresentacao p",
+      "propriedade": "color",
+      "frente": "rgb(23, 43, 77)",
+      "fundo": "rgb(245, 247, 250)",
+      "razao": 13.13989071871563,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Título no fundo geral",
+      "seletor": "h1",
+      "propriedade": "color",
+      "frente": "rgb(11, 60, 93)",
+      "fundo": "rgb(245, 247, 250)",
+      "razao": 10.75928910203558,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Texto complementar no fundo geral",
+      "seletor": "figcaption",
+      "propriedade": "color",
+      "frente": "rgb(75, 85, 99)",
+      "fundo": "rgb(245, 247, 250)",
+      "razao": 7.041758627585409,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Texto no cabeçalho",
+      "seletor": ".marca",
+      "propriedade": "color",
+      "frente": "rgb(255, 255, 255)",
+      "fundo": "rgb(11, 60, 93)",
+      "razao": 11.54711776572852,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Link da navegação",
+      "seletor": "nav a",
+      "propriedade": "color",
+      "frente": "rgb(255, 255, 255)",
+      "fundo": "rgb(11, 60, 93)",
+      "razao": 11.54711776572852,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Ação primária",
+      "seletor": "a.botao:not(.botao--secundario)",
+      "propriedade": "color",
+      "frente": "rgb(255, 255, 255)",
+      "fundo": "rgb(11, 60, 93)",
+      "razao": 11.54711776572852,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Ação secundária",
+      "seletor": ".botao--secundario",
+      "propriedade": "color",
+      "frente": "rgb(20, 99, 86)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 7.121401607612063,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Texto do rodapé",
+      "seletor": ".rodape-conteudo > p",
+      "propriedade": "color",
+      "frente": "rgb(75, 85, 99)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 7.557378129674007,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Ação primária em hover",
+      "seletor": "a.botao:not(.botao--secundario)",
+      "propriedade": "color",
+      "frente": "rgb(255, 255, 255)",
+      "fundo": "rgb(7, 42, 66)",
+      "razao": 14.800307421578115,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Ação primária pressionada",
+      "seletor": "a.botao:not(.botao--secundario)",
+      "propriedade": "color",
+      "frente": "rgb(255, 255, 255)",
+      "fundo": "rgb(7, 42, 66)",
+      "razao": 14.800307421578115,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Ação secundária em hover",
+      "seletor": ".botao--secundario",
+      "propriedade": "color",
+      "frente": "rgb(255, 255, 255)",
+      "fundo": "rgb(20, 99, 86)",
+      "razao": 7.121401607612063,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Navegação em hover",
+      "seletor": "nav a",
+      "propriedade": "color",
+      "frente": "rgb(244, 185, 66)",
+      "fundo": "rgb(11, 60, 93)",
+      "razao": 6.5240520213791635,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Foco no cabeçalho",
+      "seletor": "nav a:focus-visible",
+      "propriedade": "outlineColor",
+      "frente": "rgb(244, 185, 66)",
+      "fundo": "rgb(11, 60, 93)",
+      "razao": 6.5240520213791635,
+      "minimo": 3,
+      "aprovado": true
+    },
+    {
+      "caso": "Selo demonstrativo",
+      "seletor": ".selo",
+      "propriedade": "color",
+      "frente": "rgb(255, 255, 255)",
+      "fundo": "rgb(20, 99, 86)",
+      "razao": 7.121401607612063,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Link no conteúdo",
+      "seletor": "article a",
+      "propriedade": "color",
+      "frente": "rgb(11, 60, 93)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 11.54711776572852,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Aviso de demonstração",
+      "seletor": ".aviso",
+      "propriedade": "color",
+      "frente": "rgb(23, 43, 77)",
+      "fundo": "rgb(244, 185, 66)",
+      "razao": 7.967564565945105,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Texto do campo",
+      "seletor": "input",
+      "propriedade": "color",
+      "frente": "rgb(23, 43, 77)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 14.102034448456891,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Ajuda do campo",
+      "seletor": "small",
+      "propriedade": "color",
+      "frente": "rgb(75, 85, 99)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 7.557378129674007,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Borda de campo",
+      "seletor": "input",
+      "propriedade": "borderTopColor",
+      "frente": "rgb(107, 114, 128)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 4.834490081424352,
+      "minimo": 3,
+      "aprovado": true
+    },
+    {
+      "caso": "Foco no campo",
+      "seletor": "#nome",
+      "propriedade": "outlineColor",
+      "frente": "rgb(29, 78, 216)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 6.701618401398807,
+      "minimo": 3,
+      "aprovado": true
+    },
+    {
+      "caso": "Borda do campo inválido",
+      "seletor": "#nome",
+      "propriedade": "borderTopColor",
+      "frente": "rgb(180, 35, 24)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 6.57428861557707,
+      "minimo": 3,
+      "aprovado": true
+    },
+    {
+      "caso": "Botão desabilitado (estado aplicado no teste)",
+      "seletor": "button",
+      "propriedade": "color",
+      "frente": "rgb(75, 85, 99)",
+      "fundo": "rgb(245, 247, 250)",
+      "razao": 7.041758627585409,
+      "minimo": 4.5,
+      "aprovado": true
+    }
+  ]
+}

@@ -1,0 +1,531 @@
+{
+  "data": "2026-09-28T21:04:00.634Z",
+  "navegador": "Chrome/154.0.8037.57",
+  "protocolo": "1.3",
+  "execucao": "Chrome headless via Chrome DevTools Protocol, sem dependências instaladas",
+  "origem": "http://127.0.0.1:5500",
+  "viewports": [
+    "320x900",
+    "375x900",
+    "479x900",
+    "480x900",
+    "481x900",
+    "767x900",
+    "768x900",
+    "769x900",
+    "991x900",
+    "992x900",
+    "993x900",
+    "1199x900",
+    "1200x900",
+    "1201x900",
+    "1280x900",
+    "1439x900",
+    "1440x900",
+    "1441x900",
+    "1920x900"
+  ],
+  "sha256": {
+    "index.html": "03109ef81505ce098fecce2c61f803723ed3db9f6bf8a46069c6cc5aa7e670f2",
+    "projetos.html": "3ff9dc75fa09d861533187e77391d1d2fe46510dc28b74bf93b50b059ab03bb5",
+    "cadastro.html": "fcd8f9e049a5f0e7623b722bde3262c616e529036d93da72a3abbd29b557b8e8",
+    "css/base.css": "9d716ffa7e16cca432fcae9c08cea0186771f16692f400b0484b828e9cad6de1",
+    "css/layout.css": "109b91b9b3424645e732dd7e5d1b6a25690fa5971866f006aea87be2a958e861"
+  },
+  "casos": [
+    {
+      "caso": "index.html: idioma, título, um h1 e um main",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: navegação identifica a página atual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: IDs únicos e descrições acessíveis existentes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: links e recursos respondem HTTP 200",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: imagens carregadas com alternativa textual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: idioma, título, um h1 e um main",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: navegação identifica a página atual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: IDs únicos e descrições acessíveis existentes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: links e recursos respondem HTTP 200",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: imagens carregadas com alternativa textual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: idioma, título, um h1 e um main",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: navegação identifica a página atual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: IDs únicos e descrições acessíveis existentes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: links e recursos respondem HTTP 200",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: imagens carregadas com alternativa textual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Teclado: primeiro Tab alcança o link de pular conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Teclado: Enter no link leva o foco ao conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Teclado: navegação de Início para Projetos",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Link do projeto abre o cadastro",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formulário: todos os campos têm label e são obrigatórios",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formulário vazio: cinco campos apontam valueMissing",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Envio vazio bloqueado, com foco no nome e sem navegação",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato inválido rejeitado: nome",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato inválido rejeitado: email",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato inválido rejeitado: telefone",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato inválido rejeitado: cpf",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato inválido rejeitado: cep",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Sem máscara: a pontuação não é acrescentada automaticamente",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Clique no label do CPF foca o campo correspondente",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Dados fictícios nos formatos indicados aceitos pelo navegador",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "CPF: somente formato, sem algoritmo de dígitos verificadores",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Envio válido por Enter: GET retorna à mesma página",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Sem persistência de cadastros nesta etapa",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: sem rolagem horizontal em viewport de 320 px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: sem rolagem horizontal em viewport de 320 px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: sem rolagem horizontal em viewport de 320 px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Paleta: 12 cores distintas declaradas",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "CSS carregado e cinco níveis tipográficos aplicados",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Escala de espaçamento: oito passos com base em 4 px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Ação primária: hover usa a cor definida",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Ação primária: estado ativo mantém leitura",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Ação secundária: hover verde com texto branco",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Navegação: hover usa destaque legível no cabeçalho",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Foco no cabeçalho: contorno amarelo visível por teclado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Links de conteúdo permanecem sublinhados",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Foco no campo: contorno azul de 3 px por teclado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Campos ainda não enviados não têm borda de erro",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Erro nativo: borda vermelha após tentativa de envio",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Estado desabilitado: botão existente não envia ao ser acionado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: texto ampliado a 200% em 320 px sem corte horizontal",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: texto ampliado a 200% em 320 px sem corte horizontal",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: texto ampliado a 200% em 320 px sem corte horizontal",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Preferência por movimento reduzido: sem animações na base",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Cinco media queries explícitas: 480, 768, 992, 1200 e 1440 px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 320 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 320 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 320 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 375 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 375 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 375 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 479 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 479 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 479 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 480 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 480 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 480 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 481 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 481 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 481 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 767 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 767 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 767 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 768 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 768 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 768 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 769 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 769 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 769 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 991 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 991 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 991 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 992 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 992 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 992 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 993 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 993 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 993 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1199 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1199 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1199 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1200 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1200 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1200 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1201 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1201 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1201 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1280 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1280 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1280 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1439 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1439 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1439 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1440 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1440 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1440 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1441 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1441 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1441 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1920 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1920 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1920 px: Grid, intervalos, alinhamento e conteúdo sem cortes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 768 px: texto em 200% preserva o conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 768 px: texto em 200% preserva o conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 768 px: texto em 200% preserva o conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 992 px: texto em 200% preserva o conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 992 px: texto em 200% preserva o conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 992 px: texto em 200% preserva o conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1440 px: texto em 200% preserva o conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1440 px: texto em 200% preserva o conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1440 px: texto em 200% preserva o conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Teclado em 320 px: ordem segue navegação e campos",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Teclado em 1440 px: ordem segue navegação e campos",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Sem exceções JavaScript ou recursos HTTP com falha durante a navegação",
+      "resultado": "aprovado"
+    }
+  ],
+  "errosJavaScript": [],
+  "falhasDeRecursos": []
+}
