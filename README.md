@@ -2,7 +2,7 @@
 
 Projeto acadêmico de **Desenvolvimento Front-End**, da **Universidade Cruzeiro do Sul**. A OHTMLT é uma organização fictícia voltada à inclusão e ao aprendizado digital, com propostas para iniciantes e pessoas interessadas em compartilhar conhecimentos.
 
-**Estado: em reconstrução — etapa 1 implementada.** A aplicação tem três páginas HTML estáticas com apresentação, projetos demonstrativos e formulário com validação nativa. A aparência é a padrão do navegador; CSS, JavaScript, SPA e persistência serão desenvolvidos nas próximas etapas.
+**Estado: em reconstrução — etapa 2 implementada.** A aplicação tem três páginas HTML estáticas com apresentação, projetos demonstrativos e formulário com validação nativa. O Design System aplica cores, tipografia, espaçamentos e estilos básicos. Grid, menus interativos, JavaScript, SPA e persistência serão desenvolvidos nas próximas etapas.
 
 [Repositório no GitHub](https://github.com/samuelescoval-tech/ohtmlt-front-end-ATT-Cruzeiro)
 
@@ -60,20 +60,30 @@ ohtmlt-front-end-ATT-Cruzeiro/
 ├── index.html
 ├── projetos.html
 ├── cadastro.html
+├── css/
+│   └── base.css
 ├── assets/
 │   └── imagens/
 │       └── inclusao-digital.svg
 └── docs/
+    ├── DESIGN-SYSTEM.md
     ├── TESTES.md
     └── evidencias/
-        └── etapa-1/
+        ├── etapa-1/
+        └── etapa-2/
 ```
 
 A imagem SVG foi criada para este projeto e é usada na apresentação e como ícone das páginas. Não depende de serviços externos. As evidências de navegador são arquivos PNG; os relatórios são JSON. Não há bibliotecas, frameworks ou fontes externas. Nenhuma licença de distribuição foi definida.
 
+## Design System
+
+[`css/base.css`](css/base.css) define 12 cores distintas, cinco tamanhos tipográficos e oito passos de espaçamento baseados em 4 px. A base usa fontes do sistema, links sublinhados, foco visível, ações primária e secundária, aviso demonstrativo, selo e borda de erro após interação. A cor de sucesso está reservada para uma futura confirmação; nenhum cadastro é salvo nesta etapa.
+
+As [regras de uso](docs/DESIGN-SYSTEM.md) explicam quando aplicar cada cor e estilo, com exemplos presentes no código e medidas de contraste. Ainda não há Grid, Flexbox, breakpoints ou animações.
+
 ## Verificação
 
-Em 28/09/2026, as três páginas passaram no W3C Nu HTML Checker sem erros ou avisos. No Chrome, 37 verificações cobriram estrutura, navegação, teclado, validação, envio demonstrativo, recursos e largura de 320 px.
+Em 28/09/2026, após a aplicação do CSS, as três páginas passaram novamente no W3C Nu HTML Checker sem erros ou avisos. No Chrome, 54 verificações cobriram a base anterior, os estilos, o teclado, os estados dos controles, o texto ampliado a 200% e a largura de 320 px. As 22 combinações de contraste medidas passaram nos limites adotados. A etapa 1 mantém seus relatórios próprios com 37 verificações.
 
 Consulte [os casos, a correção observada e as evidências](docs/TESTES.md). Esses resultados não equivalem a uma auditoria completa de acessibilidade ou compatibilidade entre navegadores.
 
@@ -81,4 +91,4 @@ Consulte [os casos, a correção observada e as evidências](docs/TESTES.md). Es
 
 `main` contém a base documental e receberá versões aprovadas; `develop` integra as etapas de desenvolvimento; `feature/*` organiza mudanças verificadas em pull requests. O padrão de commits é semântico. Ainda não há release, tag de versão ou deploy.
 
-A próxima etapa é o **Design System**: variáveis de cores, escala tipográfica, espaçamentos e regras de uso dos componentes. A exigência de framework na terceira experiência e os enunciados detalhados de acessibilidade, otimização e deploy na quarta experiência ainda precisam ser confirmados.
+A próxima etapa é o **layout responsivo**: Grid de doze colunas, Flexbox e cinco breakpoints explícitos, com verificações das larguras próximas a cada limite. A exigência de framework na terceira experiência e os enunciados detalhados de acessibilidade, otimização e deploy na quarta experiência ainda precisam ser confirmados.

@@ -57,3 +57,54 @@ As capturas foram produzidas no navegador, com conteúdo integral da página. As
 ### Limitações
 
 Não foram executados testes em Firefox, Safari, dispositivos físicos, leitores de tela ou auditorias completas de acessibilidade. A checagem de largura não valida um layout responsivo com breakpoints, pois CSS ainda não foi implementado. Formatos válidos não comprovam existência dos dados. O envio nativo inclui valores na URL e não mantém cadastros; utilizar somente valores fictícios. SPA, máscaras, feedback personalizado, armazenamento, desempenho e deploy não fazem parte desta etapa.
+
+
+## Etapa 2 — Design System
+
+Data: **28/09/2026**. Branch de implementação: `feature/design-system`. Ambiente: Linux, Python 3 (`http.server`), Chrome 154 em modo headless, Node.js v22.22.1. A automação usou Chrome DevTools Protocol e script temporário, sem instalar dependências. A base de verificação da etapa 1 foi reaplicada ao HTML com CSS.
+
+Foram concluídos **54 casos no navegador** e **22 medições de contraste**. Os arquivos testados e seus hashes SHA-256 estão no [relatório do navegador](evidencias/etapa-2/navegador.json), incluindo `css/base.css`. As medições completas estão em [contraste.json](evidencias/etapa-2/contraste.json).
+
+### Casos acrescentados
+
+| Procedimento | Resultado observado |
+| --- | --- |
+| Conferir as variáveis e os estilos computados do corpo, títulos, cabeçalho e legenda. | 12 cores distintas, cinco tamanhos de fonte aplicados e oito passos de espaçamento. |
+| Usar hover e pressionar a ação principal. | Azul mais escuro com texto branco; contraste preservado. |
+| Usar hover na ação secundária e na navegação. | Verde com texto branco na ação de apoio; amarelo no cabeçalho azul. |
+| Navegar por Tab no cabeçalho e no formulário. | Contorno de 3 px amarelo no cabeçalho e azul no campo; foco visível. |
+| Abrir o formulário sem interagir e depois tentar enviá-lo vazio. | Sem borda de erro inicialmente; borda vermelha e mensagem nativa após a tentativa. |
+| Aplicar temporariamente `disabled` ao botão existente no teste. | Estilo desabilitado aplicado, ativação bloqueada e texto legível; atributo removido após a verificação. |
+| Ampliar o tamanho raiz do texto para 200% e usar viewport de 320 px nas três páginas. | Sem rolagem horizontal depois da correção de `legend`. |
+| Emular `prefers-reduced-motion: reduce`. | Nenhuma animação ou transição ativa. |
+| Repetir os casos de navegação, teclado, formulário e carregamento de recursos. | Todos aprovados; nenhuma exceção JavaScript ou recurso HTTP com falha. |
+
+As cores foram lidas dos estilos computados nos estados testados. As razões foram comparadas sem arredondamento com 4,5:1 para texto e 3:1 para bordas e foco. A documentação do [Design System](DESIGN-SYSTEM.md) apresenta as combinações, referências e limites da verificação. O controle desabilitado foi medido voluntariamente; o teste não significa que exista uma regra automática de desabilitação na aplicação.
+
+### HTML após as alterações
+
+Os três documentos foram novamente enviados ao W3C Nu HTML Checker: **zero erros e zero avisos**. Respostas originais: [início](evidencias/etapa-2/w3c-index.json), [projetos](evidencias/etapa-2/w3c-projetos.json) e [cadastro](evidencias/etapa-2/w3c-cadastro.json). Esta submissão valida o HTML; não é um relatório de validação do CSS.
+
+### Problema observado e correção
+
+Com texto em 200% e viewport de 320 px, o cadastro atingiu largura de 359 px para uma área útil de 305 px. Os elementos `legend` “Identificação” e “Contato e localização” ultrapassavam o espaço disponível. O diagnóstico no navegador confirmou o limite direito de aproximadamente 359,25 px do primeiro título.
+
+Foram adicionados `max-inline-size: 100%` e `overflow-wrap: anywhere` a `legend`, mantendo a fonte ampliada. No reteste, as três páginas passaram na comparação entre `scrollWidth` e `clientWidth`. Não foi reduzido o tamanho da fonte para esconder o problema.
+
+### Capturas da etapa
+
+- [Início com CSS em desktop](evidencias/etapa-2/index-desktop.png).
+- [Projetos com selo demonstrativo](evidencias/etapa-2/projetos-desktop.png).
+- [Cadastro com aviso e campos](evidencias/etapa-2/cadastro-desktop.png).
+- [Validação nativa com borda de erro](evidencias/etapa-2/cadastro-validacao-nativa.png).
+- [Início em 320 px](evidencias/etapa-2/inicio-320px.png).
+- [Foco na navegação](evidencias/etapa-2/foco-menu.png).
+- [Foco no campo](evidencias/etapa-2/foco-campo.png).
+- [Botão existente temporariamente desabilitado pelo teste](evidencias/etapa-2/botao-desabilitado.png).
+- [Texto ampliado a 200% em 320 px](evidencias/etapa-2/inicio-texto-200.png).
+
+As capturas registram os estados indicados. A imagem do botão desabilitado representa um estado aplicado pela automação ao controle real, sem alteração permanente no HTML. As capturas da página inicial em desktop e em 320 px também foram inspecionadas visualmente.
+
+### Limitações desta etapa
+
+A ampliação foi do tamanho raiz do texto via CSS, não um ensaio completo de zoom do navegador. As medições abrangem as 22 combinações registradas e não atestam conformidade completa de acessibilidade. Não foram testados outros navegadores, leitores de tela ou dispositivos físicos. A ausência de rolagem horizontal não comprova Grid ou breakpoints, que ainda não foram implementados. A cor de sucesso continua reservada; não há confirmação de cadastro ou persistência.
