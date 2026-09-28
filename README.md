@@ -2,7 +2,7 @@
 
 Projeto acadêmico de **Desenvolvimento Front-End**, da **Universidade Cruzeiro do Sul**. A OHTMLT é uma organização fictícia voltada à inclusão e ao aprendizado digital, com propostas para iniciantes e pessoas interessadas em compartilhar conhecimentos.
 
-**Estado: em reconstrução — etapa 7 implementada.** A aplicação é uma SPA com três views: início, projetos e cadastro. A navegação interna atualiza o conteúdo sem recarregar o documento, preservando menus, cards, estados dos controles e modal de limpeza. Cards, menu de oficinas e destinos compartilham os dados de `js/data/projetos.js`; a construção dos componentes usa DOM e texto seguro. A validação apresenta mensagens específicas e bloqueia o envio sem recarregar a página. A persistência é a próxima etapa.
+**Estado: em reconstrução — etapa 8 implementada.** A aplicação é uma SPA com três views: início, projetos e cadastro. A navegação interna atualiza o conteúdo sem recarregar o documento, preservando menus, cards, estados dos controles e modal de limpeza. Cards, menu de oficinas e destinos compartilham os dados de `js/data/projetos.js`; a construção dos componentes usa DOM e texto seguro. A validação apresenta mensagens específicas e bloqueia o envio sem recarregar a página. Demonstrações podem ser salvas, recuperadas e apagadas no navegador, com tratamento de falhas.
 
 [Repositório no GitHub](https://github.com/samuelescoval-tech/ohtmlt-front-end-ATT-Cruzeiro)
 
@@ -51,11 +51,17 @@ As antigas páginas `projetos.html` e `cadastro.html` foram substituídas pelas 
 
 Digite a pontuação indicada: `pattern` verifica o formato e não aplica máscaras. O e-mail usa `inputmode="email"`; campos com pontuação manual usam `inputmode="text"` para permitir os separadores. Não há consulta de endereço, confirmação de existência dos dados ou algoritmo de dígitos verificadores do CPF.
 
-**Use somente dados fictícios.** “Verificar demonstração” valida os cinco campos sem recarregar a página e sem incluir os valores na URL. Não há backend nem persistência nesta versão: a confirmação informa apenas que os formatos foram verificados.
+**Use somente dados fictícios.** “Salvar demonstração” valida os cinco campos e grava a lista local sem recarregar a página ou incluir os valores na URL. A confirmação só aparece após a gravação. Não há backend nem inscrições reais. O preenchimento permanece após salvar; cada novo envio válido acrescenta uma demonstração.
 
 Ao sair de um campo, a validade é apresentada por texto e cor. Durante a correção, `input` revalida os campos já tratados. No envio, todos são verificados e o primeiro inválido recebe foco. Os valores são preservados. `aria-invalid` acompanha o resultado e `aria-describedby` relaciona a ajuda e o estado.
 
 “Limpar campos” pede confirmação; cancelar ou usar Escape preserva o preenchimento. Confirmar remove valores e estados e anuncia a limpeza. Sair da view e voltar cria formulário vazio; selecionar a mesma rota mantém o preenchimento. Consulte [validação e eventos](docs/FORMULARIO.md).
+
+## Armazenamento local
+
+A chave `ohtmlt:cadastros:v1` contém um array JSON de objetos com `nome`, `cpf`, `email`, `telefone` e `cep`, todos textos. A leitura confere estrutura, campos esperados e limites de comprimento. Os registros aparecem novamente ao entrar no cadastro ou recarregar. Eles pertencem à origem (protocolo, domínio e porta) e ao perfil deste navegador; não há sincronização com contas ou outros dispositivos.
+
+“Limpar campos” afeta apenas o formulário. “Apagar demonstrações salvas” pede confirmação e remove somente a chave da aplicação, mantendo outros dados do navegador e o formulário. JSON inválido, estrutura inesperada, bloqueio de acesso e falha de gravação apresentam mensagens; conteúdo defeituoso não é sobrescrito pelo envio. Consulte [contrato e limitações](docs/PERSISTENCIA.md).
 
 ## Estrutura versionada
 
@@ -79,6 +85,7 @@ ohtmlt-front-end-ATT-Cruzeiro/
 │   └── modules/
 │       ├── form.js
 │       ├── validation.js
+│       ├── storage.js
 │       ├── templates.js
 │       ├── navigation.js
 │       ├── modal.js
@@ -99,7 +106,8 @@ ohtmlt-front-end-ATT-Cruzeiro/
         ├── etapa-4/
         ├── etapa-5/
         ├── etapa-6/
-        └── etapa-7/
+        ├── etapa-7/
+        └── etapa-8/
 ```
 
 A imagem SVG é local e foi criada para este projeto. As views usam marcação fixa em `<template>`, sem inserir valores digitados ou trechos de URL no HTML. Nenhuma biblioteca, framework ou fonte externa foi instalada. Nenhuma licença de distribuição foi definida.
@@ -120,10 +128,12 @@ Na etapa 6, 29 verificações adicionais passaram: preservação dos cards, text
 
 Na etapa 7, 26 verificações de formulário passaram no Chrome e o cadastro renderizado passou no W3C sem erros ou avisos. [Resultados](docs/evidencias/etapa-7/navegador.json).
 
+Na etapa 8, 35 verificações passaram: persistência real no navegador, recuperação, exclusão restrita, texto seguro e falhas simuladas de quota/permissão. Cadastro no W3C sem erros ou avisos. [Resultados](docs/evidencias/etapa-8/navegador.json).
+
 Esses resultados não equivalem a uma auditoria completa de acessibilidade ou compatibilidade entre navegadores.
 
 ## Versionamento e próximos passos
 
 `main` contém a base documental e receberá versões aprovadas; `develop` integra as etapas; `feature/*` organiza mudanças verificadas em pull requests. Os commits são semânticos. Ainda não há release, tag de versão ou deploy.
 
-A próxima etapa é a **persistência local dos dados de demonstração**. A integração básica de framework, acessibilidade, otimização e publicação terão implementação simples; não há rubrica detalhada disponível para certificar exigências adicionais.
+A próxima etapa é a **integração básica de framework**. A integração básica de framework, acessibilidade, otimização e publicação terão implementação simples; não há rubrica detalhada disponível para certificar exigências adicionais.

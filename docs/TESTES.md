@@ -286,3 +286,11 @@ Em 28/09/2026, Chrome 154: 26 casos aprovados em [navegador.json](evidencias/eta
 Capturas: [desktop](evidencias/etapa-7/erros-desktop.png), [mobile](evidencias/etapa-7/erros-mobile.png) e [sucesso de validação](evidencias/etapa-7/validacao-sucesso.png). [W3C cadastro](evidencias/etapa-7/w3c-cadastro.json): sem erros/avisos.
 
 A primeira execução do ensaio verificou o foco depois que `open` mudou, mas antes do evento `close` do diálogo. A inspeção posterior confirmou a restauração correta. O teste passou a aguardar também o foco do acionador; a rodada completa passou. Foi um ajuste de sincronização do ensaio, sem mudança na implementação do modal. Não foram realizados testes com leitor de tela nesta etapa.
+
+## Etapa 8 — persistência local
+
+Em 28/09/2026, Chrome 154: [35 casos aprovados](evidencias/etapa-8/navegador.json). Gravação, recuperação após recarga, acréscimo, retorno à view, exclusão confirmada/cancelada e preservação de outra chave foram exercitados no armazenamento real do perfil temporário. Sete conteúdos inválidos foram rejeitados sem sobrescrita. Falhas de quota, leitura, acesso à propriedade e exclusão foram simuladas substituindo temporariamente métodos/propriedade, depois restaurados. Formulário preservado nas falhas; nenhuma confirmação falsa de gravação.
+
+Capturas: [recuperação](evidencias/etapa-8/registros-recuperados.png), [mobile](evidencias/etapa-8/registros-mobile.png), [estrutura inválida](evidencias/etapa-8/falha-estrutura.png) e [falha de gravação](evidencias/etapa-8/falha-gravacao.png). Quatro larguras sem transbordamento. [W3C cadastro](evidencias/etapa-8/w3c-cadastro.json): sem erros/avisos. Nenhuma exceção ou recurso obrigatório com falha na rodada concluída.
+
+O ensaio inicial tentou executar JavaScript enquanto a confirmação nativa estava aberta, bloqueando a automação. O navegador temporário foi reiniciado e o teste passou a responder pelo comando de diálogo do CDP sem avaliar código dentro da página. A rodada completa passou; não houve alteração funcional para contornar o teste. A atualização entre abas foi verificada por evento simulado, sem ensaio de concorrência real entre dois processos. Dados fictícios do ensaio foram removidos ao final.
