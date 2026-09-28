@@ -1,0 +1,119 @@
+{
+  "data": "2026-09-28T23:33:14.161Z",
+  "origem": "https://samuelescoval-tech.github.io/ohtmlt-front-end-ATT-Cruzeiro",
+  "commitExaminado": "ec72d89f80f964be4a58986d1bc05fcf55fde496",
+  "navegador": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/154.0.8037.57",
+    "revision": "@73c14f6228d7cd537c855007e8f88678969cc0eb",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "jsVersion": "15.4.80.11"
+  },
+  "checks": [
+    {
+      "caso": "index.html: idioma, título e landmarks",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: IDs e referências acessíveis válidos",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: sem transbordamento em 375",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: sem transbordamento em 1280",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: idioma, título e landmarks",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: IDs e referências acessíveis válidos",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: sem transbordamento em 375",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: sem transbordamento em 1280",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: idioma, título e landmarks",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: IDs e referências acessíveis válidos",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: sem transbordamento em 375",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: sem transbordamento em 1280",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Navegação e oficina preservam o documento",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Envio vazio foca primeiro erro e apresenta cinco mensagens",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Salvamento válido confirma e exibe dados sem dados na URL",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Recarregar recupera a demonstração persistida",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Modal preserva campos e restaura foco ao cancelar",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Rota desconhecida oferece retorno",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Todos os arquivos públicos da aplicação respondem 200 e têm conteúdo esperado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Nenhuma exceção ou falha de recurso obrigatório",
+      "resultado": "aprovado"
+    }
+  ],
+  "hashes": {
+    "assets/imagens/inclusao-digital.svg": "5c02dc916e947f4c209cee4a3cb9fd045a16a98661e9766c05873432c9634e26",
+    "css/base.css": "03b303f9117e2636bce0d9274f90514e66d910c78ecd2eb38c315ff27db4e1a9",
+    "css/components.css": "73513fd8fd590272cdc17a051e49191280e2a1fc6f71411efca49dac33e16ef0",
+    "css/layout.css": "02ec8ae392e821776084a73e22f6a8758e8a3f0716a43606dceaa91464828bb6",
+    "index.html": "f7c7647e55f1aacb083ea6445ef3d13578502295d82afa4e97624098da907b43",
+    "js/data/projetos.js": "ba69013f9af5606f2b0e1123e1de8c399149a6c493fa104e48e71ddd906749b8",
+    "js/main.js": "04e868f43074c74fcfcdc948ffd2081deeaafc5b62edbc11461a18bceac7af24",
+    "js/modules/cadastros.js": "3fe83bd5511425b6a24009931b201b8a2d491d53b4c3dca1670c806fb38923c2",
+    "js/modules/feedback.js": "1e9b4736b014955bf2b1f07b1ac4cd8beab62526866e8172a672730b501e155a",
+    "js/modules/form.js": "c2a2442cc9850cc0cd67439892156c67439d39e4e457ca571ec10ed869d1d03e",
+    "js/modules/modal.js": "92ef75008ac0f5d6803dcf9151c0345f16df8530ed931866be37ca12d165d471",
+    "js/modules/navigation.js": "e0cc55dc554340583f1014ca58828e5d0f3ae7491327cc606160114c368c86fc",
+    "js/modules/storage.js": "8bdeabecc4a06b085fe7c70e5b61a2b0b0e2280efd8eb018ed64c7b67fbcf199",
+    "js/modules/templates.js": "081d49a2fa8fae05c4a1aca5bf06e9af94ef8796a697b0e588fc5c9dad44ab16",
+    "js/modules/validation.js": "b9eda3abf81107134f07908765b0cbad1b773eff15a78e6b56fdbf308870dc66",
+    "js/router.js": "4ac082ca9a4eda5907ad1b68af0c886d5db8bb983e23f37de8fd29be8281a9c5",
+    "js/vendor/vue-3.5.43.runtime.esm-browser.prod.js": "41cd1dce54e6396e7aa3fa8a4b60182f383ef73ae448d3f4a352522199dc4a44",
+    "js/vendor/vue-LICENSE.txt": "1bb85cc9b13b81ef41c81c51866172fc345e0503c86726a6755b796590b70175",
+    "js/views/cadastro.js": "6d7c7d2947f67a0ff251ea364643357c4da2ae9f2516a3642329b1c5e617c381",
+    "js/views/inicio.js": "dbcb0db43baa87e4a8c4cca69161f069a3a994f336d72930c7ac35e26f436c26",
+    "js/views/projetos.js": "ef250c83399b168ed45b82eb868e5624cd4eb0fa7b1fab939563f0df56a2b962"
+  },
+  "exceptions": [],
+  "resourceFailures": []
+}

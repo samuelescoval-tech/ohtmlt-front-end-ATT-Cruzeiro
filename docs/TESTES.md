@@ -314,3 +314,7 @@ A automação inicialmente esperava `errorText` específico para o bloqueio de d
 ## Candidata 1.0.0 — revisão local
 
 20 verificações finais aprovadas no Chrome: três views, idioma/landmarks/referências ARIA, duas larguras, navegação sem reload, destino de oficina, envio inválido/válido, persistência após recarga, modal, rota desconhecida e recursos sem falhas. [Relatório e hashes de cada arquivo](evidencias/release/local.json). O commit examinado está registrado no relatório; mudanças posteriores desta finalização são documentais. Shell e três views renderizadas passaram novamente no W3C sem erros/avisos; respostas em `docs/evidencias/release/w3c-*.json`.
+
+## Versão 1.0.0 — publicação HTTPS
+
+20 casos finais aprovados no endereço do GitHub Pages, repetindo a verificação local da candidata. [Relatório com commit, origem e hashes](evidencias/release/publicado.json). Cada arquivo público da aplicação respondeu HTTP 200 e teve conteúdo idêntico ao arquivo local; nenhuma exceção ou falha de recurso obrigatório. A gravação e a recuperação foram exercitadas na origem HTTPS com dados fictícios, removidos ao final. Capturas inspecionadas: [início](evidencias/release/index-publicado.png), [projetos](evidencias/release/projetos-publicado.png), [cadastro](evidencias/release/cadastro-publicado.png).
