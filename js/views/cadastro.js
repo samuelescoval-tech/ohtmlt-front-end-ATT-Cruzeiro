@@ -4,8 +4,8 @@ export function criarCadastro() {
   template.innerHTML = String.raw`
     <div class="cadastro-conteudo">
       <h1>Cadastro demonstrativo de interessados</h1>
-      <p id="aviso-demonstracao" class="aviso"><strong>Use somente dados fictícios.</strong> Este formulário é uma demonstração acadêmica: não realiza inscrições nem mantém uma lista de cadastros.</p>
-      <p id="instrucao-envio">Todos os campos são obrigatórios. As mensagens junto aos campos orientam a correção. A verificação ocorre sem recarregar a página ou incluir dados na URL; não use informações pessoais reais. Ao sair desta tela, o preenchimento é descartado.</p>
+      <p id="aviso-demonstracao" class="aviso"><strong>Use somente dados fictícios.</strong> Este formulário é uma demonstração acadêmica: não realiza inscrições reais. As demonstrações ficam salvas somente neste navegador.</p>
+      <p id="instrucao-envio">Todos os campos são obrigatórios. As mensagens junto aos campos orientam a correção. A verificação ocorre sem recarregar a página ou incluir dados na URL; não use informações pessoais reais. Ao sair desta tela, campos não salvos são descartados. A lista salva permanece nesta origem e não sincroniza entre navegadores ou dispositivos.</p>
       <section aria-labelledby="formulario">
         <h2 id="formulario">Preencha seus dados de demonstração</h2>
         <form id="form-cadastro" action="index.html#cadastro" method="get" autocomplete="off" aria-describedby="aviso-demonstracao instrucao-envio">
@@ -65,7 +65,7 @@ export function criarCadastro() {
             </div>
           </fieldset>
           <div class="acoes">
-            <button type="submit" class="botao">Verificar demonstração</button>
+            <button type="submit" class="botao">Salvar demonstração</button>
             <button type="button" id="abrir-limpeza" class="botao botao--secundario" aria-haspopup="dialog" aria-controls="modal-limpeza" aria-describedby="ajuda-limpeza" hidden disabled>Limpar campos</button>
           </div>
           <small id="ajuda-limpeza" hidden>A limpeza fica disponível quando algum campo está preenchido e pede sua confirmação.</small>
@@ -79,6 +79,12 @@ export function criarCadastro() {
             <button type="button" id="confirmar-limpeza" class="botao">Confirmar limpeza</button>
           </div>
         </dialog>
+      </section>
+      <section aria-labelledby="cadastros-salvos">
+        <h2 id="cadastros-salvos" tabindex="-1">Demonstrações salvas neste navegador</h2>
+        <div id="lista-cadastros"></div>
+        <button type="button" id="apagar-cadastros" class="botao botao--secundario" disabled>Apagar demonstrações salvas</button>
+        <div id="status-armazenamento" role="status" aria-atomic="true"></div>
       </section>
     </div>
   `;

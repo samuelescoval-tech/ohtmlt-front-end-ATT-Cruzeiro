@@ -1,6 +1,8 @@
 import { validarCampo } from './validation.js';
 import { iniciarLimpeza } from './modal.js';
-import { anunciarSucesso } from './feedback.js';
+import { anunciarSucesso, anunciarErro } from './feedback.js';
+import { carregarCadastros, salvarCadastro, apagarCadastros, CHAVE_CADASTROS } from './storage.js';
+import { renderizarCadastros } from './templates.js';
 
 export function iniciarFormulario(raiz) {
   const form = raiz.querySelector('#form-cadastro');
@@ -9,6 +11,43 @@ export function iniciarFormulario(raiz) {
   const controller = new AbortController();
   const opcoes = { signal: controller.signal };
   const tratados = new Set();
+  const lista = raiz.querySelector('#lista-cadastros');
+  const statusArmazenamento = raiz.querySelector('#status-armazenamento');
+  const apagar = raiz.querySelector('#apagar-cadastros');
+
+  function mostrarRegistros(resultado) {
+    if (resultado.ok) {
+      renderizarCadastros(lista, resultado.registros);
+      apagar.disabled = resultado.registros.length === 0;
+    } else {
+      lista.replaceChildren();
+      apagar.disabled = false;
+      anunciarErro(statusArmazenamento, resultado.mensagem);
+    }
+  }
+  mostrarRegistros(carregarCadastros());
+  apagar.addEventListener('click', () => {
+    if (!window.confirm('Apagar todas as demonstrações salvas neste navegador? Os campos preenchidos serão mantidos.')) return;
+    const resultado = apagarCadastros();
+    if (!resultado.ok) {
+      anunciarErro(statusArmazenamento, resultado.mensagem);
+      return;
+    }
+    mostrarRegistros(resultado);
+    raiz.querySelector('#cadastros-salvos').focus();
+    anunciarSucesso(statusArmazenamento, 'Demonstrações salvas apagadas deste navegador.');
+  }, opcoes);
+  window.addEventListener('storage', event => {
+    if (event.key !== CHAVE_CADASTROS && event.key !== null) return;
+    try {
+      if (event.storageArea !== localStorage) return;
+    } catch {
+      mostrarRegistros(carregarCadastros());
+      return;
+    }
+    statusArmazenamento.replaceChildren();
+    mostrarRegistros(carregarCadastros());
+  }, opcoes);
   const desmontarLimpeza = iniciarLimpeza(raiz);
 
   function atualizar(campo) {
@@ -41,7 +80,15 @@ export function iniciarFormulario(raiz) {
       invalidos[0].focus();
       return;
     }
-    anunciarSucesso(status, 'Formatos verificados. Esta etapa apenas valida a demonstração; os dados ainda não são salvos.');
+    const registro = Object.fromEntries(campos.map(campo => [campo.name, campo.value.trim()]));
+    const resultado = salvarCadastro(registro);
+    if (!resultado.ok) {
+      anunciarErro(status, resultado.mensagem);
+      return;
+    }
+    statusArmazenamento.replaceChildren();
+    mostrarRegistros(resultado);
+    anunciarSucesso(status, 'Demonstração salva neste navegador. Nenhuma inscrição real foi realizada.');
   }, opcoes);
   // Ativar somente após conectar o tratamento do envio.
   form.noValidate = true;

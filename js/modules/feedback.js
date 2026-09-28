@@ -4,3 +4,10 @@ export function anunciarSucesso(regiao, mensagem) {
   alerta.textContent = mensagem;
   regiao.replaceChildren(alerta);
 }
+
+export function anunciarErro(regiao, mensagem) {
+  const aviso = document.createElement('p');
+  aviso.className = 'alerta alerta--erro';
+  aviso.textContent = mensagem;
+  regiao.replaceChildren(aviso);
+}

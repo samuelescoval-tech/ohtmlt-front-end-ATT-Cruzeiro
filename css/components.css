@@ -343,3 +343,25 @@ input[aria-invalid="true"] ~ .campo-status .campo-feedback--erro {
     transition: none;
   }
 }
+
+.cadastros-salvos {
+  padding-inline-start: var(--espaco-5);
+}
+
+.cadastros-salvos li {
+  margin-block-end: var(--espaco-5);
+  overflow-wrap: anywhere;
+}
+
+.cadastros-salvos dt {
+  font-weight: 700;
+}
+
+.cadastros-salvos dd {
+  margin-inline-start: 0;
+  margin-block-end: var(--espaco-2);
+}
+
+.alerta--erro {
+  color: var(--cor-erro);
+}
