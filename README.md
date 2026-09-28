@@ -2,7 +2,7 @@
 
 Projeto acadêmico de **Desenvolvimento Front-End**, da **Universidade Cruzeiro do Sul**. A OHTMLT é uma organização fictícia voltada à inclusão e ao aprendizado digital, com propostas para iniciantes e pessoas interessadas em compartilhar conhecimentos.
 
-**Estado: em reconstrução — etapa 6 implementada.** A aplicação é uma SPA com três views: início, projetos e cadastro. A navegação interna atualiza o conteúdo sem recarregar o documento, preservando menus, cards, estados dos controles e modal de limpeza. Cards, menu de oficinas e destinos compartilham os dados de `js/data/projetos.js`; a construção dos componentes usa DOM e texto seguro. Validação personalizada e persistência são as próximas etapas.
+**Estado: em reconstrução — etapa 7 implementada.** A aplicação é uma SPA com três views: início, projetos e cadastro. A navegação interna atualiza o conteúdo sem recarregar o documento, preservando menus, cards, estados dos controles e modal de limpeza. Cards, menu de oficinas e destinos compartilham os dados de `js/data/projetos.js`; a construção dos componentes usa DOM e texto seguro. A validação apresenta mensagens específicas e bloqueia o envio sem recarregar a página. A persistência é a próxima etapa.
 
 [Repositório no GitHub](https://github.com/samuelescoval-tech/ohtmlt-front-end-ATT-Cruzeiro)
 
@@ -51,11 +51,11 @@ As antigas páginas `projetos.html` e `cadastro.html` foram substituídas pelas 
 
 Digite a pontuação indicada: `pattern` verifica o formato e não aplica máscaras. O e-mail usa `inputmode="email"`; campos com pontuação manual usam `inputmode="text"` para permitir os separadores. Não há consulta de endereço, confirmação de existência dos dados ou algoritmo de dígitos verificadores do CPF.
 
-**Use somente dados fictícios.** O botão aciona a validação do navegador. Quando os dados são válidos, o formulário ainda usa `GET` para `index.html#cadastro`, recarregando o documento e incluindo os valores na URL. Eles podem aparecer no histórico e no log do servidor local. Essa submissão demonstrativa não realiza inscrição nem cria lista de cadastros; não há backend ou uso de `localStorage`.
+**Use somente dados fictícios.** “Verificar demonstração” valida os cinco campos sem recarregar a página e sem incluir os valores na URL. Não há backend nem persistência nesta versão: a confirmação informa apenas que os formatos foram verificados.
 
-Após interação, os campos mostram erro ou formato aceito, conforme a validade nativa. “Limpar campos” pede confirmação; cancelar ou usar Escape preserva os valores. Confirmar reinicia os campos e anuncia a limpeza. Sair da view de cadastro e voltar descarta o preenchimento; selecionar a mesma rota preserva os campos atuais.
+Ao sair de um campo, a validade é apresentada por texto e cor. Durante a correção, `input` revalida os campos já tratados. No envio, todos são verificados e o primeiro inválido recebe foco. Os valores são preservados. `aria-invalid` acompanha o resultado e `aria-describedby` relaciona a ajuda e o estado.
 
-O tratamento do envio sem recarga e as mensagens específicas de validação em JavaScript pertencem à etapa 7. A persistência será implementada na etapa 8.
+“Limpar campos” pede confirmação; cancelar ou usar Escape preserva o preenchimento. Confirmar remove valores e estados e anuncia a limpeza. Sair da view e voltar cria formulário vazio; selecionar a mesma rota mantém o preenchimento. Consulte [validação e eventos](docs/FORMULARIO.md).
 
 ## Estrutura versionada
 
@@ -77,6 +77,8 @@ ohtmlt-front-end-ATT-Cruzeiro/
 │   │   ├── projetos.js
 │   │   └── cadastro.js
 │   └── modules/
+│       ├── form.js
+│       ├── validation.js
 │       ├── templates.js
 │       ├── navigation.js
 │       ├── modal.js
@@ -96,7 +98,8 @@ ohtmlt-front-end-ATT-Cruzeiro/
         ├── etapa-3/
         ├── etapa-4/
         ├── etapa-5/
-        └── etapa-6/
+        ├── etapa-6/
+        └── etapa-7/
 ```
 
 A imagem SVG é local e foi criada para este projeto. As views usam marcação fixa em `<template>`, sem inserir valores digitados ou trechos de URL no HTML. Nenhuma biblioteca, framework ou fonte externa foi instalada. Nenhuma licença de distribuição foi definida.
@@ -115,10 +118,12 @@ O `index.html` e os documentos extraídos das três views renderizadas passaram 
 
 Na etapa 6, 29 verificações adicionais passaram: preservação dos cards, texto seguro, renderização repetida, destinos, modal e 19 larguras. O shell e a view de projetos passaram novamente no W3C sem erros ou avisos. Consulte [templates](docs/TEMPLATES.md) e [resultados](docs/evidencias/etapa-6/navegador.json).
 
+Na etapa 7, 26 verificações de formulário passaram no Chrome e o cadastro renderizado passou no W3C sem erros ou avisos. [Resultados](docs/evidencias/etapa-7/navegador.json).
+
 Esses resultados não equivalem a uma auditoria completa de acessibilidade ou compatibilidade entre navegadores.
 
 ## Versionamento e próximos passos
 
 `main` contém a base documental e receberá versões aprovadas; `develop` integra as etapas; `feature/*` organiza mudanças verificadas em pull requests. Os commits são semânticos. Ainda não há release, tag de versão ou deploy.
 
-A próxima etapa é a **validação personalizada do formulário**. A integração básica de framework, acessibilidade, otimização e publicação terão implementação simples; não há rubrica detalhada disponível para certificar exigências adicionais.
+A próxima etapa é a **persistência local dos dados de demonstração**. A integração básica de framework, acessibilidade, otimização e publicação terão implementação simples; não há rubrica detalhada disponível para certificar exigências adicionais.

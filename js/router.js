@@ -2,7 +2,7 @@ import { projetos } from './data/projetos.js';
 import { criarInicio } from './views/inicio.js';
 import { criarProjetos } from './views/projetos.js';
 import { criarCadastro } from './views/cadastro.js';
-import { iniciarLimpeza } from './modules/modal.js';
+import { iniciarFormulario } from './modules/form.js';
 
 const rotas = new Map([
   ['inicio', {
@@ -19,7 +19,7 @@ const rotas = new Map([
     titulo: 'Cadastro demonstrativo | OHTMLT',
     descricao: 'Experimente o formulário demonstrativo da OHTMLT usando somente dados fictícios.',
     criar: criarCadastro,
-    montar: iniciarLimpeza,
+    montar: iniciarFormulario,
   }],
 ]);
 

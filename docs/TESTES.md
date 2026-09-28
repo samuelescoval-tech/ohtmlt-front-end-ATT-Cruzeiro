@@ -278,3 +278,11 @@ As verificações se limitam ao Chrome e não constituem auditoria completa de a
 Verificação em 28/09/2026, Chrome 154, servidor Python local. 29 casos aprovados em [navegador.json](evidencias/etapa-6/navegador.json). Comparação com o DOM anterior confirmou textos, ordem, IDs e links; ensaios cobriram listas vazias, subconjuntos, repetição e conteúdo semelhante a HTML tratado literalmente. Foram conferidas 19 larguras entre 320 e 1920 px, três destinos de oficinas, ciclos entre views e o modal. Nenhuma exceção ou falha de recurso observada.
 
 Inspeção visual: [375 px](evidencias/etapa-6/projetos-375.png), [768 px](evidencias/etapa-6/projetos-768.png) e [1440 px](evidencias/etapa-6/projetos-1440.png). W3C: [shell](evidencias/etapa-6/w3c-index.json) e [projetos renderizados](evidencias/etapa-6/w3c-projetos.json), ambos sem erros/avisos. Nenhuma falha funcional observada nesta etapa. Contraste e demais views não foram revalidados integralmente, pois não sofreram alterações visuais.
+
+## Etapa 7 — validação personalizada
+
+Em 28/09/2026, Chrome 154: 26 casos aprovados em [navegador.json](evidencias/etapa-7/navegador.json), incluindo cinco formatos inválidos e respectivas correções, campos vazios, espaços, limites, foco, manutenção dos valores, URL sem dados e documento sem recarga. Reset limpa estados; Escape preserva valores; formulários desmontados não respondem ao submit antigo. Erros sem transbordamento em quatro larguras.
+
+Capturas: [desktop](evidencias/etapa-7/erros-desktop.png), [mobile](evidencias/etapa-7/erros-mobile.png) e [sucesso de validação](evidencias/etapa-7/validacao-sucesso.png). [W3C cadastro](evidencias/etapa-7/w3c-cadastro.json): sem erros/avisos.
+
+A primeira execução do ensaio verificou o foco depois que `open` mudou, mas antes do evento `close` do diálogo. A inspeção posterior confirmou a restauração correta. O teste passou a aguardar também o foco do acionador; a rodada completa passou. Foi um ajuste de sincronização do ensaio, sem mudança na implementação do modal. Não foram realizados testes com leitor de tela nesta etapa.

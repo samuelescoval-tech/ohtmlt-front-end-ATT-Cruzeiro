@@ -1,5 +1,7 @@
 # Navegação SPA da OHTMLT
 
+Estado atual do formulário: a etapa 7 substituiu o envio GET por validação sem recarga, com mensagens específicas e `aria-invalid`. A descrição da implementação anterior abaixo preserva o registro daquela etapa. Consulte [formulário](FORMULARIO.md).
+
 A etapa 5 reúne a aplicação em `index.html`. Cabeçalho, navegação, rodapé, `main#conteudo` e `div#app` permanecem no documento; o roteador substitui somente o conteúdo de `#app` quando a view muda. Os arquivos estáticos anteriores podem ser recuperados pelo histórico Git.
 
 ## Rotas e entrada direta
