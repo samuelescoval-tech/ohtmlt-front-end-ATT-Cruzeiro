@@ -1,0 +1,118 @@
+{
+  "data": "2026-09-28T23:07:09.075Z",
+  "navegador": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/154.0.8037.57",
+    "revision": "@73c14f6228d7cd537c855007e8f88678969cc0eb",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "jsVersion": "15.4.80.11"
+  },
+  "checks": [
+    {
+      "caso": "Campos iniciais sem estado de erro nem sucesso antecipado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Envio vazio marca cinco erros, mantém URL e foca nome",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Erros específicos visíveis e relacionados aos controles",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato rejeitado com mensagem específica: nome",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato rejeitado com mensagem específica: email",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato rejeitado com mensagem específica: telefone",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato rejeitado com mensagem específica: cpf",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato rejeitado com mensagem específica: cep",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Correção atualiza estado durante digitação: nome",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Correção atualiza estado durante digitação: email",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Correção atualiza estado durante digitação: telefone",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Correção atualiza estado durante digitação: cpf",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Correção atualiza estado durante digitação: cep",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Envio válido sem recarga, sem dados na URL, sem promessa de gravação",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Primeiro erro após campos válidos recebe foco e preserva os demais",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Escape preserva valores e restaura foco no acionador",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Limpeza remove valores, mensagens e estados de validação",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Campo reiniciado não mostra sucesso antes de ser tratado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Saída do campo trata sua validade",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Limite de caracteres também verificado para valor programático",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Desmontagem remove tratamento do formulário antigo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formulário com erros sem transbordamento em 320",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formulário com erros sem transbordamento em 375",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formulário com erros sem transbordamento em 768",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formulário com erros sem transbordamento em 1440",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Nenhuma exceção ou falha de recurso",
+      "resultado": "aprovado"
+    }
+  ],
+  "exceptions": [],
+  "resourceFailures": []
+}

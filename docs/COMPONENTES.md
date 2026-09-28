@@ -1,5 +1,7 @@
 # Componentes visuais da OHTMLT
 
+Estado atual do formulário: a etapa 7 substituiu o envio GET por validação sem recarga, com mensagens específicas e `aria-invalid`. A descrição da implementação anterior abaixo preserva o registro daquela etapa. Consulte [formulário](FORMULARIO.md).
+
 A etapa 4 acrescentou navegação expansível, mídia e badges nos cards, estados dos controles e confirmação de limpeza do formulário. Na etapa 5, esses componentes foram integrados às views da SPA, conforme [SPA.md](SPA.md). A ordem dos estilos é `base.css`, `layout.css` e `components.css`. Os módulos JavaScript são carregados por `js/main.js`, via HTTP local, sem dependências externas.
 
 ## Navegação e condições de abertura

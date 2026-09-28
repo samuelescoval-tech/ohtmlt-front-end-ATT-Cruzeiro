@@ -241,11 +241,11 @@ input:disabled {
   cursor: not-allowed;
 }
 
-input:user-valid:not(:disabled) {
+input[aria-invalid="false"]:not(:disabled) {
   border-color: var(--cor-sucesso);
 }
 
-input:user-invalid:not(:disabled) {
+input[aria-invalid="true"]:not(:disabled) {
   border-color: var(--cor-erro);
 }
 
@@ -254,12 +254,12 @@ input:user-invalid:not(:disabled) {
   font-weight: 700;
 }
 
-input:user-valid ~ .campo-status .campo-feedback--sucesso {
+input[aria-invalid="false"] ~ .campo-status .campo-feedback--sucesso {
   display: block;
   color: var(--cor-sucesso);
 }
 
-input:user-invalid ~ .campo-status .campo-feedback--erro {
+input[aria-invalid="true"] ~ .campo-status .campo-feedback--erro {
   display: block;
   color: var(--cor-erro);
 }
