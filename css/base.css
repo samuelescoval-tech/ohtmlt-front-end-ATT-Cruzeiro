@@ -1,0 +1,334 @@
+:root {
+  color-scheme: light;
+
+  --cor-primaria: #0B3C5D;
+  --cor-primaria-hover: #072A42;
+  --cor-secundaria: #146356;
+  --cor-destaque: #F4B942;
+  --cor-fundo: #F5F7FA;
+  --cor-superficie: #FFFFFF;
+  --cor-texto: #172B4D;
+  --cor-texto-suave: #4B5563;
+  --cor-borda: #6B7280;
+  --cor-erro: #B42318;
+  --cor-sucesso: #166534;
+  --cor-foco: #1D4ED8;
+
+  --fonte-familia: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --fonte-pequena: 0.875rem;
+  --fonte-corpo: 1rem;
+  --fonte-subtitulo: 1.25rem;
+  --fonte-secao: 1.75rem;
+  --fonte-titulo: 2.5rem;
+
+  --espaco-1: 0.25rem;
+  --espaco-2: 0.5rem;
+  --espaco-3: 0.75rem;
+  --espaco-4: 1rem;
+  --espaco-5: 1.5rem;
+  --espaco-6: 2rem;
+  --espaco-7: 3rem;
+  --espaco-8: 4rem;
+
+  --raio: 0.5rem;
+  --largura-conteudo: 64rem;
+  --largura-formulario: 44rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-familia);
+  font-size: var(--fonte-corpo);
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  margin-block: 0 var(--espaco-4);
+  color: var(--cor-primaria);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--fonte-titulo);
+}
+
+h2 {
+  font-size: var(--fonte-secao);
+}
+
+h3,
+legend {
+  font-size: var(--fonte-subtitulo);
+}
+
+p,
+ul,
+figure {
+  margin-block: 0 var(--espaco-5);
+}
+
+p {
+  max-inline-size: 70ch;
+}
+
+ul {
+  padding-inline-start: var(--espaco-5);
+}
+
+li + li {
+  margin-block-start: var(--espaco-2);
+}
+
+a {
+  color: var(--cor-primaria);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+a:hover,
+a:active {
+  color: var(--cor-primaria-hover);
+}
+
+:focus-visible {
+  outline: 3px solid var(--cor-foco);
+  outline-offset: 4px;
+}
+
+.pular-conteudo {
+  display: inline-block;
+  margin: var(--espaco-2) var(--espaco-4);
+}
+
+body > header {
+  padding: var(--espaco-6) var(--espaco-4);
+  background: var(--cor-primaria);
+  color: var(--cor-superficie);
+}
+
+header > p,
+nav,
+main,
+footer > p {
+  max-inline-size: var(--largura-conteudo);
+  margin-inline: auto;
+}
+
+header > p {
+  font-size: var(--fonte-subtitulo);
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 var(--espaco-2) 0 0;
+}
+
+nav a {
+  display: inline-block;
+  padding: var(--espaco-2) var(--espaco-3);
+  color: var(--cor-superficie);
+  border-radius: var(--raio);
+}
+
+nav a:hover,
+nav a:active {
+  color: var(--cor-destaque);
+}
+
+nav [aria-current="page"] {
+  font-weight: 700;
+  text-decoration-thickness: 3px;
+}
+
+header :focus-visible {
+  outline-color: var(--cor-destaque);
+}
+
+main {
+  padding: var(--espaco-7) var(--espaco-4);
+}
+
+section {
+  margin-block-start: var(--espaco-6);
+}
+
+article {
+  max-inline-size: 70ch;
+}
+
+article + article {
+  margin-block-start: var(--espaco-6);
+  padding-block-start: var(--espaco-5);
+  border-block-start: 1px solid var(--cor-borda);
+}
+
+figure {
+  margin-inline: 0;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+figure img {
+  inline-size: 32rem;
+  margin-block-end: var(--espaco-2);
+  border-radius: var(--raio);
+}
+
+small,
+figcaption {
+  color: var(--cor-texto-suave);
+  font-size: var(--fonte-pequena);
+}
+
+.acoes {
+  padding: 0;
+  list-style: none;
+}
+
+.botao {
+  display: inline-block;
+  max-inline-size: 100%;
+  padding: var(--espaco-3) var(--espaco-5);
+  border: 2px solid var(--cor-primaria);
+  border-radius: var(--raio);
+  background: var(--cor-primaria);
+  color: var(--cor-superficie);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao:hover:not(:disabled),
+.botao:active:not(:disabled) {
+  border-color: var(--cor-primaria-hover);
+  background: var(--cor-primaria-hover);
+  color: var(--cor-superficie);
+}
+
+.botao--secundario {
+  border-color: var(--cor-secundaria);
+  background: var(--cor-superficie);
+  color: var(--cor-secundaria);
+}
+
+.botao--secundario:hover:not(:disabled),
+.botao--secundario:active:not(:disabled) {
+  border-color: var(--cor-secundaria);
+  background: var(--cor-secundaria);
+  color: var(--cor-superficie);
+}
+
+.botao:disabled {
+  border-color: var(--cor-borda);
+  background: var(--cor-fundo);
+  color: var(--cor-texto-suave);
+  cursor: not-allowed;
+}
+
+form {
+  max-inline-size: var(--largura-formulario);
+}
+
+fieldset {
+  min-inline-size: 0;
+  margin: 0 0 var(--espaco-5);
+  padding: var(--espaco-5) var(--espaco-4);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: var(--cor-superficie);
+}
+
+legend {
+  max-inline-size: 100%;
+  overflow-wrap: anywhere;
+  padding-inline: var(--espaco-2);
+  color: var(--cor-primaria);
+  font-weight: 700;
+}
+
+fieldset p:last-child {
+  margin-block-end: 0;
+}
+
+label {
+  display: block;
+  margin-block-end: var(--espaco-2);
+  font-weight: 700;
+}
+
+input {
+  display: block;
+  inline-size: 100%;
+  min-inline-size: 0;
+  padding: var(--espaco-3) var(--espaco-4);
+  border: 2px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+  font: inherit;
+}
+
+input:user-invalid {
+  border-color: var(--cor-erro);
+}
+
+small {
+  display: block;
+  margin-block-start: var(--espaco-2);
+}
+
+.aviso {
+  padding: var(--espaco-5);
+  border-radius: var(--raio);
+  background: var(--cor-destaque);
+  color: var(--cor-texto);
+}
+
+.aviso strong {
+  display: block;
+  margin-block-end: var(--espaco-2);
+}
+
+.selo {
+  display: inline-block;
+  padding: var(--espaco-1) var(--espaco-3);
+  border-radius: var(--raio);
+  background: var(--cor-secundaria);
+  color: var(--cor-superficie);
+  font-size: var(--fonte-pequena);
+  font-weight: 700;
+}
+
+body > footer {
+  padding: var(--espaco-6) var(--espaco-4);
+  border-block-start: 1px solid var(--cor-borda);
+  background: var(--cor-superficie);
+  color: var(--cor-texto-suave);
+  font-size: var(--fonte-pequena);
+}
+
+footer p:last-child {
+  margin-block-end: 0;
+}
