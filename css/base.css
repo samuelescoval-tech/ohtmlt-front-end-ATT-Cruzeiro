@@ -31,8 +31,6 @@
   --espaco-8: 4rem;
 
   --raio: 0.5rem;
-  --largura-conteudo: 64rem;
-  --largura-formulario: 44rem;
 }
 
 * {
@@ -110,32 +108,16 @@ a:active {
 }
 
 body > header {
-  padding: var(--espaco-6) var(--espaco-4);
   background: var(--cor-primaria);
   color: var(--cor-superficie);
 }
 
-header > p,
-nav,
-main,
-footer > p {
-  max-inline-size: var(--largura-conteudo);
-  margin-inline: auto;
-}
-
-header > p {
+.marca {
   font-size: var(--fonte-subtitulo);
 }
 
-nav ul {
-  margin: 0;
-  padding: 0;
+.nav-list {
   list-style: none;
-}
-
-nav li {
-  display: inline-block;
-  margin: 0 var(--espaco-2) 0 0;
 }
 
 nav a {
@@ -159,28 +141,6 @@ header :focus-visible {
   outline-color: var(--cor-destaque);
 }
 
-main {
-  padding: var(--espaco-7) var(--espaco-4);
-}
-
-section {
-  margin-block-start: var(--espaco-6);
-}
-
-article {
-  max-inline-size: 70ch;
-}
-
-article + article {
-  margin-block-start: var(--espaco-6);
-  padding-block-start: var(--espaco-5);
-  border-block-start: 1px solid var(--cor-borda);
-}
-
-figure {
-  margin-inline: 0;
-}
-
 img {
   display: block;
   max-inline-size: 100%;
@@ -188,7 +148,6 @@ img {
 }
 
 figure img {
-  inline-size: 32rem;
   margin-block-end: var(--espaco-2);
   border-radius: var(--raio);
 }
@@ -200,7 +159,6 @@ figcaption {
 }
 
 .acoes {
-  padding: 0;
   list-style: none;
 }
 
@@ -247,10 +205,6 @@ figcaption {
   cursor: not-allowed;
 }
 
-form {
-  max-inline-size: var(--largura-formulario);
-}
-
 fieldset {
   min-inline-size: 0;
   margin: 0 0 var(--espaco-5);
@@ -266,10 +220,6 @@ legend {
   padding-inline: var(--espaco-2);
   color: var(--cor-primaria);
   font-weight: 700;
-}
-
-fieldset p:last-child {
-  margin-block-end: 0;
 }
 
 label {
@@ -322,13 +272,15 @@ small {
 }
 
 body > footer {
-  padding: var(--espaco-6) var(--espaco-4);
   border-block-start: 1px solid var(--cor-borda);
   background: var(--cor-superficie);
   color: var(--cor-texto-suave);
   font-size: var(--fonte-pequena);
 }
 
-footer p:last-child {
-  margin-block-end: 0;
+
+.projeto {
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: var(--cor-superficie);
 }

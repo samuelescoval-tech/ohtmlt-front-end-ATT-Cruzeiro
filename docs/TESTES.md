@@ -108,3 +108,59 @@ As capturas registram os estados indicados. A imagem do botão desabilitado repr
 ### Limitações desta etapa
 
 A ampliação foi do tamanho raiz do texto via CSS, não um ensaio completo de zoom do navegador. As medições abrangem as 22 combinações registradas e não atestam conformidade completa de acessibilidade. Não foram testados outros navegadores, leitores de tela ou dispositivos físicos. A ausência de rolagem horizontal não comprova Grid ou breakpoints, que ainda não foram implementados. A cor de sucesso continua reservada; não há confirmação de cadastro ou persistência.
+
+
+## Etapa 3 — layout responsivo
+
+Data: **28/09/2026**. Branch de implementação: `feature/layout-responsivo`. Ambiente: Linux, Python 3 (`http.server`), Chrome 154 headless e Node.js v22.22.1. A automação temporária usa Chrome DevTools Protocol, sem dependências instaladas no projeto.
+
+**123 verificações aprovadas**, incluindo os testes funcionais e visuais anteriores, **57 combinações de página e largura**, texto ampliado e ordem de Tab. O [relatório do navegador](evidencias/etapa-3/navegador.json) contém os casos e os hashes dos três HTML e dos dois CSS testados. As medidas detalhadas estão em [layout.json](evidencias/etapa-3/layout.json).
+
+### Matriz de larguras
+
+As três páginas foram verificadas em cada uma destas 19 larguras: **320, 375, 479, 480, 481, 767, 768, 769, 991, 992, 993, 1199, 1200, 1201, 1280, 1439, 1440, 1441 e 1920 px**. A altura inicial foi de 900 px.
+
+Para cada breakpoint, a matriz cobre um pixel antes, o limite exato e um pixel depois. A altura dos PNGs pode exceder 900 px para preservar o conteúdo integral.
+
+| Verificação | Resultado observado |
+| --- | --- |
+| Media queries ativas e estilos computados em cada largura. | Os cinco limites responderam como definidos. |
+| Quantidade de trilhas em todas as grades. | Doze trilhas em todas as 57 combinações; sem colunas implícitas extras. |
+| `scrollWidth` versus `clientWidth` da página e das grades. | Sem corte horizontal nos cenários executados; tolerância de 1 px apenas para arredondamento dentro das grades. |
+| Alinhamento dos containers de cabeçalho, conteúdo e rodapé. | Bordas alinhadas em todas as larguras. |
+| Margens internas, intervalos e limites máximos. | Valores correspondentes aos breakpoints; container limitado a 1280 px em 1920 px. |
+| Quantidade e ocupação dos projetos. | Três projetos mantidos: um por linha abaixo de 768 px, dois a partir de 768 px, três a partir de 992 px. |
+| Flexbox interno dos projetos e posição de seus links. | Direção em coluna; links alinhados pela borda inferior nos cards da mesma linha. |
+| Formulário e posição de nome/CPF. | Área de até 704 px com raiz de 16 px; campos empilhados no celular e lado a lado a partir de 768 px. |
+| Imagem da apresentação. | Proporção original preservada e largura dentro da coluna. |
+| Texto ampliado para 200% em 320, 768, 992 e 1440 px. | As três páginas preservaram o conteúdo sem rolagem horizontal nos cenários testados. |
+| Tab em 320 e 1440 px. | Ordem: pular conteúdo, Início, Projetos, Cadastro, nome, CPF, e-mail, telefone, CEP e botão de envio. |
+| Navegação, campos vazios/inválidos/válidos, envio, foco, hover e estados nativos. | Regressões anteriores aprovadas. |
+
+Para repetir manualmente, inicie o servidor descrito no README, abra cada página no modo responsivo do navegador e informe as larguras da matriz. Compare a quantidade de projetos por linha, a disposição dos campos, o alinhamento e a presença de rolagem horizontal. Use Tab e Shift+Tab para conferir a sequência e a visibilidade do foco. As medições automatizadas da ordem registraram o percurso com Tab; o percurso inverso não foi automatizado nesta etapa.
+
+### HTML, contraste e recursos
+
+As respostas do W3C Nu HTML Checker registraram zero erros e zero avisos: [início](evidencias/etapa-3/w3c-index.json), [projetos](evidencias/etapa-3/w3c-projetos.json) e [cadastro](evidencias/etapa-3/w3c-cadastro.json).
+
+As [22 combinações de contraste](evidencias/etapa-3/contraste.json) foram medidas novamente e passaram. Os links dos projetos agora usam fundo branco, com razão de aproximadamente 11,55:1. Não houve exceções JavaScript ou recursos HTTP com falha nos percursos testados.
+
+### Decisões verificadas
+
+Regras estruturais de `css/base.css` foram transferidas para `css/layout.css` para evitar duplicação de largura, margem e distribuição. Os itens que ocupam as doze colunas não precisam de intervalo horizontal na base; ele começa em 768 px, quando surgem itens lado a lado. O teste de texto ampliado confirmou que essa organização não excedeu as áreas disponíveis.
+
+A execução final não apresentou falhas. Os problemas e correções das etapas anteriores continuam registrados nas suas respectivas seções; não foram atribuídos novamente a esta etapa.
+
+### Capturas
+
+- [Início em desktop](evidencias/etapa-3/index-desktop.png) e [em 320 px](evidencias/etapa-3/inicio-320px.png).
+- Projetos: [767 px](evidencias/etapa-3/projetos-767px.png), [768 px](evidencias/etapa-3/projetos-768px.png), [991 px](evidencias/etapa-3/projetos-991px.png) e [992 px](evidencias/etapa-3/projetos-992px.png).
+- Telas largas: [1200 px](evidencias/etapa-3/projetos-1200px.png), [1440 px](evidencias/etapa-3/projetos-1440px.png) e [1920 px](evidencias/etapa-3/projetos-1920px.png).
+- Cadastro: [375 px](evidencias/etapa-3/cadastro-375px.png), [desktop](evidencias/etapa-3/cadastro-desktop.png), [foco no campo](evidencias/etapa-3/foco-campo.png) e [erro nativo](evidencias/etapa-3/cadastro-validacao-nativa.png).
+- [Foco na navegação](evidencias/etapa-3/foco-menu.png), [texto ampliado a 200%](evidencias/etapa-3/inicio-texto-200.png), [estado desabilitado aplicado pelo teste](evidencias/etapa-3/botao-desabilitado.png) e [projetos em desktop](evidencias/etapa-3/projetos-desktop.png).
+
+As capturas de início em desktop, projetos em 768 e 1440 px e cadastro em 375 px também foram inspecionadas visualmente.
+
+### Limitações
+
+Os testes foram executados somente no Chrome headless. Viewports em CSS px não representam todos os dispositivos físicos. A ampliação alterou a fonte raiz, sem constituir uma auditoria completa de zoom. Menus expansíveis e interações de modal ainda não foram implementados. O formulário continua demonstrativo, com envio nativo GET, e deve receber apenas dados fictícios. Nenhuma conformidade completa de acessibilidade ou resultado de deploy é declarado.
