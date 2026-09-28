@@ -304,3 +304,9 @@ O teste da atualização por evento passou a aguardar a renderização reativa, 
 ## Etapa 9 — revisão de acessibilidade
 
 28 verificações funcionais e seis complementares aprovadas. Axe-core 4.13.0: dez cenários com zero violações automáticas. Os relatórios inconclusivos sobre símbolos, destino do diálogo e contraste da descrição foram conferidos com DOM, geometria, cores computadas e capturas. Não houve correção funcional necessária. [Método, evidências e limites](ACESSIBILIDADE.md). O teste cobre teclado, árvore acessível, três views com texto a 200% em três larguras e movimento reduzido, sem certificação integral ou ensaio humano com leitor de tela.
+
+## Etapa 10 — otimização
+
+11 verificações aprovadas: importação sob demanda, ausência de recarga na navegação, histórico, validação, link direto, doze ciclos, estado ocupado, prioridade da navegação recente sobre resposta atrasada, tela de falha e recuperação. [Relatório](evidencias/etapa-10/navegador.json) e [comparação de recursos](evidencias/etapa-10/recursos.json). Início/projetos: 156.145 para 28.913 bytes; cadastro: 155.058 para 156.938 bytes. Não foi medido ganho de tempo em conexão real.
+
+A automação inicialmente esperava `errorText` específico para o bloqueio de download, mas este Chrome retornou texto vazio com `blockedReason: inspector`. O teste passou a conferir a propriedade correta; a falha simulada foi tratada sem exceção JavaScript. [Tela de recuperação](evidencias/etapa-10/falha-carregamento.png). Nenhuma falha funcional foi observada na rodada concluída.

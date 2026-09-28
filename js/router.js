@@ -1,8 +1,6 @@
 import { projetos } from './data/projetos.js';
 import { criarInicio } from './views/inicio.js';
 import { criarProjetos } from './views/projetos.js';
-import { criarCadastro } from './views/cadastro.js';
-import { iniciarFormulario } from './modules/form.js';
 
 const rotas = new Map([
   ['inicio', {
@@ -18,8 +16,12 @@ const rotas = new Map([
   ['cadastro', {
     titulo: 'Cadastro demonstrativo | OHTMLT',
     descricao: 'Experimente o formulário demonstrativo da OHTMLT usando somente dados fictícios.',
-    criar: criarCadastro,
-    montar: iniciarFormulario,
+    async carregar() {
+      const [view, formulario] = await Promise.all([
+        import('./views/cadastro.js'), import('./modules/form.js'),
+      ]);
+      return { criar: view.criarCadastro, montar: formulario.iniciarFormulario };
+    },
   }],
 ]);
 
@@ -59,6 +61,7 @@ export function iniciarRoteador({ fecharMenus }) {
   const descricao = document.querySelector('meta[name="description"]');
   let rotaAtual;
   let desmontar;
+  let versaoRenderizacao = 0;
 
   function focarConteudo(destino) {
     const alvo = destino ? document.getElementById(destino) : conteudo;
@@ -66,7 +69,8 @@ export function iniciarRoteador({ fecharMenus }) {
     alvo.scrollIntoView({ block: 'start' });
   }
 
-  function renderizar({ inicial = false } = {}) {
+  async function renderizar({ inicial = false } = {}) {
+    const versao = ++versaoRenderizacao;
     if (!location.hash) {
       history.replaceState(history.state, '', location.pathname + location.search + '#inicio');
     }
@@ -74,10 +78,46 @@ export function iniciarRoteador({ fecharMenus }) {
     fecharMenus();
     if (rota.nome !== rotaAtual) {
       desmontar?.();
-      app.replaceChildren(rota.view.criar());
-      desmontar = rota.view.montar?.(app);
-      rotaAtual = rota.nome;
-      app.dataset.rota = rota.nome;
+      desmontar = undefined;
+      rotaAtual = undefined;
+      try {
+        let view = rota.view;
+        if (view.carregar) {
+          const mensagem = document.createElement('p');
+          mensagem.setAttribute('role', 'status');
+          mensagem.textContent = 'Carregando cadastro…';
+          app.replaceChildren(mensagem);
+          app.dataset.rota = 'carregando';
+          app.setAttribute('aria-busy', 'true');
+          view = await view.carregar();
+          // Uma navegação mais recente tem prioridade sobre este carregamento.
+          if (versao !== versaoRenderizacao) return;
+        }
+        app.replaceChildren(view.criar());
+        desmontar = view.montar?.(app);
+        rotaAtual = rota.nome;
+        app.dataset.rota = rota.nome;
+      } catch {
+        if (versao !== versaoRenderizacao) return;
+        const titulo = document.createElement('h1');
+        titulo.textContent = 'Não foi possível abrir esta tela';
+        const mensagem = document.createElement('p');
+        mensagem.textContent = 'Recarregue a página para tentar novamente ou escolha outra opção do menu.';
+        const recarregar = document.createElement('button');
+        recarregar.type = 'button';
+        recarregar.className = 'botao';
+        recarregar.textContent = 'Recarregar página';
+        recarregar.addEventListener('click', () => location.reload(), { once: true });
+        app.replaceChildren(titulo, mensagem, recarregar);
+        app.dataset.rota = 'falha';
+        document.title = 'Falha ao carregar | OHTMLT';
+        descricao.content = 'Não foi possível carregar a tela solicitada.';
+        document.querySelectorAll('nav [aria-current]').forEach(link => link.removeAttribute('aria-current'));
+        focarConteudo();
+        return;
+      } finally {
+        if (versao === versaoRenderizacao) app.removeAttribute('aria-busy');
+      }
     }
     document.title = rota.view.titulo;
     descricao.content = rota.view.descricao;

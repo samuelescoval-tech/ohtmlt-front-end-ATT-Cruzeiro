@@ -1,0 +1,60 @@
+{
+  "data": "2026-09-28T23:25:23.848Z",
+  "checks": [
+    {
+      "caso": "Início não baixa formulário nem Vue",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Cadastro carrega sob demanda sem recarregar documento",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Histórico remonta cadastro e atualiza título",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Validação funciona depois do carregamento assíncrono",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Link direto e recarga abrem cadastro completo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Doze ciclos mantêm um formulário e um componente",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Carregamento informa estado ocupado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Resposta atrasada não substitui a navegação mais recente",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Falha de download oferece recuperação, limpa busy e foca conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Recuperação por botão volta a abrir cadastro",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Falha simulada foi tratada sem exceção JavaScript",
+      "resultado": "aprovado"
+    }
+  ],
+  "exceptions": [],
+  "falhasDeRedeEsperadas": [
+    {
+      "requestId": "64217.1670",
+      "timestamp": 32689.107812,
+      "type": "Script",
+      "errorText": "",
+      "canceled": false,
+      "blockedReason": "inspector"
+    }
+  ]
+}
