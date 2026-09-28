@@ -1,10 +1,10 @@
 # Componentes visuais da OHTMLT
 
-A etapa 4 acrescenta navegação expansível, mídia e badges nos cards, estados dos controles e confirmação de limpeza do formulário. A ordem dos estilos é `base.css`, `layout.css` e `components.css`. Os módulos JavaScript são carregados por `js/main.js`, via HTTP local, sem dependências externas.
+A etapa 4 acrescentou navegação expansível, mídia e badges nos cards, estados dos controles e confirmação de limpeza do formulário. Na etapa 5, esses componentes foram integrados às views da SPA, conforme [SPA.md](SPA.md). A ordem dos estilos é `base.css`, `layout.css` e `components.css`. Os módulos JavaScript são carregados por `js/main.js`, via HTTP local, sem dependências externas.
 
 ## Navegação e condições de abertura
 
-A navegação é uma lista de links de páginas, sem o papel ARIA `menu`. O link “Projetos” continua abrindo a página; o botão “Oficinas” controla três links para as seções existentes. A página atual usa `aria-current="page"`.
+A navegação é uma lista de links por hash, sem o papel ARIA `menu`. O link “Projetos” abre a view `#projetos`; o botão “Oficinas” controla três links para as seções existentes. A página atual usa `aria-current="page"`.
 
 | Elemento | Regra real |
 | --- | --- |
@@ -12,7 +12,7 @@ A navegação é uma lista de links de páginas, sem o papel ARIA `menu`. O link
 | `#menu-principal.nav-list` | Coluna no mobile; linha com quebra a partir de 768 px. O módulo controla `hidden`; links ocultos não entram na ordem de Tab. |
 | `.submenu-toggle` | Controle “Oficinas”, ligado a `#submenu-oficinas` por `aria-controls`. Clique, Enter e Espaço alternam o submenu. |
 | `.submenu` | Fechado após a inicialização. No mobile, ocupa espaço no fluxo. Em desktop, fica posicionado abaixo do grupo “Projetos / Oficinas”, com largura de até 18 rem e limite de 80 vw. |
-| `[data-menu-ativo]` | Marca a navegação inicializada. O posicionamento absoluto do dropdown depende dessa marca para preservar os links no fluxo quando JavaScript não executa. |
+| `[data-menu-ativo]` | Marca a navegação inicializada. O posicionamento absoluto do dropdown depende dessa marca para aplicar o posicionamento absoluto somente após inicializar o controle. |
 | `[hidden]` | `display: none !important` impede que as regras Flexbox voltem a mostrar um elemento oculto. |
 
 `navigation.js` altera `hidden` e `aria-expanded` na mesma operação. `:hover` e `:focus-within` destacam o controle do submenu; eles não abrem a lista separadamente. Isso evita um submenu visível com `aria-expanded="false"` e permite fechar por Escape mesmo com o ponteiro sobre o grupo.
@@ -21,7 +21,7 @@ Escape fecha primeiro o submenu e devolve o foco a “Oficinas”. Um segundo Es
 
 Ao cruzar 768 px, o submenu fecha e o estado mobile é reiniciado. Se o elemento focado vai ficar oculto, o foco passa para um controle visível: o hambúrguer ao reduzir ou o primeiro link ao ampliar. Não há altura fixa nos menus.
 
-Sem JavaScript, a lista principal e os links das oficinas ficam visíveis; os controles de expansão ficam ocultos. O conteúdo e a navegação entre documentos permanecem utilizáveis.
+Na SPA, `nav` começa oculto e é exibido ao inicializar o módulo. Sem JavaScript, ficam disponíveis somente a apresentação básica e a instrução de ativação. Os menus persistem entre rotas; `fecharMenus()` também é chamado nas navegações pelo histórico.
 
 ## Cards, mídia e badges
 
@@ -45,7 +45,7 @@ Os badges `.selo` classificam o conteúdo como “Iniciação digital”, “Cri
 
 A ajuda de cada campo permanece visível. O atributo `aria-describedby` referencia essa ajuda e o contêiner `.campo-status`; dentro dele, somente a mensagem do estado atual fica visível. A descrição inicial, a válida e a inválida foram inspecionadas pela árvore de acessibilidade do Chrome. Não se referencia diretamente uma mensagem oculta, evitando anúncios contraditórios.
 
-Os estados de formato usam as restrições HTML já existentes; não há rotina própria de validação ou de envio nesta etapa. O envio válido continua sendo `GET` para a própria página. As mensagens específicas de validação em JavaScript pertencem à etapa 7.
+Os estados de formato usam as restrições HTML já existentes; não há rotina própria de validação ou de envio nesta etapa. O envio válido continua sendo `GET`, agora para `index.html#cadastro`, com recarga do documento. As mensagens específicas de validação em JavaScript pertencem à etapa 7.
 
 O estado de campo desabilitado existe no CSS, mas nenhum campo é desabilitado pela lógica da aplicação. A captura correspondente aplica temporariamente o atributo ao campo Nome durante o teste. Já o botão de limpeza desabilitado é um estado real da interface.
 
@@ -66,6 +66,8 @@ O aviso amarelo `.aviso` continua estático, com a instrução para usar dados f
 ## Transições e limites
 
 Botões, links de navegação e campos usam transições de cor, fundo e borda de 150 ms. A seta de “Oficinas” gira em 150 ms conforme `aria-expanded`. A consulta `prefers-reduced-motion: reduce` remove essas transições. A abertura e a ocultação em si são imediatas, mantendo foco e estado anunciado sincronizados.
+
+Ao sair do cadastro, os listeners locais e o listener de `pageshow` são removidos via `AbortController`, e qualquer diálogo aberto é fechado. [SPA.md](SPA.md) descreve a montagem e a desmontagem.
 
 A implementação usa módulos ES, `<dialog>`, `:user-valid` e `:user-invalid`. As verificações foram feitas no Chrome; não demonstram cobertura de todos os navegadores ou leitores de tela. Sem suporte ao diálogo, a ação de limpeza não é exibida. Sem suporte aos pseudoestados, a validação nativa continua disponível, mas a indicação adicional de formato pode não aparecer.
 

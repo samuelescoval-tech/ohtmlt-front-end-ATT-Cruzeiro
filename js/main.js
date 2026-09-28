@@ -1,5 +1,5 @@
 import { iniciarNavegacao } from './modules/navigation.js';
-import { iniciarLimpeza } from './modules/modal.js';
+import { iniciarRoteador } from './router.js';
 
-iniciarNavegacao();
-iniciarLimpeza();
+const fecharMenus = iniciarNavegacao();
+iniciarRoteador({ fecharMenus });

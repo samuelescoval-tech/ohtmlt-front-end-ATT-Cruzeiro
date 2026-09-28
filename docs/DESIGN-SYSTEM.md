@@ -2,7 +2,7 @@
 
 ## Estado e finalidade
 
-A base visual comum às três páginas estáticas foi aplicada na etapa 2, integrada ao layout responsivo na etapa 3 e ampliada com componentes interativos na etapa 4. [`css/base.css`](../css/base.css) mantém variáveis, tipografia e estilos globais; [`css/layout.css`](../css/layout.css) define a distribuição das páginas; [`css/components.css`](../css/components.css) reúne menus, cards, controles, mensagens e modal, sendo carregado por último.
+A base visual comum às três telas foi aplicada na etapa 2, integrada ao layout responsivo na etapa 3 e ampliada com componentes interativos na etapa 4. [`css/base.css`](../css/base.css) mantém variáveis, tipografia e estilos globais; [`css/layout.css`](../css/layout.css) define a distribuição das páginas; [`css/components.css`](../css/components.css) reúne menus, cards, controles, mensagens e modal, sendo carregado por último.
 
 As regras de layout estão em [LAYOUT.md](LAYOUT.md). Seletores, condições de abertura, foco, transições e exemplos de uso dos componentes estão em [COMPONENTES.md](COMPONENTES.md).
 
@@ -64,11 +64,11 @@ O layout limita o container a 64, 76 ou 80 rem conforme a largura, e a área do 
 
 Usar `.botao` para a ação principal do contexto. No cadastro, ela aciona o envio demonstrativo do formulário. Na página inicial, o link para o cadastro recebe a mesma hierarquia visual. Usar `.botao--secundario` para navegação de apoio, como conhecer os projetos.
 
-Exemplos presentes em `cadastro.html` e `index.html`:
+Exemplos presentes em `js/views/cadastro.js` e `js/views/inicio.js`:
 
 ```html
 <button type="submit" class="botao">Verificar e enviar demonstração</button>
-<a class="botao botao--secundario" href="projetos.html">Conhecer os projetos</a>
+<a class="botao botao--secundario" href="#projetos">Conhecer os projetos</a>
 ```
 
 Manter a semântica: `a` navega; `button` executa uma ação. A aparência de botão não muda essa responsabilidade. Evitar várias ações primárias competindo no mesmo grupo.
@@ -109,7 +109,7 @@ header :focus-visible {
 </span>
 ```
 
-O exemplo reduzido reproduz a relação entre campo, ajuda e mensagens de `cadastro.html`; as restrições completas estão no arquivo. O contêiner de estado é referenciado, e seus descendentes ocultos não entram na descrição acessível observada no Chrome. As verificações atuais usam as regras nativas. Rotinas próprias e mensagens específicas por tipo de erro serão desenvolvidas na etapa de validação.
+O exemplo reduzido reproduz a relação entre campo, ajuda e mensagens de `js/views/cadastro.js`; as restrições completas estão no arquivo. O contêiner de estado é referenciado, e seus descendentes ocultos não entram na descrição acessível observada no Chrome. As verificações atuais usam as regras nativas. Rotinas próprias e mensagens específicas por tipo de erro serão desenvolvidas na etapa de validação.
 
 Um formato válido não comprova existência de CPF, endereço ou e-mail, nem conclui uma inscrição. O campo desabilitado usa fundo claro e texto suave; essa variante foi testada temporariamente, sem desabilitar campos no fluxo publicado.
 
@@ -121,7 +121,7 @@ Um formato válido não comprova existência de CPF, endereço ou e-mail, nem co
 <p id="aviso-demonstracao" class="aviso"><strong>Use somente dados fictícios.</strong> Este formulário é uma demonstração acadêmica: não realiza inscrições nem mantém uma lista de cadastros.</p>
 ```
 
-`.selo` identifica conteúdo com uma frase curta. O exemplo em `projetos.html` é:
+`.selo` identifica conteúdo com uma frase curta. O exemplo em `js/views/projetos.js` é:
 
 ```html
 <span class="selo">Propostas demonstrativas</span>
@@ -172,10 +172,10 @@ Foram adotados 4,5:1 para todos os textos medidos, incluindo títulos, e 3:1 par
 | Mensagem de limpeza concluída | 7.13:1 | 4.5:1 |
 | Campo desabilitado (aplicado no teste) | 7.04:1 | 4.5:1 |
 
-O relatório completo está em [contraste.json](evidencias/etapa-4/contraste.json). O campo desabilitado foi aplicado somente no teste; o botão de limpeza desabilitado é um estado real. Controles inativos têm exceção nos critérios de contraste, mas foram medidos também.
+O relatório completo está em [contraste.json](evidencias/etapa-5/contraste.json). O campo desabilitado foi aplicado somente no teste; o botão de limpeza desabilitado é um estado real. Controles inativos têm exceção nos critérios de contraste, mas foram medidos também.
 
 Esses resultados cobrem as combinações registradas, não uma auditoria completa de conformidade. O teste de texto a 200% altera o tamanho raiz; não substitui zoom completo, dispositivos físicos ou leitores de tela. A preferência por movimento reduzido remove as transições, conforme verificado no navegador.
 
 ## Evidências e evolução
 
-As verificações, correções reais e capturas estão em [TESTES.md](TESTES.md). Regras específicas dos componentes estão em [COMPONENTES.md](COMPONENTES.md). A próxima etapa migrará a navegação para SPA.
+As verificações, correções reais e capturas estão em [TESTES.md](TESTES.md). Regras específicas dos componentes estão em [COMPONENTES.md](COMPONENTES.md). As views agora usam a navegação por hash descrita em [SPA.md](SPA.md). A próxima etapa organizará os componentes alimentados por dados.

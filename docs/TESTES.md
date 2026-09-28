@@ -216,3 +216,59 @@ A automação também foi ajustada: cliques usam eventos reais de ponteiro; medi
 | [Mensagem de sucesso](evidencias/etapa-4/alerta-sucesso.png) | Resultado da limpeza efetivamente realizada. |
 
 As 18 capturas PNG mostram viewports reais, algumas com a página ou o diálogo rolados para o componente observado. A validação HTML não representa validação externa do CSS. Os testes não cobrem todos os navegadores, zoom completo, dispositivos físicos ou uso com leitores de tela. A ampliação de texto altera o tamanho raiz para 200%. Não houve backend, persistência, SPA, release ou deploy nesta etapa.
+
+## Etapa 5 — navegação SPA
+
+Execução em 28/09/2026 no Chrome 154, com o mesmo servidor HTTP local e sem instalar dependências. O conteúdo foi migrado para três views, preservando os componentes testados na etapa 4.
+
+**Resultado final: 187 casos aprovados, 57 combinações de rota/largura e 34 combinações de contraste aprovadas.** Não foram observadas exceções JavaScript ou falhas de recursos HTTP na rodada final. O documento principal e três documentos serializados após a renderização das views passaram no W3C Nu HTML Checker: zero erros e zero avisos.
+
+### Casos específicos da SPA
+
+| Caso | Resultado observado |
+| --- | --- |
+| Abrir sem hash | Normaliza para `#inicio` e renderiza o conteúdo inicial. |
+| Navegar por Início, Projetos e Cadastro | Atualiza view, título, descrição, link ativo e foco; preserva as referências do cabeçalho, rodapé e contêiner principal. |
+| Ausência de reload nas trocas internas | A marca do documento e `performance.timeOrigin` permanecem iguais; não há nova requisição do tipo Document durante a sequência de navegação e histórico. |
+| Voltar e avançar | Recupera as views esperadas no mesmo documento. |
+| Selecionar a rota já ativa | Não cria entrada de histórico nem remonta o formulário; valores temporários são preservados. |
+| Pular para o conteúdo | Move o foco ao `main` sem mudar a rota ou o histórico. |
+| Abrir cada oficina | Usa subdestino de `#projetos`, preserva os cards e foca o título correto. |
+| Link direto e recarga das três rotas | Renderiza a view correspondente; a recarga explícita cria um novo documento, como esperado. |
+| Rotas desconhecidas | Seis casos, incluindo destino inexistente, segmento extra e caracteres codificados: mensagem segura, sem link ativo incorreto, com retorno funcional ao início. |
+| Cliques especiais | Ctrl, Meta, Shift, nova aba, download e link externo não são interceptados pelo roteador. A ação final foi cancelada pelo ensaio para evitar abrir abas ou acessar serviços externos. |
+| Doze ciclos entre cadastro e projetos | Não acumula listeners globais; controles da view anterior deixam de executar ações. |
+| Sair com diálogo aberto | Fecha o modal removido e posiciona o foco na nova view; o botão voltar produz o mesmo resultado. |
+| Cadastro após navegação mobile | Menu fecha, foco alcança o conteúdo e confirmação de limpeza continua funcionando. |
+| Sem JavaScript | Apresentação básica e instrução de ativação visíveis; navegação da SPA oculta. |
+
+A prova de ausência de reload usa a mesma instância do documento, e não apenas a aparência da página. O arquivo [rotas.json](evidencias/etapa-5/rotas.json) registra as contagens de requisições, eventos, títulos e foco dessa sequência.
+
+### Regressões verificadas
+
+Foram repetidos os testes de menus por teclado e mouse, transição entre mobile e desktop, foco do modal, limpeza, mensagens e descrições acessíveis, estados nativos dos campos e preferência por movimento reduzido. As restrições `pattern` de nome, CPF, telefone e CEP e a validação de e-mail foram verificadas após a migração para `String.raw` nas views.
+
+O envio vazio continua bloqueado pelo navegador. Um envio válido por Enter ainda executa `GET`, recarrega `index.html#cadastro` com valores fictícios na URL e volta ao formulário vazio. Esse comportamento foi preservado deliberadamente nesta etapa; o tratamento do envio na própria página pertence à etapa 7. Nenhum cadastro foi persistido.
+
+A matriz mantém as 19 larguras anteriores, de 320 a 1920 px, incluindo os pixels imediatamente antes e depois dos cinco breakpoints. Nas três rotas, os menus foram abertos durante as medições. Foram conferidos Grid, cards, mídia, alinhamento e ausência de transbordamento. Texto a 200% foi verificado em 320, 768 e 1440 px, incluindo legibilidade dos botões do modal.
+
+### Diagnóstico e ajustes do ensaio
+
+Não foi observada uma falha da implementação SPA na rodada completa. Durante a preparação dos testes, a automação anterior tratava cada destino como um documento diferente. Na SPA, `Page.navigate` para outro hash pode preservar o documento: os testes de abertura direta passaram a aguardar a atualização do endereço antes de solicitar a recarga explícita. As navegações internas são testadas separadamente com cliques e histórico, sem essa recarga.
+
+A serialização usada somente para obter o HTML renderizado também teve um escape de string corrigido no script de teste. Não se registra esse ajuste como defeito do produto. Os testes subsequentes foram concluídos sem exceções.
+
+Após os testes da migração, `projetos.html` e `cadastro.html` foram removidos, e os links atuais passaram a usar hashes. Os arquivos antigos continuam recuperáveis pelo Git; não foi criado redirecionamento para seus nomes anteriores.
+
+### Evidências e limites
+
+- [navegador.json](evidencias/etapa-5/navegador.json): 187 casos, hashes dos arquivos testados, versão do navegador e resultados de recursos/Console.
+- [rotas.json](evidencias/etapa-5/rotas.json): navegação no mesmo documento e contagens de eventos antes/depois dos ciclos.
+- [layout.json](evidencias/etapa-5/layout.json): 57 medições nas três rotas; [contraste.json](evidencias/etapa-5/contraste.json): 34 combinações medidas.
+- W3C: [documento principal](evidencias/etapa-5/w3c-index.json), [início renderizado](evidencias/etapa-5/w3c-inicio.json), [projetos renderizados](evidencias/etapa-5/w3c-projetos.json) e [cadastro renderizado](evidencias/etapa-5/w3c-cadastro.json).
+- Telas: [início](evidencias/etapa-5/rota-inicio.png), [projetos](evidencias/etapa-5/rota-projetos.png), [cadastro](evidencias/etapa-5/rota-cadastro.png), [oficina](evidencias/etapa-5/oficina-direta.png), [rota desconhecida](evidencias/etapa-5/rota-nao-encontrada.png) e [sem JavaScript](evidencias/etapa-5/sem-javascript.png).
+- Componentes: [dropdown](evidencias/etapa-5/dropdown-desktop.png), [menu mobile](evidencias/etapa-5/menu-mobile-aberto.png), [modal](evidencias/etapa-5/modal-desktop.png), [texto a 200%](evidencias/etapa-5/modal-texto-200.png) e [limpeza após navegação mobile](evidencias/etapa-5/spa-mobile.png).
+
+São 25 PNGs e oito relatórios JSON. Os nomes de algumas capturas mantêm a nomenclatura dos ensaios anteriores, mas nesta etapa foram capturados em `index.html` com o hash correspondente. Os relatórios e capturas das etapas anteriores não foram alterados.
+
+As verificações se limitam ao Chrome e não constituem auditoria completa de acessibilidade, compatibilidade ou desempenho. A inspeção da árvore de acessibilidade não substitui um leitor de tela. Texto ampliado significa fonte raiz a 200%, não zoom completo. O W3C validou HTML, não o comportamento JavaScript ou o CSS. Framework, persistência, release e deploy permanecem fora desta etapa.

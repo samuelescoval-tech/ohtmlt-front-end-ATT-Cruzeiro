@@ -35,6 +35,7 @@ export function iniciarNavegacao() {
     }
   }
 
+  nav.hidden = false;
   nav.dataset.menuAtivo = 'true';
   submenuToggle.hidden = false;
   ajustarLargura();
@@ -68,4 +69,8 @@ export function iniciarNavegacao() {
     abrirSubmenu(false);
     if (!desktop.matches) abrirMenu(false);
   });
+  return function fecharMenus() {
+    abrirSubmenu(false);
+    if (!desktop.matches) abrirMenu(false);
+  };
 }

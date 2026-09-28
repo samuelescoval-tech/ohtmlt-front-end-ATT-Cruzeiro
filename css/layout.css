@@ -96,7 +96,7 @@ figure img {
   margin-block-start: var(--espaco-7);
 }
 
-main > section,
+#app > section,
 .cadastro-conteudo > section {
   margin-block-start: var(--espaco-6);
 }
