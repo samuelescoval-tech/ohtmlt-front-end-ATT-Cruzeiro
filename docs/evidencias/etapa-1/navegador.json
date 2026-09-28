@@ -1,0 +1,168 @@
+{
+  "data": "2026-09-28T20:15:53.688Z",
+  "navegador": "Chrome/154.0.8037.57",
+  "protocolo": "1.3",
+  "execucao": "Chrome headless via Chrome DevTools Protocol, sem dependências instaladas",
+  "origem": "http://127.0.0.1:5500",
+  "viewports": [
+    "1280x900",
+    "320x900"
+  ],
+  "sha256": {
+    "index.html": "c8830371930bba60d012ebd37db6760981ae1a74f4d8fbf1c7c84e1dbc60a3d0",
+    "projetos.html": "13a9d927049e8cd3b6a263b9109732acd8726ec3add6eeb4ac4ed19e8c13354d",
+    "cadastro.html": "4a74d9f55bbf91180b3f846f5e57000016da510cbf75b5e5ad1e86224a2f5a1c"
+  },
+  "casos": [
+    {
+      "caso": "index.html: idioma, título, um h1 e um main",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: navegação identifica a página atual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: IDs únicos e descrições acessíveis existentes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: links e recursos respondem HTTP 200",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: imagens carregadas com alternativa textual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: idioma, título, um h1 e um main",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: navegação identifica a página atual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: IDs únicos e descrições acessíveis existentes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: links e recursos respondem HTTP 200",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: imagens carregadas com alternativa textual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: idioma, título, um h1 e um main",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: navegação identifica a página atual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: IDs únicos e descrições acessíveis existentes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: links e recursos respondem HTTP 200",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: imagens carregadas com alternativa textual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Teclado: primeiro Tab alcança o link de pular conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Teclado: Enter no link leva o foco ao conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Teclado: navegação de Início para Projetos",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Link do projeto abre o cadastro",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formulário: todos os campos têm label e são obrigatórios",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formulário vazio: cinco campos apontam valueMissing",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Envio vazio bloqueado, com foco no nome e sem navegação",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato inválido rejeitado: nome",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato inválido rejeitado: email",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato inválido rejeitado: telefone",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato inválido rejeitado: cpf",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato inválido rejeitado: cep",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Sem máscara: a pontuação não é acrescentada automaticamente",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Clique no label do CPF foca o campo correspondente",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Dados fictícios nos formatos indicados aceitos pelo navegador",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "CPF: somente formato, sem algoritmo de dígitos verificadores",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Envio válido por Enter: GET retorna à mesma página",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Sem persistência de cadastros nesta etapa",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: sem rolagem horizontal em viewport de 320 px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: sem rolagem horizontal em viewport de 320 px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: sem rolagem horizontal em viewport de 320 px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Sem exceções JavaScript ou recursos HTTP com falha durante a navegação",
+      "resultado": "aprovado"
+    }
+  ],
+  "errosJavaScript": [],
+  "falhasDeRecursos": []
+}

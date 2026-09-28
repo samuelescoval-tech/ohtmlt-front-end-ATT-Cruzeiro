@@ -1,0 +1,130 @@
+{
+  "data": "2026-09-28T23:02:43.912Z",
+  "navegador": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/154.0.8037.57",
+    "revision": "@73c14f6228d7cd537c855007e8f88678969cc0eb",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "jsVersion": "15.4.80.11"
+  },
+  "checks": [
+    {
+      "caso": "Os três cards preservam textos, ordem, IDs e destinos anteriores",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Menu e cards compartilham os destinos",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Repetição, subconjunto, ordem e lista vazia substituem conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Dados com HTML são exibidos literalmente sem executar código",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 320px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 375px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 479px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 480px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 481px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 767px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 768px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 769px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 991px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 992px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 993px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 1199px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 1200px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 1201px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 1439px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 1440px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 1441px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 1600px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Projetos sem transbordamento em 1920px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Destino e foco da oficina primeiros-passos",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Destino e foco da oficina html-para-todos",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Destino e foco da oficina aprender-em-rede",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Trocas de rota não duplicam cards nem menu",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Modal continua operável após atualização dos templates",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Nenhuma exceção ou recurso com falha",
+      "resultado": "aprovado"
+    }
+  ],
+  "exceptions": [],
+  "resourceFailures": []
+}

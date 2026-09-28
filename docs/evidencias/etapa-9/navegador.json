@@ -1,0 +1,120 @@
+{
+  "data": "2026-09-28T23:20:04.636Z",
+  "checks": [
+    {
+      "caso": "Modal Tab passa à confirmação em 375",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Modal Tab retorna ao cancelamento em 375",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Escape restaura foco em 375",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Modal Tab passa à confirmação em 1280",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Modal Tab retorna ao cancelamento em 1280",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Escape restaura foco em 1280",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Primeiro Tab chega a pular conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Pular conteúdo foca main sem trocar rota",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Espaço abre menu mobile e expõe links",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Enter abre submenu de oficinas",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Escape fecha submenu e mantém foco no acionador",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: texto 200% sem transbordamento em 320",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: texto 200% sem transbordamento em 768",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: texto 200% sem transbordamento em 1440",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: texto 200% sem transbordamento em 320",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: texto 200% sem transbordamento em 768",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: texto 200% sem transbordamento em 1440",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: texto 200% sem transbordamento em 320",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: texto 200% sem transbordamento em 768",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: texto 200% sem transbordamento em 1440",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Movimento reduzido desativa transições e animações",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Árvore acessível: nome, descrição e estado inválido de Nome (obrigatório)",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Árvore acessível: nome, descrição e estado inválido de CPF (obrigatório)",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Árvore acessível: nome, descrição e estado inválido de E-mail (obrigatório)",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Árvore acessível: nome, descrição e estado inválido de Telefone celular (obrigatório)",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Árvore acessível: nome, descrição e estado inválido de CEP (obrigatório)",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Nenhuma violação automática nos dez cenários",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Nenhuma exceção ou falha de recurso",
+      "resultado": "aprovado"
+    }
+  ],
+  "exceptions": [],
+  "resourceFailures": [],
+  "limites": "Chrome headless; texto a 200% por tamanho raiz, sem leitor de tela humano. Axe não certifica conformidade integral."
+}

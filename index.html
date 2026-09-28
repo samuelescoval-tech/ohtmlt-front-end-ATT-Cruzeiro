@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conheça a OHTMLT, organização fictícia de inclusão e aprendizado digital.">
+  <title>Início | OHTMLT</title>
+  <link rel="icon" href="assets/imagens/inclusao-digital.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <header>
+    <div class="container cabecalho-conteudo">
+      <p class="marca"><strong>OHTMLT</strong> — Organização HTML para Todos</p>
+      <nav aria-label="Navegação principal" hidden>
+        <button type="button" class="menu-toggle" aria-controls="menu-principal" aria-expanded="false" hidden><span aria-hidden="true">☰</span> Menu</button>
+        <ul id="menu-principal" class="nav-list">
+          <li><a href="#inicio" data-rota="inicio">Início</a></li>
+          <li class="nav-item">
+            <div class="nav-projetos">
+              <a href="#projetos" data-rota="projetos">Projetos</a>
+              <button type="button" class="submenu-toggle" aria-controls="submenu-oficinas" aria-expanded="false" hidden>Oficinas <span aria-hidden="true">▾</span></button>
+            </div>
+            <ul id="submenu-oficinas" class="submenu"></ul>
+          </li>
+          <li><a href="#cadastro" data-rota="cadastro">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo" class="container" tabindex="-1">
+    <div id="app">
+      <h1>OHTMLT — inclusão e aprendizado digital</h1>
+      <p>Uma organização fictícia dedicada ao aprendizado de tecnologia, com propostas para iniciantes e pessoas interessadas em compartilhar conhecimentos.</p>
+      <noscript><p class="aviso">Ative o JavaScript do navegador para acessar os projetos e o formulário demonstrativo.</p></noscript>
+    </div>
+  </main>
+  <footer>
+    <div class="container rodape-conteudo">
+      <p>OHTMLT — Organização HTML para Todos.</p>
+      <p>Organização fictícia. Projeto acadêmico de Desenvolvimento Front-End da Universidade Cruzeiro do Sul.</p>
+    </div>
+  </footer>
+</body>
+</html>
