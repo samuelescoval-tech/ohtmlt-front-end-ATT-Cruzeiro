@@ -8,6 +8,8 @@
   <link rel="icon" href="assets/imagens/inclusao-digital.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script type="module" src="js/main.js"></script>
 </head>
 <body>
   <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
@@ -15,9 +17,20 @@
     <div class="container cabecalho-conteudo">
       <p class="marca"><strong>OHTMLT</strong> — Organização HTML para Todos</p>
       <nav aria-label="Navegação principal">
-        <ul class="nav-list">
+        <button type="button" class="menu-toggle" aria-controls="menu-principal" aria-expanded="false" hidden><span aria-hidden="true">☰</span> Menu</button>
+        <ul id="menu-principal" class="nav-list">
           <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html" aria-current="page">Projetos</a></li>
+          <li class="nav-item">
+            <div class="nav-projetos">
+              <a href="projetos.html" aria-current="page">Projetos</a>
+              <button type="button" class="submenu-toggle" aria-controls="submenu-oficinas" aria-expanded="false" hidden>Oficinas <span aria-hidden="true">▾</span></button>
+            </div>
+            <ul id="submenu-oficinas" class="submenu">
+              <li><a href="projetos.html#primeiros-passos">Primeiros passos digitais</a></li>
+              <li><a href="projetos.html#html-para-todos">HTML para todos</a></li>
+              <li><a href="projetos.html#aprender-em-rede">Aprender em rede</a></li>
+            </ul>
+          </li>
           <li><a href="cadastro.html">Cadastro</a></li>
         </ul>
       </nav>
@@ -30,19 +43,25 @@
     <section class="grade projetos-grade" aria-labelledby="oficinas">
       <h2 id="oficinas" class="col-12">Oficinas propostas</h2>
       <article class="projeto col-4" aria-labelledby="primeiros-passos">
-        <h3 id="primeiros-passos">Primeiros passos digitais</h3>
+        <img class="projeto__imagem" src="assets/imagens/inclusao-digital.svg" width="224" height="126" loading="lazy" alt="">
+        <p><span class="selo">Iniciação digital</span></p>
+        <h3 id="primeiros-passos" tabindex="-1">Primeiros passos digitais</h3>
         <p>Uma introdução ao uso do computador, à organização de arquivos e à navegação na internet, com atividades para quem está começando.</p>
         <p><strong>Público da proposta:</strong> pessoas com pouca experiência no uso de computadores.</p>
         <a href="cadastro.html">Demonstrar interesse em primeiros passos digitais</a>
       </article>
       <article class="projeto col-4" aria-labelledby="html-para-todos">
-        <h3 id="html-para-todos">HTML para todos</h3>
+        <img class="projeto__imagem" src="assets/imagens/inclusao-digital.svg" width="224" height="126" loading="lazy" alt="">
+        <p><span class="selo">Criação de páginas</span></p>
+        <h3 id="html-para-todos" tabindex="-1">HTML para todos</h3>
         <p>Uma proposta de oficina para construir uma primeira página com títulos, parágrafos, links e imagens, compreendendo a função de cada elemento.</p>
         <p><strong>Público da proposta:</strong> iniciantes interessados na criação de páginas para a web.</p>
         <a href="cadastro.html">Demonstrar interesse em HTML para todos</a>
       </article>
       <article class="projeto col-4" aria-labelledby="aprender-em-rede">
-        <h3 id="aprender-em-rede">Aprender em rede</h3>
+        <img class="projeto__imagem" src="assets/imagens/inclusao-digital.svg" width="224" height="126" loading="lazy" alt="">
+        <p><span class="selo">Colaboração</span></p>
+        <h3 id="aprender-em-rede" tabindex="-1">Aprender em rede</h3>
         <p>Encontros propostos para trocar dúvidas e conhecimentos sobre tecnologia, com a colaboração de pessoas interessadas em atuar como voluntárias.</p>
         <p><strong>Público da proposta:</strong> aprendizes e voluntários que desejam compartilhar conhecimentos.</p>
         <a href="cadastro.html">Demonstrar interesse em aprender em rede</a>

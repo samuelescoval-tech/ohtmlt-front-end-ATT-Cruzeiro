@@ -1,0 +1,609 @@
+{
+  "data": "2026-09-28T22:09:39.769Z",
+  "navegador": "Chrome/154.0.8037.57",
+  "execucao": "Chrome headless via CDP, sem dependências instaladas",
+  "sha256": {
+    "index.html": "7a65eb71100d867e44a65b29351dbca92c4cea75920221f6e3736d71115a04ce",
+    "projetos.html": "fb2b0a315cc0ba7986ce8be2c225af313a4295fb4e9a5ff01960e84765372d67",
+    "cadastro.html": "b164f500cd1e82f50d9ddffafb45d9b143215d28640398b0ee4c9edf6724b3fe",
+    "css/base.css": "03b303f9117e2636bce0d9274f90514e66d910c78ecd2eb38c315ff27db4e1a9",
+    "css/layout.css": "bfd2f6e8aae46f457f153d760341e796b28b80cce0a8fd225cff80a1dce84a7f",
+    "css/components.css": "24157c8c9d5538f5789cbade895d15e93b6d53d15cb0f03e9ef108cb15969f53",
+    "js/main.js": "5c75cd756586a2d078df14bd34fb2ade4ce3498c85cb5b7db507dfe6a9a0c0a5",
+    "js/modules/navigation.js": "1d22b374d8c96ef5c7bd6d7ab9143565dac2af3cc4c3fc82bb56e0fcd015e997",
+    "js/modules/modal.js": "c323e81162245c8dea046ab91f81f066f77c8633110b5831d914b975fbe5c232",
+    "js/modules/feedback.js": "2d88744812494b1e55883701b7a27bf11e314d0ee740a761d46b971e2814aa6f"
+  },
+  "casos": [
+    {
+      "caso": "index.html: idioma, título, um h1 e um main",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: navegação identifica a página atual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: IDs únicos e descrições acessíveis existentes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: links e recursos respondem HTTP 200",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: imagens carregadas com alternativa textual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: idioma, título, um h1 e um main",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: navegação identifica a página atual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: IDs únicos e descrições acessíveis existentes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: links e recursos respondem HTTP 200",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: imagens carregadas com alternativa textual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: idioma, título, um h1 e um main",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: navegação identifica a página atual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: IDs únicos e descrições acessíveis existentes",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: links e recursos respondem HTTP 200",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: imagens carregadas com alternativa textual",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Teclado: primeiro Tab alcança o link de pular conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Teclado: Enter no link leva o foco ao conteúdo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Teclado: navegação de Início para Projetos",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Link do projeto abre o cadastro",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formulário: todos os campos têm label e são obrigatórios",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formulário vazio: cinco campos apontam valueMissing",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Envio vazio bloqueado, com foco no nome e sem navegação",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato inválido rejeitado: nome",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato inválido rejeitado: email",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato inválido rejeitado: telefone",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato inválido rejeitado: cpf",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Formato inválido rejeitado: cep",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Sem máscara: a pontuação não é acrescentada automaticamente",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Clique no label do CPF foca o campo correspondente",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Dados fictícios nos formatos indicados aceitos pelo navegador",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "CPF: somente formato, sem algoritmo de dígitos verificadores",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Envio válido por Enter: GET retorna à mesma página",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Sem persistência de cadastros nesta etapa",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html: sem rolagem horizontal em viewport de 320 px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html: sem rolagem horizontal em viewport de 320 px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html: sem rolagem horizontal em viewport de 320 px",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Desktop: menu visível, hambúrguer oculto, submenu fechado e aria-expanded coerente",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Botão pressionado: estado ativo e contorno interno visíveis",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Dropdown: Enter abre, anuncia expansão e Tab alcança o primeiro link",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Dropdown: Escape fecha e devolve foco ao acionador",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Dropdown: Espaço também abre pelo teclado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Dropdown: Tab para fora fecha sem desviar foco de Cadastro",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Dropdown: clique externo fecha",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Link do submenu abre a seção correta",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Mobile: menu começa fechado, controle disponível e estado anunciado falso",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Mobile: segundo Tab alcança o hambúrguer",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Mobile: Enter abre e Tab alcança Início",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Mobile: primeiro Escape fecha somente submenu e restaura seu controle",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Mobile: segundo Escape fecha navegação e restaura hambúrguer",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Mobile: Tab não percorre links ocultos",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Mobile: sair por foco fecha o menu",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Mobile: clique externo fecha a navegação",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Mudança para desktop: submenu fechado, foco visível, navegação aberta",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Mudança para mobile: menu fechado e foco no hambúrguer",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Hambúrguer focado ao ampliar: foco transferido para Início",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Descrição acessível inicial: apenas instruções, sem estados ocultos",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Estado inicial: limpar desabilitado e mensagens de campo ocultas",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Botão desabilitado não abre modal",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Campo preenchido: feedback textual de formato aceito e borda verde",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Descrição acessível do campo válido inclui somente o sucesso",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Campo vazio após envio: erro visível em texto e borda",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Descrição acessível do campo inválido inclui somente o erro",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Erro permanece vermelho mesmo em hover",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Modal: abre com título, descrição e foco em Cancelar",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Modal: Shift+Tab permanece no diálogo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Modal: Tab não alcança controles de fundo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Modal: Escape preserva os campos e devolve foco",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Modal: botão Cancelar preserva os campos e devolve foco",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Limpeza confirmada: campos vazios, estado reiniciado, status e foco no primeiro campo",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Nova edição remove a mensagem antiga e habilita limpeza",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Modal em 320 × 480: cabe na tela e permite rolagem interna",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Campo desabilitado: atributo nativo, aparência e cursor",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 320 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 320 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 320 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 375 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 375 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 375 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 479 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 479 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 479 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 480 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 480 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 480 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 481 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 481 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 481 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 767 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 767 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 767 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 768 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 768 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 768 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 769 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 769 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 769 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 991 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 991 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 991 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 992 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 992 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 992 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 993 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 993 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 993 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1199 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1199 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1199 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1200 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1200 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1200 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1201 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1201 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1201 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1280 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1280 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1280 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1439 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1439 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1439 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1440 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1440 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1440 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1441 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1441 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1441 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1920 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1920 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1920 px: menus abertos sem cortes e Grid preservado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 320 px: texto a 200% e menus abertos sem transbordamento",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 320 px: texto a 200% e menus abertos sem transbordamento",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 320 px: texto a 200% e menus abertos sem transbordamento",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Modal em 320 px com texto a 200%: conteúdo sem corte horizontal",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Modal em 320 px a 200%: palavras dos botões cabem na área de texto",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 768 px: texto a 200% e menus abertos sem transbordamento",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 768 px: texto a 200% e menus abertos sem transbordamento",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 768 px: texto a 200% e menus abertos sem transbordamento",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Modal em 768 px com texto a 200%: conteúdo sem corte horizontal",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Modal em 768 px a 200%: palavras dos botões cabem na área de texto",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "index.html em 1440 px: texto a 200% e menus abertos sem transbordamento",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "projetos.html em 1440 px: texto a 200% e menus abertos sem transbordamento",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "cadastro.html em 1440 px: texto a 200% e menus abertos sem transbordamento",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Modal em 1440 px com texto a 200%: conteúdo sem corte horizontal",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Modal em 1440 px a 200%: palavras dos botões cabem na área de texto",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Movimento reduzido: transições dos controles desativadas",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Sem JavaScript: navegação e submenu visíveis; botões dependentes de script ocultos",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Sem exceções JavaScript ou falhas de recursos HTTP",
+      "resultado": "aprovado"
+    }
+  ],
+  "errosJavaScript": [],
+  "falhasDeRecursos": []
+}

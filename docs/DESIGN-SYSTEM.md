@@ -2,9 +2,9 @@
 
 ## Estado e finalidade
 
-A base visual comum às três páginas estáticas foi aplicada na etapa 2 e integrada ao layout responsivo na etapa 3. Cores, tipografia e aparência estão em [`css/base.css`](../css/base.css); containers, colunas e breakpoints estão em [`css/layout.css`](../css/layout.css), carregado em seguida. A paleta, a hierarquia e as regras abaixo são as escolhas desta implementação.
+A base visual comum às três páginas estáticas foi aplicada na etapa 2, integrada ao layout responsivo na etapa 3 e ampliada com componentes interativos na etapa 4. [`css/base.css`](../css/base.css) mantém variáveis, tipografia e estilos globais; [`css/layout.css`](../css/layout.css) define a distribuição das páginas; [`css/components.css`](../css/components.css) reúne menus, cards, controles, mensagens e modal, sendo carregado por último.
 
-O objetivo é manter a leitura, a identificação das ações e o foco consistentes. A base já oferece os estilos de ações primária e secundária, links, campos, aviso e selo. Grid, Flexbox e cinco breakpoints já estão implementados; suas regras estão em [LAYOUT.md](LAYOUT.md). Menus expansíveis, evolução dos cards, modal e feedback JavaScript pertencem às próximas etapas.
+As regras de layout estão em [LAYOUT.md](LAYOUT.md). Seletores, condições de abertura, foco, transições e exemplos de uso dos componentes estão em [COMPONENTES.md](COMPONENTES.md).
 
 ## Cores e regras de uso
 
@@ -19,8 +19,8 @@ O objetivo é manter a leitura, a identificação das ações e o foco consisten
 | `--cor-texto` | `#172B4D` | Texto principal, conteúdo dos campos e texto sobre o amarelo do aviso. |
 | `--cor-texto-suave` | `#4B5563` | Ajuda, legenda da imagem, rodapé e texto do botão desabilitado. Não reduzir sua opacidade. |
 | `--cor-borda` | `#6B7280` | Limites visíveis dos campos, grupos e cards de projetos, além da separação do rodapé. |
-| `--cor-erro` | `#B42318` | Borda de `input:user-invalid`, depois da interação que torna o campo inválido. A mensagem nativa do navegador informa o problema em texto. |
-| `--cor-sucesso` | `#166534` | Reserva para confirmação textual de uma operação concluída. Ainda não aplicada a mensagens: nesta versão nenhum cadastro é salvo. |
+| `--cor-erro` | `#B42318` | Borda e mensagem de erro após interação, com `input:user-invalid`. A instrução junto ao campo e a mensagem nativa indicam o problema. |
+| `--cor-sucesso` | `#166534` | Borda e texto de formato aceito após interação; mensagem que confirma a limpeza efetivamente concluída. Nenhum cadastro é salvo. |
 | `--cor-foco` | `#1D4ED8` | Contorno de foco sobre os fundos claros. No cabeçalho, usar o amarelo de destaque para manter contraste. |
 
 São **12 cores distintas**. Alterações nas combinações exigem uma nova medição. Evitar texto branco sobre amarelo e não usar cor como única explicação de erro, sucesso ou estado. O selo descreve a natureza demonstrativa do conteúdo; ele não anuncia uma operação concluída.
@@ -75,7 +75,7 @@ Manter a semântica: `a` navega; `button` executa uma ação. A aparência de bo
 
 `.botao:hover:not(:disabled)` e `.botao:active:not(:disabled)` escurecem a ação principal. A variante secundária recebe preenchimento verde e texto branco nesses estados. `:focus-visible` mantém o contorno, inclusive sobre as ações. `button.botao:disabled` usa fundo claro, texto suave e cursor de indisponibilidade; o atributo nativo impede a ativação. Não aplicar `disabled` a links: ele não desabilita um elemento `a`.
 
-O formulário publicado mantém o envio habilitado para que a validação nativa possa orientar quem o preenche. O estado desabilitado foi aplicado temporariamente ao botão existente durante o teste; não há regra automática de desabilitação nesta etapa.
+O envio permanece habilitado para que a validação nativa possa orientar o preenchimento. O botão secundário “Limpar campos” é desabilitado enquanto todos os campos estão vazios; quando há valores, abre um modal de confirmação. O estado ativo dos botões também recebe contorno interno perceptível.
 
 ### Links, página atual e foco
 
@@ -94,13 +94,24 @@ header :focus-visible {
 }
 ```
 
-### Campos e erro
+### Campos, erro e formato aceito
 
-`label` aparece acima da entrada; `small` apresenta a instrução associada por `aria-describedby`. Os grupos usam `fieldset` e `legend`. Usar branco no campo, texto escuro e borda visível, mantendo espaço suficiente para o foco.
+`label` aparece acima da entrada; `small` apresenta a ajuda associada por `aria-describedby`. Os grupos usam `fieldset` e `legend`. Campos têm fundo branco, texto escuro e borda visível, mantendo espaço suficiente para o foco.
 
-`input:user-invalid` muda a borda para `--cor-erro` após a interação apropriada. Os campos vazios na primeira visita não aparecem como erro. O navegador fornece a mensagem textual e bloqueia o envio quando necessário. Não se usa `:invalid` indiscriminadamente para pintar todos os campos obrigatórios antes de qualquer interação.
+`input:user-invalid:not(:disabled)` usa borda vermelha e mostra a instrução de erro; `input:user-valid:not(:disabled)` usa borda verde e a mensagem “Formato aceito pelo navegador.” Os campos vazios na primeira visita não aparecem como erro. A indicação textual e a borda de validade têm prioridade sobre o hover; a cor não é a única informação.
 
-As mensagens persistentes junto aos campos, `aria-invalid` controlado por JavaScript e o feedback de sucesso serão acrescentados na etapa de validação. Não declarar uma inscrição concluída apenas porque o formato dos campos é válido.
+```html
+<input id="nome" name="nome" required aria-describedby="ajuda-nome estado-nome">
+<small id="ajuda-nome">Digite um nome fictício.</small>
+<span id="estado-nome" class="campo-status">
+  <small class="campo-feedback campo-feedback--erro">Preencha este campo conforme a instrução acima.</small>
+  <small class="campo-feedback campo-feedback--sucesso">Formato aceito pelo navegador.</small>
+</span>
+```
+
+O exemplo reduzido reproduz a relação entre campo, ajuda e mensagens de `cadastro.html`; as restrições completas estão no arquivo. O contêiner de estado é referenciado, e seus descendentes ocultos não entram na descrição acessível observada no Chrome. As verificações atuais usam as regras nativas. Rotinas próprias e mensagens específicas por tipo de erro serão desenvolvidas na etapa de validação.
+
+Um formato válido não comprova existência de CPF, endereço ou e-mail, nem conclui uma inscrição. O campo desabilitado usa fundo claro e texto suave; essa variante foi testada temporariamente, sem desabilitar campos no fluxo publicado.
 
 ### Aviso e selo
 
@@ -116,43 +127,55 @@ As mensagens persistentes junto aos campos, `aria-invalid` controlado por JavaSc
 <span class="selo">Propostas demonstrativas</span>
 ```
 
-Preservar o texto explicativo mesmo quando uma cor já foi escolhida. Não transformar o selo em link ou botão sem uma ação real. Modal, alertas dinâmicos e confirmação de operações ainda não estão implementados.
+Preservar o texto explicativo mesmo quando uma cor já foi escolhida. Não transformar o selo em link ou botão sem uma ação real. Os cards também usam badges de categoria. O modal confirma a limpeza dos campos; o alerta verde em `role="status"` anuncia somente essa operação concluída, sem afirmar que houve cadastro. Consulte [o fluxo e o tratamento do foco](COMPONENTES.md).
 
 ## Contraste medido
 
-As cores foram obtidas por `getComputedStyle()` no Chrome, incluindo hover, foco, estado pressionado e borda inválida. O cálculo usa luminância relativa sRGB e `(Lmaior + 0.05) / (Lmenor + 0.05)`, sem arredondar antes da comparação.
+As cores foram obtidas por `getComputedStyle()` no Chrome, respeitando o fim das transições de 150 ms. O cálculo usa luminância relativa sRGB e `(Lmaior + 0.05) / (Lmenor + 0.05)`, sem arredondar antes da comparação.
 
-Foram adotados 4,5:1 para todos os textos medidos, incluindo títulos, e 3:1 para bordas de campos e indicadores de foco, tomando como referência [contraste de texto — WCAG 2.2, 1.4.3](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html) e [contraste não textual — WCAG 2.2, 1.4.11](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html). Os números da tabela são arredondados somente para apresentação.
+Foram adotados 4,5:1 para todos os textos medidos, incluindo títulos, e 3:1 para bordas de campos e indicadores de foco, tomando como referência [contraste de texto — WCAG 2.2, 1.4.3](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html) e [contraste não textual — WCAG 2.2, 1.4.11](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html). Os números abaixo são arredondados somente para apresentação.
 
 | Combinação observada | Contraste | Mínimo adotado |
 | --- | --- | --- |
-| Texto no fundo geral | 13.14:1 | 4.5:1 |
-| Título no fundo geral | 10.76:1 | 4.5:1 |
-| Texto complementar no fundo geral | 7.04:1 | 4.5:1 |
-| Texto no cabeçalho | 11.55:1 | 4.5:1 |
-| Link da navegação | 11.55:1 | 4.5:1 |
-| Ação primária | 11.55:1 | 4.5:1 |
-| Ação secundária | 7.12:1 | 4.5:1 |
-| Texto do rodapé | 7.56:1 | 4.5:1 |
-| Ação primária em hover | 14.80:1 | 4.5:1 |
-| Ação primária pressionada | 14.80:1 | 4.5:1 |
-| Ação secundária em hover | 7.12:1 | 4.5:1 |
+| Texto geral | 13.14:1 | 4.5:1 |
+| Título | 10.76:1 | 4.5:1 |
+| Texto complementar | 7.04:1 | 4.5:1 |
+| Marca | 11.55:1 | 4.5:1 |
+| Navegação | 11.55:1 | 4.5:1 |
+| Botão primário | 11.55:1 | 4.5:1 |
+| Botão secundário | 7.12:1 | 4.5:1 |
+| Rodapé | 7.56:1 | 4.5:1 |
+| Controle do submenu | 11.55:1 | 4.5:1 |
+| Botão primário em hover | 14.80:1 | 4.5:1 |
+| Botão primário ativo | 14.80:1 | 4.5:1 |
+| Botão secundário em hover | 7.12:1 | 4.5:1 |
 | Navegação em hover | 6.52:1 | 4.5:1 |
-| Foco no cabeçalho | 6.52:1 | 3:1 |
-| Selo demonstrativo | 7.12:1 | 4.5:1 |
-| Link no conteúdo | 11.55:1 | 4.5:1 |
-| Aviso de demonstração | 7.97:1 | 4.5:1 |
-| Texto do campo | 14.10:1 | 4.5:1 |
-| Ajuda do campo | 7.56:1 | 4.5:1 |
-| Borda de campo | 4.83:1 | 3:1 |
-| Foco no campo | 6.70:1 | 3:1 |
-| Borda do campo inválido | 6.57:1 | 3:1 |
-| Botão desabilitado (estado aplicado no teste) | 7.04:1 | 4.5:1 |
+| Link do submenu | 11.55:1 | 4.5:1 |
+| Foco no submenu | 6.52:1 | 3:1 |
+| Badge do card | 7.12:1 | 4.5:1 |
+| Ação do card | 11.55:1 | 4.5:1 |
+| Hambúrguer | 11.55:1 | 4.5:1 |
+| Foco no hambúrguer | 6.52:1 | 3:1 |
+| Botão limpar desabilitado | 7.04:1 | 4.5:1 |
+| Aviso estático | 7.97:1 | 4.5:1 |
+| Campo | 14.10:1 | 4.5:1 |
+| Ajuda | 7.56:1 | 4.5:1 |
+| Borda padrão | 4.83:1 | 3:1 |
+| Borda do campo em hover | 11.55:1 | 3:1 |
+| Foco do campo | 6.70:1 | 3:1 |
+| Borda válida | 7.13:1 | 3:1 |
+| Texto de formato aceito | 7.13:1 | 4.5:1 |
+| Borda inválida | 6.57:1 | 3:1 |
+| Texto de erro | 6.57:1 | 4.5:1 |
+| Texto do modal | 14.10:1 | 4.5:1 |
+| Título do modal | 11.55:1 | 4.5:1 |
+| Mensagem de limpeza concluída | 7.13:1 | 4.5:1 |
+| Campo desabilitado (aplicado no teste) | 7.04:1 | 4.5:1 |
 
-As 22 combinações foram medidas novamente após a etapa 3 e passaram. Os links dos projetos agora ficam sobre superfície branca. A cor de sucesso é apenas uma reserva; não há mensagem de sucesso para medir nesta etapa. O botão desabilitado foi medido como estado de teste, embora controles inativos tenham exceção nos critérios de contraste. O relatório completo está em [contraste.json](evidencias/etapa-3/contraste.json).
+O relatório completo está em [contraste.json](evidencias/etapa-4/contraste.json). O campo desabilitado foi aplicado somente no teste; o botão de limpeza desabilitado é um estado real. Controles inativos têm exceção nos critérios de contraste, mas foram medidos também.
 
-Esses resultados cobrem as combinações registradas, não uma auditoria completa de conformidade. O teste de ampliação alterou o tamanho raiz para 200%; não substitui testes de zoom, dispositivos físicos ou leitores de tela. Não há animação ou transição nesta base, inclusive quando o navegador informa preferência por movimento reduzido.
+Esses resultados cobrem as combinações registradas, não uma auditoria completa de conformidade. O teste de texto a 200% altera o tamanho raiz; não substitui zoom completo, dispositivos físicos ou leitores de tela. A preferência por movimento reduzido remove as transições, conforme verificado no navegador.
 
 ## Evidências e evolução
 
-Os testes, a correção de quebra dos títulos do formulário e as capturas estão em [TESTES.md](TESTES.md). O layout implementado está documentado em [LAYOUT.md](LAYOUT.md). A próxima etapa ampliará os componentes visuais e suas interações.
+As verificações, correções reais e capturas estão em [TESTES.md](TESTES.md). Regras específicas dos componentes estão em [COMPONENTES.md](COMPONENTES.md). A próxima etapa migrará a navegação para SPA.
