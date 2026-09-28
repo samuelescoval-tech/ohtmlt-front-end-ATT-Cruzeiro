@@ -2,9 +2,9 @@
 
 Projeto acadêmico de **Desenvolvimento Front-End da Universidade Cruzeiro do Sul**, desenvolvido por Samuel Escoval. A OHTMLT é uma organização fictícia de inclusão e aprendizado digital, com propostas para iniciantes e pessoas interessadas em compartilhar conhecimentos.
 
-**Estado: candidata à versão 1.0.0, com funcionalidades implementadas e publicação em preparação.**
+**Versão 1.0.0 — aplicação implementada e demonstração publicada.**
 
-[Repositório](https://github.com/samuelescoval-tech/ohtmlt-front-end-ATT-Cruzeiro) · [Testes e evidências](docs/TESTES.md) · [Entrega e versionamento](docs/ENTREGA.md)
+[Abrir demonstração](https://samuelescoval-tech.github.io/ohtmlt-front-end-ATT-Cruzeiro/) · [Repositório](https://github.com/samuelescoval-tech/ohtmlt-front-end-ATT-Cruzeiro) · [Testes e evidências](docs/TESTES.md) · [Entrega e versionamento](docs/ENTREGA.md)
 
 ## Executar localmente
 
@@ -117,6 +117,6 @@ Os números são de rodadas por etapa; não representam uma suíte única cumula
 
 GitFlow: `feature/*` recebe cada mudança, PRs integram em `develop`, `release/1.0.0` prepara a versão para `main`, tag e release semântica. `hotfix/*` fica reservado para problemas reais após publicação. Commits usam tipos como `feat`, `perf`, `fix` e `docs`; os merges preservam o histórico. [Procedimento de publicação](docs/ENTREGA.md).
 
-A publicação no GitHub Pages está em preparação. Seu endereço será registrado após verificação. A aplicação é uma demonstração acadêmica; a implementação simples cobre os requisitos disponíveis, sem atestar itens de uma rubrica detalhada não fornecida. Não há autenticação, envio a servidor, validação de documentos reais ou garantia transacional entre abas.
+A [demonstração no GitHub Pages](https://samuelescoval-tech.github.io/ohtmlt-front-end-ATT-Cruzeiro/) foi verificada em HTTPS: 20 casos finais passaram, com arquivos públicos comparados por SHA-256 e sem recursos obrigatórios ausentes. A versão também passou em 20 casos locais e no W3C do shell e das três views. [Relatório da publicação](docs/evidencias/release/publicado.json). A aplicação é uma demonstração acadêmica; a implementação simples cobre os requisitos disponíveis, sem atestar itens de uma rubrica detalhada não fornecida. Não há autenticação, envio a servidor, validação de documentos reais ou garantia transacional entre abas.
 
 O SVG foi criado para o projeto. Vue mantém sua [licença MIT](js/vendor/vue-LICENSE.txt). Não foi definida licença de distribuição para o código autoral da atividade.

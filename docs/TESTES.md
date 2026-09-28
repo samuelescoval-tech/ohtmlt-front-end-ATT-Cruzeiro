@@ -310,3 +310,11 @@ O teste da atualização por evento passou a aguardar a renderização reativa, 
 11 verificações aprovadas: importação sob demanda, ausência de recarga na navegação, histórico, validação, link direto, doze ciclos, estado ocupado, prioridade da navegação recente sobre resposta atrasada, tela de falha e recuperação. [Relatório](evidencias/etapa-10/navegador.json) e [comparação de recursos](evidencias/etapa-10/recursos.json). Início/projetos: 156.145 para 28.913 bytes; cadastro: 155.058 para 156.938 bytes. Não foi medido ganho de tempo em conexão real.
 
 A automação inicialmente esperava `errorText` específico para o bloqueio de download, mas este Chrome retornou texto vazio com `blockedReason: inspector`. O teste passou a conferir a propriedade correta; a falha simulada foi tratada sem exceção JavaScript. [Tela de recuperação](evidencias/etapa-10/falha-carregamento.png). Nenhuma falha funcional foi observada na rodada concluída.
+
+## Candidata 1.0.0 — revisão local
+
+20 verificações finais aprovadas no Chrome: três views, idioma/landmarks/referências ARIA, duas larguras, navegação sem reload, destino de oficina, envio inválido/válido, persistência após recarga, modal, rota desconhecida e recursos sem falhas. [Relatório e hashes de cada arquivo](evidencias/release/local.json). O commit examinado está registrado no relatório; mudanças posteriores desta finalização são documentais. Shell e três views renderizadas passaram novamente no W3C sem erros/avisos; respostas em `docs/evidencias/release/w3c-*.json`.
+
+## Versão 1.0.0 — publicação HTTPS
+
+20 casos finais aprovados no endereço do GitHub Pages, repetindo a verificação local da candidata. [Relatório com commit, origem e hashes](evidencias/release/publicado.json). Cada arquivo público da aplicação respondeu HTTP 200 e teve conteúdo idêntico ao arquivo local; nenhuma exceção ou falha de recurso obrigatório. A gravação e a recuperação foram exercitadas na origem HTTPS com dados fictícios, removidos ao final. Capturas inspecionadas: [início](evidencias/release/index-publicado.png), [projetos](evidencias/release/projetos-publicado.png), [cadastro](evidencias/release/cadastro-publicado.png).
