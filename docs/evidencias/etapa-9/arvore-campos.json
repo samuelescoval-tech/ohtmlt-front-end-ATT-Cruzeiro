@@ -1,0 +1,833 @@
+[
+  {
+    "nodeId": "933",
+    "ignored": false,
+    "role": {
+      "type": "role",
+      "value": "textbox"
+    },
+    "chromeRole": {
+      "type": "internalRole",
+      "value": 170
+    },
+    "name": {
+      "type": "computedString",
+      "value": "Nome (obrigatório)",
+      "sources": [
+        {
+          "type": "relatedElement",
+          "attribute": "aria-labelledby"
+        },
+        {
+          "type": "attribute",
+          "attribute": "aria-label"
+        },
+        {
+          "type": "relatedElement",
+          "value": {
+            "type": "computedString",
+            "value": "Nome (obrigatório)"
+          },
+          "nativeSource": "labelfor",
+          "nativeSourceValue": {
+            "type": "nodeList",
+            "relatedNodes": [
+              {
+                "backendDOMNodeId": 995,
+                "text": "Nome (obrigatório)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "attribute",
+          "value": {
+            "type": "computedString",
+            "value": "Digite um nome; somente espaços não são aceitos."
+          },
+          "attribute": "title",
+          "attributeValue": {
+            "type": "string",
+            "value": "Digite um nome; somente espaços não são aceitos."
+          },
+          "superseded": true
+        },
+        {
+          "type": "placeholder",
+          "attribute": "placeholder",
+          "superseded": true
+        },
+        {
+          "type": "placeholder",
+          "attribute": "aria-placeholder",
+          "superseded": true
+        },
+        {
+          "type": "attribute",
+          "value": {
+            "type": "computedString",
+            "value": "Digite um nome; somente espaços não são aceitos."
+          },
+          "attribute": "title",
+          "attributeValue": {
+            "type": "string",
+            "value": "Digite um nome; somente espaços não são aceitos."
+          },
+          "superseded": true
+        }
+      ]
+    },
+    "description": {
+      "type": "computedString",
+      "value": "Digite um nome fictício. O campo não aceita somente espaços. Digite um nome fictício; somente espaços não são aceitos."
+    },
+    "properties": [
+      {
+        "name": "invalid",
+        "value": {
+          "type": "token",
+          "value": "true"
+        }
+      },
+      {
+        "name": "focusable",
+        "value": {
+          "type": "booleanOrUndefined",
+          "value": true
+        }
+      },
+      {
+        "name": "focused",
+        "value": {
+          "type": "booleanOrUndefined",
+          "value": true
+        }
+      },
+      {
+        "name": "editable",
+        "value": {
+          "type": "token",
+          "value": "plaintext"
+        }
+      },
+      {
+        "name": "settable",
+        "value": {
+          "type": "booleanOrUndefined",
+          "value": true
+        }
+      },
+      {
+        "name": "multiline",
+        "value": {
+          "type": "boolean",
+          "value": false
+        }
+      },
+      {
+        "name": "readonly",
+        "value": {
+          "type": "boolean",
+          "value": false
+        }
+      },
+      {
+        "name": "required",
+        "value": {
+          "type": "boolean",
+          "value": true
+        }
+      },
+      {
+        "name": "describedby",
+        "value": {
+          "type": "idrefList",
+          "value": "ajuda-nome estado-nome",
+          "relatedNodes": [
+            {
+              "backendDOMNodeId": 997,
+              "idref": "ajuda-nome"
+            },
+            {
+              "backendDOMNodeId": 998,
+              "idref": "estado-nome"
+            }
+          ]
+        }
+      },
+      {
+        "name": "labelledby",
+        "value": {
+          "type": "nodeList",
+          "relatedNodes": [
+            {
+              "backendDOMNodeId": 995,
+              "text": "Nome (obrigatório)"
+            }
+          ]
+        }
+      }
+    ],
+    "parentId": "994",
+    "childIds": [
+      "996"
+    ],
+    "backendDOMNodeId": 933
+  },
+  {
+    "nodeId": "934",
+    "ignored": false,
+    "role": {
+      "type": "role",
+      "value": "textbox"
+    },
+    "chromeRole": {
+      "type": "internalRole",
+      "value": 170
+    },
+    "name": {
+      "type": "computedString",
+      "value": "CPF (obrigatório)",
+      "sources": [
+        {
+          "type": "relatedElement",
+          "attribute": "aria-labelledby"
+        },
+        {
+          "type": "attribute",
+          "attribute": "aria-label"
+        },
+        {
+          "type": "relatedElement",
+          "value": {
+            "type": "computedString",
+            "value": "CPF (obrigatório)"
+          },
+          "nativeSource": "labelfor",
+          "nativeSourceValue": {
+            "type": "nodeList",
+            "relatedNodes": [
+              {
+                "backendDOMNodeId": 1002,
+                "text": "CPF (obrigatório)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "attribute",
+          "value": {
+            "type": "computedString",
+            "value": "Use o formato 000.000.000-00."
+          },
+          "attribute": "title",
+          "attributeValue": {
+            "type": "string",
+            "value": "Use o formato 000.000.000-00."
+          },
+          "superseded": true
+        },
+        {
+          "type": "placeholder",
+          "attribute": "placeholder",
+          "superseded": true
+        },
+        {
+          "type": "placeholder",
+          "attribute": "aria-placeholder",
+          "superseded": true
+        },
+        {
+          "type": "attribute",
+          "value": {
+            "type": "computedString",
+            "value": "Use o formato 000.000.000-00."
+          },
+          "attribute": "title",
+          "attributeValue": {
+            "type": "string",
+            "value": "Use o formato 000.000.000-00."
+          },
+          "superseded": true
+        }
+      ]
+    },
+    "description": {
+      "type": "computedString",
+      "value": "Formato: 000.000.000-00. Digite os pontos e o hífen. A verificação confere apenas o formato, não os dígitos verificadores nem a existência do CPF. Digite um CPF fictício."
+    },
+    "properties": [
+      {
+        "name": "invalid",
+        "value": {
+          "type": "token",
+          "value": "true"
+        }
+      },
+      {
+        "name": "focusable",
+        "value": {
+          "type": "booleanOrUndefined",
+          "value": true
+        }
+      },
+      {
+        "name": "editable",
+        "value": {
+          "type": "token",
+          "value": "plaintext"
+        }
+      },
+      {
+        "name": "settable",
+        "value": {
+          "type": "booleanOrUndefined",
+          "value": true
+        }
+      },
+      {
+        "name": "multiline",
+        "value": {
+          "type": "boolean",
+          "value": false
+        }
+      },
+      {
+        "name": "readonly",
+        "value": {
+          "type": "boolean",
+          "value": false
+        }
+      },
+      {
+        "name": "required",
+        "value": {
+          "type": "boolean",
+          "value": true
+        }
+      },
+      {
+        "name": "describedby",
+        "value": {
+          "type": "idrefList",
+          "value": "ajuda-cpf estado-cpf",
+          "relatedNodes": [
+            {
+              "backendDOMNodeId": 1004,
+              "idref": "ajuda-cpf"
+            },
+            {
+              "backendDOMNodeId": 1005,
+              "idref": "estado-cpf"
+            }
+          ]
+        }
+      },
+      {
+        "name": "labelledby",
+        "value": {
+          "type": "nodeList",
+          "relatedNodes": [
+            {
+              "backendDOMNodeId": 1002,
+              "text": "CPF (obrigatório)"
+            }
+          ]
+        }
+      }
+    ],
+    "parentId": "1001",
+    "childIds": [
+      "1003"
+    ],
+    "backendDOMNodeId": 934
+  },
+  {
+    "nodeId": "935",
+    "ignored": false,
+    "role": {
+      "type": "role",
+      "value": "textbox"
+    },
+    "chromeRole": {
+      "type": "internalRole",
+      "value": 170
+    },
+    "name": {
+      "type": "computedString",
+      "value": "E-mail (obrigatório)",
+      "sources": [
+        {
+          "type": "relatedElement",
+          "attribute": "aria-labelledby"
+        },
+        {
+          "type": "attribute",
+          "attribute": "aria-label"
+        },
+        {
+          "type": "relatedElement",
+          "value": {
+            "type": "computedString",
+            "value": "E-mail (obrigatório)"
+          },
+          "nativeSource": "labelfor",
+          "nativeSourceValue": {
+            "type": "nodeList",
+            "relatedNodes": [
+              {
+                "backendDOMNodeId": 1010,
+                "text": "E-mail (obrigatório)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "attribute",
+          "attribute": "title",
+          "superseded": true
+        },
+        {
+          "type": "placeholder",
+          "attribute": "placeholder",
+          "superseded": true
+        },
+        {
+          "type": "placeholder",
+          "attribute": "aria-placeholder",
+          "superseded": true
+        },
+        {
+          "type": "attribute",
+          "attribute": "title",
+          "superseded": true
+        }
+      ]
+    },
+    "description": {
+      "type": "computedString",
+      "value": "Use um endereço fictício, como pessoa@example.com. A verificação não comprova que o endereço existe. Digite um e-mail fictício."
+    },
+    "properties": [
+      {
+        "name": "invalid",
+        "value": {
+          "type": "token",
+          "value": "true"
+        }
+      },
+      {
+        "name": "focusable",
+        "value": {
+          "type": "booleanOrUndefined",
+          "value": true
+        }
+      },
+      {
+        "name": "editable",
+        "value": {
+          "type": "token",
+          "value": "plaintext"
+        }
+      },
+      {
+        "name": "settable",
+        "value": {
+          "type": "booleanOrUndefined",
+          "value": true
+        }
+      },
+      {
+        "name": "multiline",
+        "value": {
+          "type": "boolean",
+          "value": false
+        }
+      },
+      {
+        "name": "readonly",
+        "value": {
+          "type": "boolean",
+          "value": false
+        }
+      },
+      {
+        "name": "required",
+        "value": {
+          "type": "boolean",
+          "value": true
+        }
+      },
+      {
+        "name": "describedby",
+        "value": {
+          "type": "idrefList",
+          "value": "ajuda-email estado-email",
+          "relatedNodes": [
+            {
+              "backendDOMNodeId": 1012,
+              "idref": "ajuda-email"
+            },
+            {
+              "backendDOMNodeId": 1013,
+              "idref": "estado-email"
+            }
+          ]
+        }
+      },
+      {
+        "name": "labelledby",
+        "value": {
+          "type": "nodeList",
+          "relatedNodes": [
+            {
+              "backendDOMNodeId": 1010,
+              "text": "E-mail (obrigatório)"
+            }
+          ]
+        }
+      }
+    ],
+    "parentId": "1009",
+    "childIds": [
+      "1011"
+    ],
+    "backendDOMNodeId": 935
+  },
+  {
+    "nodeId": "936",
+    "ignored": false,
+    "role": {
+      "type": "role",
+      "value": "textbox"
+    },
+    "chromeRole": {
+      "type": "internalRole",
+      "value": 170
+    },
+    "name": {
+      "type": "computedString",
+      "value": "Telefone celular (obrigatório)",
+      "sources": [
+        {
+          "type": "relatedElement",
+          "attribute": "aria-labelledby"
+        },
+        {
+          "type": "attribute",
+          "attribute": "aria-label"
+        },
+        {
+          "type": "relatedElement",
+          "value": {
+            "type": "computedString",
+            "value": "Telefone celular (obrigatório)"
+          },
+          "nativeSource": "labelfor",
+          "nativeSourceValue": {
+            "type": "nodeList",
+            "relatedNodes": [
+              {
+                "backendDOMNodeId": 1016,
+                "text": "Telefone celular (obrigatório)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "attribute",
+          "value": {
+            "type": "computedString",
+            "value": "Use o formato (11)99999-9999, sem espaços."
+          },
+          "attribute": "title",
+          "attributeValue": {
+            "type": "string",
+            "value": "Use o formato (11)99999-9999, sem espaços."
+          },
+          "superseded": true
+        },
+        {
+          "type": "placeholder",
+          "attribute": "placeholder",
+          "superseded": true
+        },
+        {
+          "type": "placeholder",
+          "attribute": "aria-placeholder",
+          "superseded": true
+        },
+        {
+          "type": "attribute",
+          "value": {
+            "type": "computedString",
+            "value": "Use o formato (11)99999-9999, sem espaços."
+          },
+          "attribute": "title",
+          "attributeValue": {
+            "type": "string",
+            "value": "Use o formato (11)99999-9999, sem espaços."
+          },
+          "superseded": true
+        }
+      ]
+    },
+    "description": {
+      "type": "computedString",
+      "value": "Formato: (11)99999-9999, sem espaços. Digite os parênteses e o hífen; a pontuação não é inserida automaticamente. Digite um telefone fictício."
+    },
+    "properties": [
+      {
+        "name": "invalid",
+        "value": {
+          "type": "token",
+          "value": "true"
+        }
+      },
+      {
+        "name": "focusable",
+        "value": {
+          "type": "booleanOrUndefined",
+          "value": true
+        }
+      },
+      {
+        "name": "editable",
+        "value": {
+          "type": "token",
+          "value": "plaintext"
+        }
+      },
+      {
+        "name": "settable",
+        "value": {
+          "type": "booleanOrUndefined",
+          "value": true
+        }
+      },
+      {
+        "name": "multiline",
+        "value": {
+          "type": "boolean",
+          "value": false
+        }
+      },
+      {
+        "name": "readonly",
+        "value": {
+          "type": "boolean",
+          "value": false
+        }
+      },
+      {
+        "name": "required",
+        "value": {
+          "type": "boolean",
+          "value": true
+        }
+      },
+      {
+        "name": "describedby",
+        "value": {
+          "type": "idrefList",
+          "value": "ajuda-telefone estado-telefone",
+          "relatedNodes": [
+            {
+              "backendDOMNodeId": 1018,
+              "idref": "ajuda-telefone"
+            },
+            {
+              "backendDOMNodeId": 1019,
+              "idref": "estado-telefone"
+            }
+          ]
+        }
+      },
+      {
+        "name": "labelledby",
+        "value": {
+          "type": "nodeList",
+          "relatedNodes": [
+            {
+              "backendDOMNodeId": 1016,
+              "text": "Telefone celular (obrigatório)"
+            }
+          ]
+        }
+      }
+    ],
+    "parentId": "942",
+    "childIds": [
+      "1017"
+    ],
+    "backendDOMNodeId": 936
+  },
+  {
+    "nodeId": "937",
+    "ignored": false,
+    "role": {
+      "type": "role",
+      "value": "textbox"
+    },
+    "chromeRole": {
+      "type": "internalRole",
+      "value": 170
+    },
+    "name": {
+      "type": "computedString",
+      "value": "CEP (obrigatório)",
+      "sources": [
+        {
+          "type": "relatedElement",
+          "attribute": "aria-labelledby"
+        },
+        {
+          "type": "attribute",
+          "attribute": "aria-label"
+        },
+        {
+          "type": "relatedElement",
+          "value": {
+            "type": "computedString",
+            "value": "CEP (obrigatório)"
+          },
+          "nativeSource": "labelfor",
+          "nativeSourceValue": {
+            "type": "nodeList",
+            "relatedNodes": [
+              {
+                "backendDOMNodeId": 1022,
+                "text": "CEP (obrigatório)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "attribute",
+          "value": {
+            "type": "computedString",
+            "value": "Use o formato 00000-000."
+          },
+          "attribute": "title",
+          "attributeValue": {
+            "type": "string",
+            "value": "Use o formato 00000-000."
+          },
+          "superseded": true
+        },
+        {
+          "type": "placeholder",
+          "attribute": "placeholder",
+          "superseded": true
+        },
+        {
+          "type": "placeholder",
+          "attribute": "aria-placeholder",
+          "superseded": true
+        },
+        {
+          "type": "attribute",
+          "value": {
+            "type": "computedString",
+            "value": "Use o formato 00000-000."
+          },
+          "attribute": "title",
+          "attributeValue": {
+            "type": "string",
+            "value": "Use o formato 00000-000."
+          },
+          "superseded": true
+        }
+      ]
+    },
+    "description": {
+      "type": "computedString",
+      "value": "Formato: 00000-000. Digite o hífen. Não há consulta de endereço. Digite um CEP fictício."
+    },
+    "properties": [
+      {
+        "name": "invalid",
+        "value": {
+          "type": "token",
+          "value": "true"
+        }
+      },
+      {
+        "name": "focusable",
+        "value": {
+          "type": "booleanOrUndefined",
+          "value": true
+        }
+      },
+      {
+        "name": "editable",
+        "value": {
+          "type": "token",
+          "value": "plaintext"
+        }
+      },
+      {
+        "name": "settable",
+        "value": {
+          "type": "booleanOrUndefined",
+          "value": true
+        }
+      },
+      {
+        "name": "multiline",
+        "value": {
+          "type": "boolean",
+          "value": false
+        }
+      },
+      {
+        "name": "readonly",
+        "value": {
+          "type": "boolean",
+          "value": false
+        }
+      },
+      {
+        "name": "required",
+        "value": {
+          "type": "boolean",
+          "value": true
+        }
+      },
+      {
+        "name": "describedby",
+        "value": {
+          "type": "idrefList",
+          "value": "ajuda-cep estado-cep",
+          "relatedNodes": [
+            {
+              "backendDOMNodeId": 1024,
+              "idref": "ajuda-cep"
+            },
+            {
+              "backendDOMNodeId": 1025,
+              "idref": "estado-cep"
+            }
+          ]
+        }
+      },
+      {
+        "name": "labelledby",
+        "value": {
+          "type": "nodeList",
+          "relatedNodes": [
+            {
+              "backendDOMNodeId": 1022,
+              "text": "CEP (obrigatório)"
+            }
+          ]
+        }
+      }
+    ],
+    "parentId": "943",
+    "childIds": [
+      "1023"
+    ],
+    "backendDOMNodeId": 937
+  }
+]

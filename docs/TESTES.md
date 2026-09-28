@@ -300,3 +300,7 @@ O ensaio inicial tentou executar JavaScript enquanto a confirmação nativa esta
 Vue 3.5.43: 37 verificações aprovadas no Chrome em 28/09/2026. Os casos de persistência foram repetidos após a troca de renderização, com montagem/desmontagem do componente e versão verificadas. Textos semelhantes a HTML continuaram literais; erros e exclusão mantiveram os resultados esperados. [Relatório](evidencias/framework/navegador.json), [W3C sem erros/avisos](evidencias/framework/w3c-cadastro.json) e [integridade da dependência](evidencias/framework/dependencia.json). As quatro capturas foram renovadas na pasta `framework`.
 
 O teste da atualização por evento passou a aguardar a renderização reativa, que ocorre em microtarefa. Nenhuma falha funcional observada. Não houve adição de ferramenta de build; a distribuição local dispensa rede externa em execução.
+
+## Etapa 9 — revisão de acessibilidade
+
+28 verificações funcionais e seis complementares aprovadas. Axe-core 4.13.0: dez cenários com zero violações automáticas. Os relatórios inconclusivos sobre símbolos, destino do diálogo e contraste da descrição foram conferidos com DOM, geometria, cores computadas e capturas. Não houve correção funcional necessária. [Método, evidências e limites](ACESSIBILIDADE.md). O teste cobre teclado, árvore acessível, três views com texto a 200% em três larguras e movimento reduzido, sem certificação integral ou ensaio humano com leitor de tela.

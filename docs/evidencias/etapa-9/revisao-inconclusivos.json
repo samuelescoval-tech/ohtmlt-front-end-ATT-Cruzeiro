@@ -1,0 +1,76 @@
+{
+  "checks": [
+    {
+      "caso": "Destino aria-controls existe e é dialog em 375",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Contraste dos símbolos e descrição do modal em 375",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Descrição do modal inteira dentro do diálogo em 375",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Destino aria-controls existe e é dialog em 1280",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Contraste dos símbolos e descrição do modal em 1280",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Descrição do modal inteira dentro do diálogo em 1280",
+      "resultado": "aprovado"
+    }
+  ],
+  "result": [
+    {
+      "width": 375,
+      "combinacoes": [
+        {
+          "selector": ".menu-toggle > span",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgb(11, 60, 93)",
+          "contraste": 11.54711776572852
+        },
+        {
+          "selector": ".submenu-toggle > span",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgb(11, 60, 93)",
+          "contraste": 11.54711776572852
+        },
+        {
+          "selector": "#descricao-limpeza",
+          "color": "rgb(23, 43, 77)",
+          "bg": "rgb(255, 255, 255)",
+          "contraste": 14.102034448456891
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "combinacoes": [
+        {
+          "selector": ".menu-toggle > span",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgb(11, 60, 93)",
+          "contraste": 11.54711776572852
+        },
+        {
+          "selector": ".submenu-toggle > span",
+          "color": "rgb(255, 255, 255)",
+          "bg": "rgb(11, 60, 93)",
+          "contraste": 11.54711776572852
+        },
+        {
+          "selector": "#descricao-limpeza",
+          "color": "rgb(23, 43, 77)",
+          "bg": "rgb(255, 255, 255)",
+          "contraste": 14.102034448456891
+        }
+      ]
+    }
+  ]
+}
