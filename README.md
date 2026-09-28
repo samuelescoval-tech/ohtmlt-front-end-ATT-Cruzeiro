@@ -2,7 +2,7 @@
 
 Projeto acadêmico de **Desenvolvimento Front-End**, da **Universidade Cruzeiro do Sul**. A OHTMLT é uma organização fictícia voltada à inclusão e ao aprendizado digital, com propostas para iniciantes e pessoas interessadas em compartilhar conhecimentos.
 
-**Estado: em reconstrução — etapa 5 implementada.** A aplicação é uma SPA com três views: início, projetos e cadastro. A navegação interna atualiza o conteúdo sem recarregar o documento, preservando menus, cards, estados dos controles e modal de limpeza. Templates alimentados por dados, validação personalizada e persistência serão desenvolvidos nas próximas etapas.
+**Estado: em reconstrução — etapa 6 implementada.** A aplicação é uma SPA com três views: início, projetos e cadastro. A navegação interna atualiza o conteúdo sem recarregar o documento, preservando menus, cards, estados dos controles e modal de limpeza. Cards, menu de oficinas e destinos compartilham os dados de `js/data/projetos.js`; a construção dos componentes usa DOM e texto seguro. Validação personalizada e persistência são as próximas etapas.
 
 [Repositório no GitHub](https://github.com/samuelescoval-tech/ohtmlt-front-end-ATT-Cruzeiro)
 
@@ -70,12 +70,14 @@ ohtmlt-front-end-ATT-Cruzeiro/
 │   └── components.css
 ├── js/
 │   ├── main.js
+│   ├── data/projetos.js
 │   ├── router.js
 │   ├── views/
 │   │   ├── inicio.js
 │   │   ├── projetos.js
 │   │   └── cadastro.js
 │   └── modules/
+│       ├── templates.js
 │       ├── navigation.js
 │       ├── modal.js
 │       └── feedback.js
@@ -93,7 +95,8 @@ ohtmlt-front-end-ATT-Cruzeiro/
         ├── etapa-2/
         ├── etapa-3/
         ├── etapa-4/
-        └── etapa-5/
+        ├── etapa-5/
+        └── etapa-6/
 ```
 
 A imagem SVG é local e foi criada para este projeto. As views usam marcação fixa em `<template>`, sem inserir valores digitados ou trechos de URL no HTML. Nenhuma biblioteca, framework ou fonte externa foi instalada. Nenhuma licença de distribuição foi definida.
@@ -110,10 +113,12 @@ Em 28/09/2026, **187 casos foram aprovados no Chrome**, incluindo rotas, histór
 
 O `index.html` e os documentos extraídos das três views renderizadas passaram no W3C Nu HTML Checker sem erros ou avisos. Os resultados incluem 25 capturas PNG e oito relatórios JSON. Consulte [os casos e limites](docs/TESTES.md) e a [evidência de navegação](docs/evidencias/etapa-5/rotas.json). As etapas anteriores foram preservadas.
 
+Na etapa 6, 29 verificações adicionais passaram: preservação dos cards, texto seguro, renderização repetida, destinos, modal e 19 larguras. O shell e a view de projetos passaram novamente no W3C sem erros ou avisos. Consulte [templates](docs/TEMPLATES.md) e [resultados](docs/evidencias/etapa-6/navegador.json).
+
 Esses resultados não equivalem a uma auditoria completa de acessibilidade ou compatibilidade entre navegadores.
 
 ## Versionamento e próximos passos
 
 `main` contém a base documental e receberá versões aprovadas; `develop` integra as etapas; `feature/*` organiza mudanças verificadas em pull requests. Os commits são semânticos. Ainda não há release, tag de versão ou deploy.
 
-A próxima etapa é a de **templates e componentes alimentados por dados**. A exigência de framework na terceira experiência e os enunciados detalhados de acessibilidade, otimização e deploy na quarta experiência ainda precisam ser confirmados antes das entregas correspondentes.
+A próxima etapa é a **validação personalizada do formulário**. A integração básica de framework, acessibilidade, otimização e publicação terão implementação simples; não há rubrica detalhada disponível para certificar exigências adicionais.

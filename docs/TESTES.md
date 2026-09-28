@@ -272,3 +272,9 @@ Após os testes da migração, `projetos.html` e `cadastro.html` foram removidos
 São 25 PNGs e oito relatórios JSON. Os nomes de algumas capturas mantêm a nomenclatura dos ensaios anteriores, mas nesta etapa foram capturados em `index.html` com o hash correspondente. Os relatórios e capturas das etapas anteriores não foram alterados.
 
 As verificações se limitam ao Chrome e não constituem auditoria completa de acessibilidade, compatibilidade ou desempenho. A inspeção da árvore de acessibilidade não substitui um leitor de tela. Texto ampliado significa fonte raiz a 200%, não zoom completo. O W3C validou HTML, não o comportamento JavaScript ou o CSS. Framework, persistência, release e deploy permanecem fora desta etapa.
+
+## Etapa 6 — templates
+
+Verificação em 28/09/2026, Chrome 154, servidor Python local. 29 casos aprovados em [navegador.json](evidencias/etapa-6/navegador.json). Comparação com o DOM anterior confirmou textos, ordem, IDs e links; ensaios cobriram listas vazias, subconjuntos, repetição e conteúdo semelhante a HTML tratado literalmente. Foram conferidas 19 larguras entre 320 e 1920 px, três destinos de oficinas, ciclos entre views e o modal. Nenhuma exceção ou falha de recurso observada.
+
+Inspeção visual: [375 px](evidencias/etapa-6/projetos-375.png), [768 px](evidencias/etapa-6/projetos-768.png) e [1440 px](evidencias/etapa-6/projetos-1440.png). W3C: [shell](evidencias/etapa-6/w3c-index.json) e [projetos renderizados](evidencias/etapa-6/w3c-projetos.json), ambos sem erros/avisos. Nenhuma falha funcional observada nesta etapa. Contraste e demais views não foram revalidados integralmente, pois não sofreram alterações visuais.

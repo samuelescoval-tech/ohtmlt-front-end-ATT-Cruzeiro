@@ -1,3 +1,4 @@
+import { projetos } from './data/projetos.js';
 import { criarInicio } from './views/inicio.js';
 import { criarProjetos } from './views/projetos.js';
 import { criarCadastro } from './views/cadastro.js';
@@ -22,7 +23,7 @@ const rotas = new Map([
   }],
 ]);
 
-const oficinas = new Set(['primeiros-passos', 'html-para-todos', 'aprender-em-rede']);
+const oficinas = new Set(projetos.map(projeto => projeto.id));
 
 function criarNaoEncontrada() {
   const fragmento = document.createDocumentFragment();
