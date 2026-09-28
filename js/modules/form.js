@@ -2,7 +2,7 @@ import { validarCampo } from './validation.js';
 import { iniciarLimpeza } from './modal.js';
 import { anunciarSucesso, anunciarErro } from './feedback.js';
 import { carregarCadastros, salvarCadastro, apagarCadastros, CHAVE_CADASTROS } from './storage.js';
-import { renderizarCadastros } from './templates.js';
+import { iniciarListaCadastros } from './cadastros.js';
 
 export function iniciarFormulario(raiz) {
   const form = raiz.querySelector('#form-cadastro');
@@ -11,16 +11,16 @@ export function iniciarFormulario(raiz) {
   const controller = new AbortController();
   const opcoes = { signal: controller.signal };
   const tratados = new Set();
-  const lista = raiz.querySelector('#lista-cadastros');
+  const componenteLista = iniciarListaCadastros(raiz.querySelector('#lista-cadastros'));
   const statusArmazenamento = raiz.querySelector('#status-armazenamento');
   const apagar = raiz.querySelector('#apagar-cadastros');
 
   function mostrarRegistros(resultado) {
     if (resultado.ok) {
-      renderizarCadastros(lista, resultado.registros);
+      componenteLista.atualizar(resultado.registros);
       apagar.disabled = resultado.registros.length === 0;
     } else {
-      lista.replaceChildren();
+      componenteLista.atualizar(null);
       apagar.disabled = false;
       anunciarErro(statusArmazenamento, resultado.mensagem);
     }
@@ -95,5 +95,6 @@ export function iniciarFormulario(raiz) {
   return () => {
     controller.abort();
     desmontarLimpeza?.();
+    componenteLista.desmontar();
   };
 }

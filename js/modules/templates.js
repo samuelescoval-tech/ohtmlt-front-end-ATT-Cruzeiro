@@ -47,23 +47,3 @@ export function renderizarMenuProjetos(container, projetos) {
   });
   container.replaceChildren(fragmento);
 }
-
-export function renderizarCadastros(container, registros) {
-  const fragmento = document.createDocumentFragment();
-  if (!registros.length) fragmento.append(elemento('p', 'Nenhuma demonstração salva neste navegador.'));
-  else {
-    const lista = elemento('ul', undefined, 'cadastros-salvos');
-    registros.forEach(registro => {
-      const item = elemento('li');
-      item.append(elemento('h3', registro.nome));
-      const dados = elemento('dl');
-      Object.entries({ cpf: 'CPF', email: 'E-mail', telefone: 'Telefone', cep: 'CEP' }).forEach(([campo, rotulo]) => {
-        dados.append(elemento('dt', rotulo), elemento('dd', registro[campo]));
-      });
-      item.append(dados);
-      lista.append(item);
-    });
-    fragmento.append(lista);
-  }
-  container.replaceChildren(fragmento);
-}
