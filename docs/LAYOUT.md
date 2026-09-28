@@ -1,6 +1,6 @@
 # Layout responsivo da OHTMLT
 
-A etapa 3 organiza as três páginas por uma abordagem mobile first. [`css/base.css`](../css/base.css) mantém cores, fontes, controles e aparência; [`css/layout.css`](../css/layout.css), carregado depois, define containers, Grid, Flexbox, larguras e breakpoints. Não há dependências ou JavaScript para ajustar o layout.
+A etapa 3 organiza as três páginas por uma abordagem mobile first. Na etapa 4, [`css/base.css`](../css/base.css) mantém variáveis e estilos globais; [`css/layout.css`](../css/layout.css) define containers, Grid, Flexbox, larguras e breakpoints; [`css/components.css`](../css/components.css) reúne a aparência e a distribuição interna dos componentes. A visibilidade dos menus passa a ser controlada por JavaScript, conforme [COMPONENTES.md](COMPONENTES.md).
 
 ## Grid de doze colunas
 
@@ -47,15 +47,15 @@ A imagem da apresentação mantém seu tamanho máximo de 32 rem, a proporção 
 | --- | --- | --- | --- |
 | `.cabecalho-conteudo` | `column` na base; `row` e `wrap` a partir de 768 px. | `align-items: flex-start` na base; `center` e `justify-content: space-between` em telas maiores. A marca usa `flex: 1 1 20rem` a partir de 768 px. | 24 px. |
 | `.rodape-conteudo` | `column` na base; `row` e `wrap` a partir de 768 px. | Mesmas regras de alinhamento do cabeçalho. Os parágrafos recebem bases flexíveis de 20 e 26 rem em telas maiores. | 24 px. |
-| `.nav-list` | Linha, direção padrão do Flexbox, com `flex-wrap: wrap`. | `align-items: center`; os links continuam visíveis e na ordem do HTML. | 8 px. |
+| `.nav-list` | Coluna na base; linha a partir de 768 px, com `flex-wrap: wrap`. | `align-items: flex-start` na base e `center` no desktop; links na ordem do HTML. | 8 px. |
 | `.acoes` | Linha, direção padrão, com `flex-wrap: wrap`. | `align-items: center`; ações quebram de linha quando não cabem. | 16 px. |
 | `.projeto` | `flex-direction: column`. | `align-items: flex-start`; o link usa `margin-block-start: auto` para chegar ao fim do card. | 16 px. |
 
 Os intervalos referem-se à raiz padrão de 16 px e acompanham as variáveis em rem. Os itens flexíveis usam largura mínima zero quando necessário, permitindo quebra do conteúdo. O Grid iguala a altura dos projetos da mesma linha; a margem automática do link alinha as ações inferiores sem fixar a altura dos textos.
 
-A navegação ainda é uma lista sempre visível. Dropdown e menu hambúrguer fazem parte da próxima etapa de componentes.
+Desde a etapa 4, a lista mobile depende do botão hambúrguer; o submenu usa um controle próprio. As regras internas dos cards foram movidas para `components.css`, preservando as colunas do Grid. Consulte [as condições de abertura e foco](COMPONENTES.md).
 
-## Medidas obtidas no navegador
+## Medidas registradas na etapa 3
 
 A matriz completa cobre as três páginas em 19 larguras: 320, 375, 479, 480, 481, 767, 768, 769, 991, 992, 993, 1199, 1200, 1201, 1280, 1439, 1440, 1441 e 1920 px. Foram medidos os doze tracks, a ocupação dos itens, os intervalos, os limites de leitura, os alinhamentos e a ausência de corte horizontal.
 
@@ -81,3 +81,5 @@ A barra de rolagem vertical ocupou 15 px nas medições. Por isso, um viewport d
 Os 57 pares de página e largura passaram. O texto a 200% foi verificado em 320, 768, 992 e 1440 px nas três páginas. A ordem de Tab foi confirmada em 320 e 1440 px. O relatório [layout.json](evidencias/etapa-3/layout.json) contém as medidas; [TESTES.md](TESTES.md) reúne resultados e capturas.
 
 Os ensaios foram realizados no Chrome em modo headless. A ampliação alterou a fonte raiz e não substitui uma verificação completa de zoom do navegador, dispositivos físicos ou outros navegadores.
+
+Na etapa 4, a mesma matriz de 57 pares foi repetida com os menus abertos e a mídia dos cards. As medidas estão em [etapa-4/layout.json](evidencias/etapa-4/layout.json).

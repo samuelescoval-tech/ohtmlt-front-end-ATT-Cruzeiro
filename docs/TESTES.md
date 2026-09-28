@@ -164,3 +164,55 @@ As capturas de início em desktop, projetos em 768 e 1440 px e cadastro em 375 p
 ### Limitações
 
 Os testes foram executados somente no Chrome headless. Viewports em CSS px não representam todos os dispositivos físicos. A ampliação alterou a fonte raiz, sem constituir uma auditoria completa de zoom. Menus expansíveis e interações de modal ainda não foram implementados. O formulário continua demonstrativo, com envio nativo GET, e deve receber apenas dados fictícios. Nenhuma conformidade completa de acessibilidade ou resultado de deploy é declarado.
+
+## Etapa 4 — componentes visuais
+
+Execução em 28/09/2026 no Chrome 154, via Chrome DevTools Protocol e servidor HTTP local, sem instalar dependências. Esta etapa adiciona JavaScript aos três documentos existentes. A validação nativa e a navegação entre páginas foram verificadas novamente.
+
+### Escopo verificado
+
+- Desktop: submenu começa fechado; Enter e Espaço alternam a abertura; Tab alcança os links; Escape fecha e devolve o foco; saída do foco e clique externo fecham a lista.
+- Mobile: hambúrguer começa fechado; os links ocultos ficam fora da sequência de Tab; Escape fecha o submenu antes da navegação; o foco volta ao controle correspondente.
+- Mudança entre 767 e 768 px: visibilidade e `aria-expanded` permanecem coerentes, com transferência do foco quando um controle vai ficar oculto.
+- Cards: três propostas existentes, mídia proporcional 16:9 e ações alinhadas na mesma linha do Grid.
+- Controles: hover, foco, pressionado, botão de limpeza desabilitado, formato aceito e erro nativo com indicação textual. Campo desabilitado aplicado apenas como estado temporário de teste.
+- Descrições acessíveis dos campos inspecionadas pela árvore de acessibilidade do Chrome: ajuda inicial sem mensagens ocultas; sucesso e erro aparecem somente no estado correspondente.
+- Modal: título e descrição identificados, foco inicial em Cancelar, ciclo de Tab/Shift+Tab, Escape e cancelamento preservando os dados, confirmação limpando os campos e anunciando o resultado em `role="status"`.
+- Após a confirmação, o acionador fica desabilitado; o foco vai para Nome. Ao editar novamente, a mensagem anterior é removida.
+- Modal em 320 × 480 px e texto a 200% em 320, 768 e 1440 px: limites da janela, rolagem interna e palavras dos botões cabendo na área útil.
+- Sem JavaScript: links de navegação permanecem visíveis e controles que dependem de script ficam ocultos. Movimento reduzido: transições desativadas.
+- Formatos obrigatórios, envio vazio bloqueado, envio válido por GET e ausência de persistência preservados. Nenhuma máscara ou verificação de existência dos dados foi adicionada.
+
+A matriz de layout repete 19 larguras nas três páginas: **320, 375, 479, 480, 481, 767, 768, 769, 991, 992, 993, 1199, 1200, 1201, 1280, 1439, 1440, 1441 e 1920 px**. Desta vez, as medições incluem os menus abertos. Foram conferidos os doze tracks, as colunas dos cards, suas imagens e a ausência de transbordamento horizontal. As três páginas também foram verificadas com menus abertos e texto a 200% em 320, 768 e 1440 px.
+
+**Resultado final: 147 casos aprovados, 57 combinações de layout, 34 combinações de contraste aprovadas e zero erros ou avisos nos três HTML submetidos ao W3C Nu HTML Checker.** Não foram observadas exceções JavaScript ou falhas de recursos HTTP na rodada final.
+
+### Falhas observadas e correções
+
+| Observação real | Diagnóstico e correção | Reteste |
+| --- | --- | --- |
+| Tab fechava o submenu durante a transferência do foco. | A leitura de `document.activeElement` em uma microtask de `focusout` podia ocorrer durante a troca, antes de o destino receber foco. O código passou a consultar `event.relatedTarget`. | Enter, Tab entre links, Tab para fora, Escape e foco em mobile aprovados. |
+| Shift+Tab na primeira ação do diálogo podia levar o foco à interface do navegador. | O diálogo nativo impedia a interação com o fundo, mas não garantia o ciclo entre as duas ações. Foi acrescentado tratamento de Tab nos extremos. | Tab e Shift+Tab permanecem nos botões; Escape continua funcionando. |
+| A borda de um campo válido voltava ao azul quando o ponteiro estava sobre ele. | A especificidade do seletor de hover superava a do estado válido. Os seletores de validade passaram a incluir `:not(:disabled)` e mantêm prioridade pela ordem das regras. | Verde no campo válido sob hover, vermelho no inválido sob hover e contraste reavaliados. |
+| A captura do modal a 200% em 320 px mostrava rótulos quebrados em muitas linhas, apesar de não haver rolagem horizontal. | As margens e os preenchimentos consumiam a largura de leitura. Foram reduzidos no modal e em seus botões, com título de 1,25 rem. A medição passou a comparar a largura das palavras com a área de texto. | Palavras dos botões cabem em 320, 768 e 1440 px a 200%; inspeção visual repetida. |
+
+Como medida preventiva, as referências diretas às mensagens ocultas foram substituídas pela referência ao contêiner de estado. A árvore de acessibilidade confirmou a descrição correta nos três estados. Isso não é uma declaração de ensaio com leitor de tela.
+
+A automação também foi ajustada: cliques usam eventos reais de ponteiro; medidas de cor aguardam o fim das transições; capturas usam somente o viewport para não provocar mudanças temporárias de largura que alterem o estado dos menus. Esses ajustes pertencem ao ensaio, não a funcionalidades da aplicação.
+
+### Evidências e limites
+
+| Evidência | Conteúdo |
+| --- | --- |
+| [navegador.json](evidencias/etapa-4/navegador.json) | Casos aprovados, versão do navegador, hashes dos HTML/CSS/JS e ausência de exceções e falhas de recursos. |
+| [layout.json](evidencias/etapa-4/layout.json) | 57 medições de página/largura, com menus abertos. |
+| [contraste.json](evidencias/etapa-4/contraste.json) | Cores computadas, método e 34 combinações. |
+| [W3C início](evidencias/etapa-4/w3c-index.json), [projetos](evidencias/etapa-4/w3c-projetos.json) e [cadastro](evidencias/etapa-4/w3c-cadastro.json) | Respostas da validação dos HTML finais. |
+| [Dropdown desktop](evidencias/etapa-4/dropdown-desktop.png) e [menu mobile](evidencias/etapa-4/menu-mobile-aberto.png) | Listas abertas e foco de teclado. |
+| [Cards em 375 px](evidencias/etapa-4/cards-375px.png), [768 px](evidencias/etapa-4/cards-768px.png) e [1440 px](evidencias/etapa-4/cards-1440px.png) | Mídia e distribuição dos projetos. |
+| [Campos com sucesso e erro](evidencias/etapa-4/campos-sucesso-erro.png) e [botão ativo](evidencias/etapa-4/botao-ativo.png) | Estados reais após interação. |
+| [Botão de limpeza desabilitado](evidencias/etapa-4/cadastro-desabilitado.png) e [campo desabilitado](evidencias/etapa-4/campo-desabilitado.png) | O primeiro é um estado real; o segundo foi aplicado somente durante o teste. |
+| [Modal desktop](evidencias/etapa-4/modal-desktop.png), [mobile](evidencias/etapa-4/modal-mobile.png) e [texto a 200%](evidencias/etapa-4/modal-texto-200.png) | Confirmação, foco e adaptação do diálogo. |
+| [Mensagem de sucesso](evidencias/etapa-4/alerta-sucesso.png) | Resultado da limpeza efetivamente realizada. |
+
+As 18 capturas PNG mostram viewports reais, algumas com a página ou o diálogo rolados para o componente observado. A validação HTML não representa validação externa do CSS. Os testes não cobrem todos os navegadores, zoom completo, dispositivos físicos ou uso com leitores de tela. A ampliação de texto altera o tamanho raiz para 200%. Não houve backend, persistência, SPA, release ou deploy nesta etapa.

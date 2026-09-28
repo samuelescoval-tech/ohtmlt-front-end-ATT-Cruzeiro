@@ -101,24 +101,6 @@ main > section,
   margin-block-start: var(--espaco-6);
 }
 
-.projeto {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--espaco-4);
-  padding: var(--espaco-5);
-}
-
-.projeto > * {
-  min-inline-size: 0;
-  max-inline-size: 100%;
-  margin: 0;
-}
-
-.projeto > a {
-  margin-block-start: auto;
-}
-
 .cadastro-conteudo {
   max-inline-size: var(--largura-formulario);
   margin-inline: auto;
