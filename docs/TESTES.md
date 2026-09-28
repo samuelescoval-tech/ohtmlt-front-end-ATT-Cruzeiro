@@ -294,3 +294,9 @@ Em 28/09/2026, Chrome 154: [35 casos aprovados](evidencias/etapa-8/navegador.jso
 Capturas: [recuperação](evidencias/etapa-8/registros-recuperados.png), [mobile](evidencias/etapa-8/registros-mobile.png), [estrutura inválida](evidencias/etapa-8/falha-estrutura.png) e [falha de gravação](evidencias/etapa-8/falha-gravacao.png). Quatro larguras sem transbordamento. [W3C cadastro](evidencias/etapa-8/w3c-cadastro.json): sem erros/avisos. Nenhuma exceção ou recurso obrigatório com falha na rodada concluída.
 
 O ensaio inicial tentou executar JavaScript enquanto a confirmação nativa estava aberta, bloqueando a automação. O navegador temporário foi reiniciado e o teste passou a responder pelo comando de diálogo do CDP sem avaliar código dentro da página. A rodada completa passou; não houve alteração funcional para contornar o teste. A atualização entre abas foi verificada por evento simulado, sem ensaio de concorrência real entre dois processos. Dados fictícios do ensaio foram removidos ao final.
+
+## Integração básica de framework
+
+Vue 3.5.43: 37 verificações aprovadas no Chrome em 28/09/2026. Os casos de persistência foram repetidos após a troca de renderização, com montagem/desmontagem do componente e versão verificadas. Textos semelhantes a HTML continuaram literais; erros e exclusão mantiveram os resultados esperados. [Relatório](evidencias/framework/navegador.json), [W3C sem erros/avisos](evidencias/framework/w3c-cadastro.json) e [integridade da dependência](evidencias/framework/dependencia.json). As quatro capturas foram renovadas na pasta `framework`.
+
+O teste da atualização por evento passou a aguardar a renderização reativa, que ocorre em microtarefa. Nenhuma falha funcional observada. Não houve adição de ferramenta de build; a distribuição local dispensa rede externa em execução.

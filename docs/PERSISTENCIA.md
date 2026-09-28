@@ -4,7 +4,7 @@
 
 `carregarCadastros` usa `getItem`, `JSON.parse` e validação da estrutura. Chave ausente retorna lista vazia. Erros não são apresentados como lista vazia normal. `salvarCadastro` relê a lista, acrescenta um registro e usa `JSON.stringify`/`setItem`. Leitura, conversão e escrita ficam em `try/catch`; resultados têm `ok` e `registros` ou uma mensagem. Não sobrescreve conteúdo inválido. O usuário pode apagá-lo explicitamente para recuperar a demonstração.
 
-A view mostra uma lista com `textContent`; dados recuperados não viram HTML. `form.js` coordena salvamento, feedback e atualização. Evento `storage` atualiza a lista quando outra aba modifica a chave; os listeners são abortados ao sair da view. As operações são síncronas e não constituem transação entre abas: escritas simultâneas podem competir. Não é um banco de dados multiusuário.
+A view monta um componente Vue em `cadastros.js`, com `shallowRef` para a lista e `h` para elementos e texto. Dados recuperados não viram HTML. `form.js` coordena salvamento, feedback e atualização. Evento `storage` atualiza a lista quando outra aba modifica a chave; os listeners são abortados ao sair da view. As operações são síncronas e não constituem transação entre abas: escritas simultâneas podem competir. Não é um banco de dados multiusuário.
 
 “Apagar demonstrações salvas” usa confirmação nativa do navegador e `removeItem` somente na chave da aplicação. Cancelar preserva tudo; falha informa o problema; sucesso atualiza a lista e foca seu título. “Limpar campos” continua independente, com o modal já existente. Repetir um envio válido acrescenta outra demonstração; o formulário não é apagado automaticamente.
 

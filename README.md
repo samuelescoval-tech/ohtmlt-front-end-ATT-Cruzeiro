@@ -2,7 +2,7 @@
 
 Projeto acadêmico de **Desenvolvimento Front-End**, da **Universidade Cruzeiro do Sul**. A OHTMLT é uma organização fictícia voltada à inclusão e ao aprendizado digital, com propostas para iniciantes e pessoas interessadas em compartilhar conhecimentos.
 
-**Estado: em reconstrução — etapa 8 implementada.** A aplicação é uma SPA com três views: início, projetos e cadastro. A navegação interna atualiza o conteúdo sem recarregar o documento, preservando menus, cards, estados dos controles e modal de limpeza. Cards, menu de oficinas e destinos compartilham os dados de `js/data/projetos.js`; a construção dos componentes usa DOM e texto seguro. A validação apresenta mensagens específicas e bloqueia o envio sem recarregar a página. Demonstrações podem ser salvas, recuperadas e apagadas no navegador, com tratamento de falhas.
+**Estado: em reconstrução — etapa de framework implementada.** A aplicação é uma SPA com três views: início, projetos e cadastro. A navegação interna atualiza o conteúdo sem recarregar o documento, preservando menus, cards, estados dos controles e modal de limpeza. Cards, menu de oficinas e destinos compartilham os dados de `js/data/projetos.js`; a construção dos componentes usa DOM e texto seguro. A validação apresenta mensagens específicas e bloqueia o envio sem recarregar a página. Demonstrações podem ser salvas, recuperadas e apagadas no navegador, com tratamento de falhas.
 
 [Repositório no GitHub](https://github.com/samuelescoval-tech/ohtmlt-front-end-ATT-Cruzeiro)
 
@@ -76,6 +76,7 @@ ohtmlt-front-end-ATT-Cruzeiro/
 │   └── components.css
 ├── js/
 │   ├── main.js
+│   ├── vendor/ (Vue e sua licença)
 │   ├── data/projetos.js
 │   ├── router.js
 │   ├── views/
@@ -83,6 +84,7 @@ ohtmlt-front-end-ATT-Cruzeiro/
 │   │   ├── projetos.js
 │   │   └── cadastro.js
 │   └── modules/
+│       ├── cadastros.js
 │       ├── form.js
 │       ├── validation.js
 │       ├── storage.js
@@ -110,7 +112,7 @@ ohtmlt-front-end-ATT-Cruzeiro/
         └── etapa-8/
 ```
 
-A imagem SVG é local e foi criada para este projeto. As views usam marcação fixa em `<template>`, sem inserir valores digitados ou trechos de URL no HTML. Nenhuma biblioteca, framework ou fonte externa foi instalada. Nenhuma licença de distribuição foi definida.
+A imagem SVG é local e foi criada para este projeto. As views usam marcação fixa em `<template>`, sem inserir valores digitados ou trechos de URL no HTML. O Vue 3.5.43 controla a lista de demonstrações. Sua distribuição de produção está incluída localmente, com licença MIT preservada; não há CDN em execução nem ferramenta de build. Nenhuma licença de distribuição foi definida.
 
 ## Design System e layout
 
@@ -130,10 +132,12 @@ Na etapa 7, 26 verificações de formulário passaram no Chrome e o cadastro ren
 
 Na etapa 8, 35 verificações passaram: persistência real no navegador, recuperação, exclusão restrita, texto seguro e falhas simuladas de quota/permissão. Cadastro no W3C sem erros ou avisos. [Resultados](docs/evidencias/etapa-8/navegador.json).
 
+Após integrar o Vue, 37 verificações passaram, incluindo as regressões da persistência e a desmontagem do componente ao sair da tela. [Integração e dependência](docs/FRAMEWORK.md).
+
 Esses resultados não equivalem a uma auditoria completa de acessibilidade ou compatibilidade entre navegadores.
 
 ## Versionamento e próximos passos
 
 `main` contém a base documental e receberá versões aprovadas; `develop` integra as etapas; `feature/*` organiza mudanças verificadas em pull requests. Os commits são semânticos. Ainda não há release, tag de versão ou deploy.
 
-A próxima etapa é a **integração básica de framework**. A integração básica de framework, acessibilidade, otimização e publicação terão implementação simples; não há rubrica detalhada disponível para certificar exigências adicionais.
+A próxima etapa é a **revisão de acessibilidade**. A integração básica de framework, acessibilidade, otimização e publicação terão implementação simples; não há rubrica detalhada disponível para certificar exigências adicionais.

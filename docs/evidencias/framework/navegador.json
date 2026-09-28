@@ -1,0 +1,163 @@
+{
+  "data": "2026-09-28T23:16:57.598Z",
+  "navegador": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/154.0.8037.57",
+    "revision": "@73c14f6228d7cd537c855007e8f88678969cc0eb",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "jsVersion": "15.4.80.11"
+  },
+  "checks": [
+    {
+      "caso": "Chave ausente mostra lista vazia e não cria gravação",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Inválidos não criam registros",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Válido grava JSON, mostra registro e confirma somente após salvar",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Recarga recupera os cinco dados e mantém novo formulário vazio",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Novo envio acrescenta sem substituir o anterior",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Retorno à view reconstrói lista sem duplicação",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Cancelar exclusão preserva registros",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Excluir remove apenas a chave da aplicação e preserva campos",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Limpar campos não apaga registros persistidos",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "JSON inválido: erro de leitura apresentado, sem lista falsa",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "JSON inválido: envio não sobrescreve conteúdo defeituoso",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Objeto fora do contrato: erro de leitura apresentado, sem lista falsa",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Objeto fora do contrato: envio não sobrescreve conteúdo defeituoso",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Valor nulo: erro de leitura apresentado, sem lista falsa",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Valor nulo: envio não sobrescreve conteúdo defeituoso",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Registro incompleto: erro de leitura apresentado, sem lista falsa",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Registro incompleto: envio não sobrescreve conteúdo defeituoso",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Tipo incorreto: erro de leitura apresentado, sem lista falsa",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Tipo incorreto: envio não sobrescreve conteúdo defeituoso",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Campo inesperado: erro de leitura apresentado, sem lista falsa",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Campo inesperado: envio não sobrescreve conteúdo defeituoso",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Texto longo: erro de leitura apresentado, sem lista falsa",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Texto longo: envio não sobrescreve conteúdo defeituoso",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Após apagar conteúdo inválido é possível salvar novamente",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Quota excedida não anuncia sucesso e preserva formulário e dados anteriores",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Erro de leitura por permissão é capturado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Acesso bloqueado à propriedade localStorage é capturado",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Falha de exclusão preserva lista e informa erro",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Dados recuperados com HTML são exibidos como texto seguro",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Evento de armazenamento atualiza a lista",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Lista sem transbordamento em 320",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Lista sem transbordamento em 375",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Lista sem transbordamento em 768",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Lista sem transbordamento em 1440",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Lista montada pelo Vue 3.5.43",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Vue desmontado ao sair da view",
+      "resultado": "aprovado"
+    },
+    {
+      "caso": "Nenhuma exceção ou falha de recurso não tratada",
+      "resultado": "aprovado"
+    }
+  ],
+  "exceptions": [],
+  "resourceFailures": [],
+  "limites": "Falhas de quota e permissão simuladas substituindo métodos/propriedade do navegador e restauradas após o ensaio."
+}
