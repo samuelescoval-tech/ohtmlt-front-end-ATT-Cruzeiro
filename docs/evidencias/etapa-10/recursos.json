@@ -1,0 +1,567 @@
+{
+  "antes": {
+    "data": "2026-09-28T23:22:49.876Z",
+    "cache": "desabilitado via CDP",
+    "results": [
+      {
+        "route": "index.html",
+        "recursos": [
+          {
+            "arquivo": "css/base.css",
+            "bytes": 2448,
+            "transferencia": 2748
+          },
+          {
+            "arquivo": "css/layout.css",
+            "bytes": 2606,
+            "transferencia": 2906
+          },
+          {
+            "arquivo": "js/main.js",
+            "bytes": 373,
+            "transferencia": 673
+          },
+          {
+            "arquivo": "css/components.css",
+            "bytes": 6885,
+            "transferencia": 7185
+          },
+          {
+            "arquivo": "js/data/projetos.js",
+            "bytes": 1289,
+            "transferencia": 1589
+          },
+          {
+            "arquivo": "js/modules/templates.js",
+            "bytes": 1814,
+            "transferencia": 2114
+          },
+          {
+            "arquivo": "js/modules/navigation.js",
+            "bytes": 2600,
+            "transferencia": 2900
+          },
+          {
+            "arquivo": "js/router.js",
+            "bytes": 4133,
+            "transferencia": 4433
+          },
+          {
+            "arquivo": "js/views/inicio.js",
+            "bytes": 1932,
+            "transferencia": 2232
+          },
+          {
+            "arquivo": "js/views/projetos.js",
+            "bytes": 779,
+            "transferencia": 1079
+          },
+          {
+            "arquivo": "js/views/cadastro.js",
+            "bytes": 6970,
+            "transferencia": 7270
+          },
+          {
+            "arquivo": "js/modules/form.js",
+            "bytes": 3772,
+            "transferencia": 4072
+          },
+          {
+            "arquivo": "js/modules/modal.js",
+            "bytes": 2189,
+            "transferencia": 2489
+          },
+          {
+            "arquivo": "js/modules/validation.js",
+            "bytes": 987,
+            "transferencia": 1287
+          },
+          {
+            "arquivo": "js/modules/feedback.js",
+            "bytes": 419,
+            "transferencia": 719
+          },
+          {
+            "arquivo": "js/modules/cadastros.js",
+            "bytes": 1093,
+            "transferencia": 1393
+          },
+          {
+            "arquivo": "js/modules/storage.js",
+            "bytes": 2249,
+            "transferencia": 2549
+          },
+          {
+            "arquivo": "js/vendor/vue-3.5.43.runtime.esm-browser.prod.js",
+            "bytes": 111433,
+            "transferencia": 111733
+          },
+          {
+            "arquivo": "assets/imagens/inclusao-digital.svg",
+            "bytes": 1087,
+            "transferencia": 1387
+          },
+          {
+            "arquivo": "assets/imagens/inclusao-digital.svg",
+            "bytes": 1087,
+            "transferencia": 1387
+          }
+        ],
+        "bytes": 156145,
+        "quantidade": 20
+      },
+      {
+        "route": "projetos.html",
+        "recursos": [
+          {
+            "arquivo": "css/base.css",
+            "bytes": 2448,
+            "transferencia": 2748
+          },
+          {
+            "arquivo": "css/layout.css",
+            "bytes": 2606,
+            "transferencia": 2906
+          },
+          {
+            "arquivo": "css/components.css",
+            "bytes": 6885,
+            "transferencia": 7185
+          },
+          {
+            "arquivo": "js/main.js",
+            "bytes": 373,
+            "transferencia": 673
+          },
+          {
+            "arquivo": "js/data/projetos.js",
+            "bytes": 1289,
+            "transferencia": 1589
+          },
+          {
+            "arquivo": "js/modules/templates.js",
+            "bytes": 1814,
+            "transferencia": 2114
+          },
+          {
+            "arquivo": "js/modules/navigation.js",
+            "bytes": 2600,
+            "transferencia": 2900
+          },
+          {
+            "arquivo": "js/router.js",
+            "bytes": 4133,
+            "transferencia": 4433
+          },
+          {
+            "arquivo": "js/views/inicio.js",
+            "bytes": 1932,
+            "transferencia": 2232
+          },
+          {
+            "arquivo": "js/views/projetos.js",
+            "bytes": 779,
+            "transferencia": 1079
+          },
+          {
+            "arquivo": "js/views/cadastro.js",
+            "bytes": 6970,
+            "transferencia": 7270
+          },
+          {
+            "arquivo": "js/modules/form.js",
+            "bytes": 3772,
+            "transferencia": 4072
+          },
+          {
+            "arquivo": "js/modules/validation.js",
+            "bytes": 987,
+            "transferencia": 1287
+          },
+          {
+            "arquivo": "js/modules/modal.js",
+            "bytes": 2189,
+            "transferencia": 2489
+          },
+          {
+            "arquivo": "js/modules/storage.js",
+            "bytes": 2249,
+            "transferencia": 2549
+          },
+          {
+            "arquivo": "js/modules/feedback.js",
+            "bytes": 419,
+            "transferencia": 719
+          },
+          {
+            "arquivo": "js/modules/cadastros.js",
+            "bytes": 1093,
+            "transferencia": 1393
+          },
+          {
+            "arquivo": "js/vendor/vue-3.5.43.runtime.esm-browser.prod.js",
+            "bytes": 111433,
+            "transferencia": 111733
+          },
+          {
+            "arquivo": "assets/imagens/inclusao-digital.svg",
+            "bytes": 1087,
+            "transferencia": 1387
+          },
+          {
+            "arquivo": "assets/imagens/inclusao-digital.svg",
+            "bytes": 1087,
+            "transferencia": 1387
+          }
+        ],
+        "bytes": 156145,
+        "quantidade": 20
+      },
+      {
+        "route": "cadastro.html",
+        "recursos": [
+          {
+            "arquivo": "css/base.css",
+            "bytes": 2448,
+            "transferencia": 2748
+          },
+          {
+            "arquivo": "css/layout.css",
+            "bytes": 2606,
+            "transferencia": 2906
+          },
+          {
+            "arquivo": "css/components.css",
+            "bytes": 6885,
+            "transferencia": 7185
+          },
+          {
+            "arquivo": "js/main.js",
+            "bytes": 373,
+            "transferencia": 673
+          },
+          {
+            "arquivo": "js/data/projetos.js",
+            "bytes": 1289,
+            "transferencia": 1589
+          },
+          {
+            "arquivo": "js/modules/templates.js",
+            "bytes": 1814,
+            "transferencia": 2114
+          },
+          {
+            "arquivo": "js/modules/navigation.js",
+            "bytes": 2600,
+            "transferencia": 2900
+          },
+          {
+            "arquivo": "js/router.js",
+            "bytes": 4133,
+            "transferencia": 4433
+          },
+          {
+            "arquivo": "js/views/projetos.js",
+            "bytes": 779,
+            "transferencia": 1079
+          },
+          {
+            "arquivo": "js/views/inicio.js",
+            "bytes": 1932,
+            "transferencia": 2232
+          },
+          {
+            "arquivo": "js/views/cadastro.js",
+            "bytes": 6970,
+            "transferencia": 7270
+          },
+          {
+            "arquivo": "js/modules/form.js",
+            "bytes": 3772,
+            "transferencia": 4072
+          },
+          {
+            "arquivo": "js/modules/validation.js",
+            "bytes": 987,
+            "transferencia": 1287
+          },
+          {
+            "arquivo": "js/modules/modal.js",
+            "bytes": 2189,
+            "transferencia": 2489
+          },
+          {
+            "arquivo": "js/modules/feedback.js",
+            "bytes": 419,
+            "transferencia": 719
+          },
+          {
+            "arquivo": "js/modules/storage.js",
+            "bytes": 2249,
+            "transferencia": 2549
+          },
+          {
+            "arquivo": "js/modules/cadastros.js",
+            "bytes": 1093,
+            "transferencia": 1393
+          },
+          {
+            "arquivo": "js/vendor/vue-3.5.43.runtime.esm-browser.prod.js",
+            "bytes": 111433,
+            "transferencia": 111733
+          },
+          {
+            "arquivo": "assets/imagens/inclusao-digital.svg",
+            "bytes": 1087,
+            "transferencia": 1387
+          }
+        ],
+        "bytes": 155058,
+        "quantidade": 19
+      }
+    ]
+  },
+  "depois": {
+    "data": "2026-09-28T23:23:31.720Z",
+    "cache": "desabilitado via CDP",
+    "results": [
+      {
+        "route": "index.html",
+        "recursos": [
+          {
+            "arquivo": "css/base.css",
+            "bytes": 2448,
+            "transferencia": 2748
+          },
+          {
+            "arquivo": "css/layout.css",
+            "bytes": 2606,
+            "transferencia": 2906
+          },
+          {
+            "arquivo": "css/components.css",
+            "bytes": 6885,
+            "transferencia": 7185
+          },
+          {
+            "arquivo": "js/main.js",
+            "bytes": 373,
+            "transferencia": 673
+          },
+          {
+            "arquivo": "js/modules/templates.js",
+            "bytes": 1814,
+            "transferencia": 2114
+          },
+          {
+            "arquivo": "js/data/projetos.js",
+            "bytes": 1289,
+            "transferencia": 1589
+          },
+          {
+            "arquivo": "js/modules/navigation.js",
+            "bytes": 2600,
+            "transferencia": 2900
+          },
+          {
+            "arquivo": "js/router.js",
+            "bytes": 6013,
+            "transferencia": 6313
+          },
+          {
+            "arquivo": "js/views/inicio.js",
+            "bytes": 1932,
+            "transferencia": 2232
+          },
+          {
+            "arquivo": "js/views/projetos.js",
+            "bytes": 779,
+            "transferencia": 1079
+          },
+          {
+            "arquivo": "assets/imagens/inclusao-digital.svg",
+            "bytes": 1087,
+            "transferencia": 1387
+          },
+          {
+            "arquivo": "assets/imagens/inclusao-digital.svg",
+            "bytes": 1087,
+            "transferencia": 1387
+          }
+        ],
+        "bytes": 28913,
+        "quantidade": 12
+      },
+      {
+        "route": "projetos.html",
+        "recursos": [
+          {
+            "arquivo": "css/base.css",
+            "bytes": 2448,
+            "transferencia": 2748
+          },
+          {
+            "arquivo": "css/layout.css",
+            "bytes": 2606,
+            "transferencia": 2906
+          },
+          {
+            "arquivo": "css/components.css",
+            "bytes": 6885,
+            "transferencia": 7185
+          },
+          {
+            "arquivo": "js/main.js",
+            "bytes": 373,
+            "transferencia": 673
+          },
+          {
+            "arquivo": "js/data/projetos.js",
+            "bytes": 1289,
+            "transferencia": 1589
+          },
+          {
+            "arquivo": "js/modules/templates.js",
+            "bytes": 1814,
+            "transferencia": 2114
+          },
+          {
+            "arquivo": "js/modules/navigation.js",
+            "bytes": 2600,
+            "transferencia": 2900
+          },
+          {
+            "arquivo": "js/router.js",
+            "bytes": 6013,
+            "transferencia": 6313
+          },
+          {
+            "arquivo": "js/views/inicio.js",
+            "bytes": 1932,
+            "transferencia": 2232
+          },
+          {
+            "arquivo": "js/views/projetos.js",
+            "bytes": 779,
+            "transferencia": 1079
+          },
+          {
+            "arquivo": "assets/imagens/inclusao-digital.svg",
+            "bytes": 1087,
+            "transferencia": 1387
+          },
+          {
+            "arquivo": "assets/imagens/inclusao-digital.svg",
+            "bytes": 1087,
+            "transferencia": 1387
+          }
+        ],
+        "bytes": 28913,
+        "quantidade": 12
+      },
+      {
+        "route": "cadastro.html",
+        "recursos": [
+          {
+            "arquivo": "css/base.css",
+            "bytes": 2448,
+            "transferencia": 2748
+          },
+          {
+            "arquivo": "css/components.css",
+            "bytes": 6885,
+            "transferencia": 7185
+          },
+          {
+            "arquivo": "css/layout.css",
+            "bytes": 2606,
+            "transferencia": 2906
+          },
+          {
+            "arquivo": "js/main.js",
+            "bytes": 373,
+            "transferencia": 673
+          },
+          {
+            "arquivo": "js/data/projetos.js",
+            "bytes": 1289,
+            "transferencia": 1589
+          },
+          {
+            "arquivo": "js/modules/templates.js",
+            "bytes": 1814,
+            "transferencia": 2114
+          },
+          {
+            "arquivo": "js/modules/navigation.js",
+            "bytes": 2600,
+            "transferencia": 2900
+          },
+          {
+            "arquivo": "js/router.js",
+            "bytes": 6013,
+            "transferencia": 6313
+          },
+          {
+            "arquivo": "js/views/inicio.js",
+            "bytes": 1932,
+            "transferencia": 2232
+          },
+          {
+            "arquivo": "js/views/projetos.js",
+            "bytes": 779,
+            "transferencia": 1079
+          },
+          {
+            "arquivo": "js/views/cadastro.js",
+            "bytes": 6970,
+            "transferencia": 7270
+          },
+          {
+            "arquivo": "js/modules/form.js",
+            "bytes": 3772,
+            "transferencia": 4072
+          },
+          {
+            "arquivo": "assets/imagens/inclusao-digital.svg",
+            "bytes": 1087,
+            "transferencia": 1387
+          },
+          {
+            "arquivo": "js/modules/validation.js",
+            "bytes": 987,
+            "transferencia": 1287
+          },
+          {
+            "arquivo": "js/modules/modal.js",
+            "bytes": 2189,
+            "transferencia": 2489
+          },
+          {
+            "arquivo": "js/modules/feedback.js",
+            "bytes": 419,
+            "transferencia": 719
+          },
+          {
+            "arquivo": "js/modules/storage.js",
+            "bytes": 2249,
+            "transferencia": 2549
+          },
+          {
+            "arquivo": "js/modules/cadastros.js",
+            "bytes": 1093,
+            "transferencia": 1393
+          },
+          {
+            "arquivo": "js/vendor/vue-3.5.43.runtime.esm-browser.prod.js",
+            "bytes": 111433,
+            "transferencia": 111733
+          }
+        ],
+        "bytes": 156938,
+        "quantidade": 19
+      }
+    ]
+  },
+  "limites": "Bytes de recursos em Resource Timing, cache HTTP desabilitado, sem tamanho do documento principal. Sem nota Lighthouse ou conclusão sobre tempo real de conexão."
+}

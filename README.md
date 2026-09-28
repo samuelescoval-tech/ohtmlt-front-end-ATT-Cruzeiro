@@ -2,7 +2,7 @@
 
 Projeto acadêmico de **Desenvolvimento Front-End**, da **Universidade Cruzeiro do Sul**. A OHTMLT é uma organização fictícia voltada à inclusão e ao aprendizado digital, com propostas para iniciantes e pessoas interessadas em compartilhar conhecimentos.
 
-**Estado: em reconstrução — etapa 9 revisada.** A aplicação é uma SPA com três views: início, projetos e cadastro. A navegação interna atualiza o conteúdo sem recarregar o documento, preservando menus, cards, estados dos controles e modal de limpeza. Cards, menu de oficinas e destinos compartilham os dados de `js/data/projetos.js`; a construção dos componentes usa DOM e texto seguro. A validação apresenta mensagens específicas e bloqueia o envio sem recarregar a página. Demonstrações podem ser salvas, recuperadas e apagadas no navegador, com tratamento de falhas.
+**Estado: em reconstrução — etapa 10 implementada.** A aplicação é uma SPA com três views: início, projetos e cadastro. A navegação interna atualiza o conteúdo sem recarregar o documento, preservando menus, cards, estados dos controles e modal de limpeza. Cards, menu de oficinas e destinos compartilham os dados de `js/data/projetos.js`; a construção dos componentes usa DOM e texto seguro. A validação apresenta mensagens específicas e bloqueia o envio sem recarregar a página. Demonstrações podem ser salvas, recuperadas e apagadas no navegador, com tratamento de falhas.
 
 [Repositório no GitHub](https://github.com/samuelescoval-tech/ohtmlt-front-end-ATT-Cruzeiro)
 
@@ -136,10 +136,12 @@ Após integrar o Vue, 37 verificações passaram, incluindo as regressões da pe
 
 A etapa 9 reuniu 34 verificações de acessibilidade e dez cenários do axe-core sem violações automáticas. Itens inconclusivos foram revisados e documentados. [Escopo e limites](docs/ACESSIBILIDADE.md).
 
+A etapa 10 passou em 11 verificações de carregamento e recuperação. Recursos do início e projetos caíram cerca de 81,5% em bytes no ensaio local, adiando os módulos do cadastro. [Medições e limites](docs/OTIMIZACAO.md).
+
 Esses resultados não equivalem a uma auditoria completa de acessibilidade ou compatibilidade entre navegadores.
 
 ## Versionamento e próximos passos
 
 `main` contém a base documental e receberá versões aprovadas; `develop` integra as etapas; `feature/*` organiza mudanças verificadas em pull requests. Os commits são semânticos. Ainda não há release, tag de versão ou deploy.
 
-A próxima etapa é a **otimização medida dos recursos**. A integração básica de framework, acessibilidade, otimização e publicação terão implementação simples; não há rubrica detalhada disponível para certificar exigências adicionais.
+A próxima etapa é a **documentação final e preparação da publicação**. A integração básica de framework, acessibilidade, otimização e publicação terão implementação simples; não há rubrica detalhada disponível para certificar exigências adicionais.
