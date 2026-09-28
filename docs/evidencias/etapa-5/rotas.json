@@ -1,0 +1,40 @@
+{
+  "data": "2026-09-28T22:39:20.674Z",
+  "tokenPreservado": true,
+  "tempoOrigem": 1790635151249.7,
+  "requisicoesAntes": 11,
+  "requisicoesDepois": 11,
+  "listenersAntes": {
+    "hashchange": 1,
+    "pageshow": 1,
+    "click": 2
+  },
+  "listenersDepois": {
+    "hashchange": 1,
+    "pageshow": 1,
+    "click": 2
+  },
+  "rotas": [
+    {
+      "hash": "#projetos",
+      "titulo": "Projetos | OHTMLT",
+      "foco": "conteudo",
+      "descricao": "Explore as propostas demonstrativas de inclusão digital da OHTMLT.",
+      "tempoOrigem": 1790635151249.7
+    },
+    {
+      "hash": "#cadastro",
+      "titulo": "Cadastro demonstrativo | OHTMLT",
+      "foco": "conteudo",
+      "descricao": "Experimente o formulário demonstrativo da OHTMLT usando somente dados fictícios.",
+      "tempoOrigem": 1790635151249.7
+    },
+    {
+      "hash": "#inicio",
+      "titulo": "Início | OHTMLT",
+      "foco": "conteudo",
+      "descricao": "Conheça a OHTMLT, organização fictícia de inclusão e aprendizado digital.",
+      "tempoOrigem": 1790635151249.7
+    }
+  ]
+}

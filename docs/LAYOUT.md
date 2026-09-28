@@ -1,6 +1,6 @@
 # Layout responsivo da OHTMLT
 
-A etapa 3 organiza as três páginas por uma abordagem mobile first. Na etapa 4, [`css/base.css`](../css/base.css) mantém variáveis e estilos globais; [`css/layout.css`](../css/layout.css) define containers, Grid, Flexbox, larguras e breakpoints; [`css/components.css`](../css/components.css) reúne a aparência e a distribuição interna dos componentes. A visibilidade dos menus passa a ser controlada por JavaScript, conforme [COMPONENTES.md](COMPONENTES.md).
+A etapa 3 organizou as três páginas por uma abordagem mobile first. Na etapa 5, seus conteúdos passaram a ser views dentro de `#app`; o contêiner principal e as classes da grade foram preservados. Na etapa 4, [`css/base.css`](../css/base.css) mantém variáveis e estilos globais; [`css/layout.css`](../css/layout.css) define containers, Grid, Flexbox, larguras e breakpoints; [`css/components.css`](../css/components.css) reúne a aparência e a distribuição interna dos componentes. A visibilidade dos menus passa a ser controlada por JavaScript, conforme [COMPONENTES.md](COMPONENTES.md).
 
 ## Grid de doze colunas
 
@@ -83,3 +83,5 @@ Os 57 pares de página e largura passaram. O texto a 200% foi verificado em 320,
 Os ensaios foram realizados no Chrome em modo headless. A ampliação alterou a fonte raiz e não substitui uma verificação completa de zoom do navegador, dispositivos físicos ou outros navegadores.
 
 Na etapa 4, a mesma matriz de 57 pares foi repetida com os menus abertos e a mídia dos cards. As medidas estão em [etapa-4/layout.json](evidencias/etapa-4/layout.json).
+
+A margem das seções diretamente dentro do conteúdo usa `#app > section` desde a migração SPA. As verificações da etapa 5 repetem as 57 combinações nas três rotas, com resultados em [etapa-5/layout.json](evidencias/etapa-5/layout.json).

@@ -1,49 +1,14 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Experimente o formulário demonstrativo da OHTMLT usando somente dados fictícios.">
-  <title>Cadastro demonstrativo | OHTMLT</title>
-  <link rel="icon" href="assets/imagens/inclusao-digital.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <script type="module" src="js/main.js"></script>
-</head>
-<body>
-  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
-  <header>
-    <div class="container cabecalho-conteudo">
-      <p class="marca"><strong>OHTMLT</strong> — Organização HTML para Todos</p>
-      <nav aria-label="Navegação principal">
-        <button type="button" class="menu-toggle" aria-controls="menu-principal" aria-expanded="false" hidden><span aria-hidden="true">☰</span> Menu</button>
-        <ul id="menu-principal" class="nav-list">
-          <li><a href="index.html">Início</a></li>
-          <li class="nav-item">
-            <div class="nav-projetos">
-              <a href="projetos.html">Projetos</a>
-              <button type="button" class="submenu-toggle" aria-controls="submenu-oficinas" aria-expanded="false" hidden>Oficinas <span aria-hidden="true">▾</span></button>
-            </div>
-            <ul id="submenu-oficinas" class="submenu">
-              <li><a href="projetos.html#primeiros-passos">Primeiros passos digitais</a></li>
-              <li><a href="projetos.html#html-para-todos">HTML para todos</a></li>
-              <li><a href="projetos.html#aprender-em-rede">Aprender em rede</a></li>
-            </ul>
-          </li>
-          <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main id="conteudo" class="container" tabindex="-1">
+// Marcação fixa da view; não recebe valores do formulário nem trechos da URL.
+export function criarCadastro() {
+  const template = document.createElement('template');
+  template.innerHTML = String.raw`
     <div class="cadastro-conteudo">
       <h1>Cadastro demonstrativo de interessados</h1>
       <p id="aviso-demonstracao" class="aviso"><strong>Use somente dados fictícios.</strong> Este formulário é uma demonstração acadêmica: não realiza inscrições nem mantém uma lista de cadastros.</p>
-      <p id="instrucao-envio">Todos os campos são obrigatórios. O navegador verifica os formatos antes do envio. Se estiverem válidos, esta versão retorna à mesma página e inclui os valores na URL; não use informações pessoais reais.</p>
+      <p id="instrucao-envio">Todos os campos são obrigatórios. O navegador verifica os formatos antes do envio. Se estiverem válidos, esta versão recarrega o cadastro e inclui os valores na URL; não use informações pessoais reais. Ao sair desta tela, o preenchimento é descartado.</p>
       <section aria-labelledby="formulario">
         <h2 id="formulario">Preencha seus dados de demonstração</h2>
-        <form id="form-cadastro" action="cadastro.html#formulario" method="get" autocomplete="off" aria-describedby="aviso-demonstracao instrucao-envio">
+        <form id="form-cadastro" action="index.html#cadastro" method="get" autocomplete="off" aria-describedby="aviso-demonstracao instrucao-envio">
           <fieldset>
             <legend>Identificação</legend>
             <div class="grade campos">
@@ -116,12 +81,6 @@
         </dialog>
       </section>
     </div>
-  </main>
-  <footer>
-    <div class="container rodape-conteudo">
-      <p>OHTMLT — Organização HTML para Todos.</p>
-      <p>Organização fictícia. Projeto acadêmico de Desenvolvimento Front-End da Universidade Cruzeiro do Sul.</p>
-    </div>
-  </footer>
-</body>
-</html>
+  `;
+  return template.content;
+}

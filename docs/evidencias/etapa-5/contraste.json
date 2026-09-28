@@ -1,0 +1,347 @@
+{
+  "data": "2026-09-28T22:40:24.548Z",
+  "metodo": "Luminância relativa sRGB a partir de estilos computados; comparação sem arredondamento.",
+  "combinacoes": [
+    {
+      "caso": "Texto geral",
+      "seletor": ".apresentacao p",
+      "propriedade": "color",
+      "frente": "rgb(23, 43, 77)",
+      "fundo": "rgb(245, 247, 250)",
+      "razao": 13.13989071871563,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Título",
+      "seletor": "h1",
+      "propriedade": "color",
+      "frente": "rgb(11, 60, 93)",
+      "fundo": "rgb(245, 247, 250)",
+      "razao": 10.75928910203558,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Texto complementar",
+      "seletor": "figcaption",
+      "propriedade": "color",
+      "frente": "rgb(75, 85, 99)",
+      "fundo": "rgb(245, 247, 250)",
+      "razao": 7.041758627585409,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Marca",
+      "seletor": ".marca",
+      "propriedade": "color",
+      "frente": "rgb(255, 255, 255)",
+      "fundo": "rgb(11, 60, 93)",
+      "razao": 11.54711776572852,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Navegação",
+      "seletor": "nav a",
+      "propriedade": "color",
+      "frente": "rgb(255, 255, 255)",
+      "fundo": "rgb(11, 60, 93)",
+      "razao": 11.54711776572852,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Botão primário",
+      "seletor": "a.botao:not(.botao--secundario)",
+      "propriedade": "color",
+      "frente": "rgb(255, 255, 255)",
+      "fundo": "rgb(11, 60, 93)",
+      "razao": 11.54711776572852,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Botão secundário",
+      "seletor": ".botao--secundario",
+      "propriedade": "color",
+      "frente": "rgb(20, 99, 86)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 7.121401607612063,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Rodapé",
+      "seletor": ".rodape-conteudo p",
+      "propriedade": "color",
+      "frente": "rgb(75, 85, 99)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 7.557378129674007,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Controle do submenu",
+      "seletor": ".submenu-toggle",
+      "propriedade": "color",
+      "frente": "rgb(255, 255, 255)",
+      "fundo": "rgb(11, 60, 93)",
+      "razao": 11.54711776572852,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Botão primário em hover",
+      "seletor": "a.botao:not(.botao--secundario)",
+      "propriedade": "color",
+      "frente": "rgb(255, 255, 255)",
+      "fundo": "rgb(7, 42, 66)",
+      "razao": 14.800307421578115,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Botão primário ativo",
+      "seletor": "a.botao:not(.botao--secundario)",
+      "propriedade": "color",
+      "frente": "rgb(255, 255, 255)",
+      "fundo": "rgb(7, 42, 66)",
+      "razao": 14.800307421578115,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Botão secundário em hover",
+      "seletor": ".botao--secundario",
+      "propriedade": "color",
+      "frente": "rgb(255, 255, 255)",
+      "fundo": "rgb(20, 99, 86)",
+      "razao": 7.121401607612063,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Navegação em hover",
+      "seletor": "nav a",
+      "propriedade": "color",
+      "frente": "rgb(244, 185, 66)",
+      "fundo": "rgb(11, 60, 93)",
+      "razao": 6.5240520213791635,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Link do submenu",
+      "seletor": ".submenu a",
+      "propriedade": "color",
+      "frente": "rgb(255, 255, 255)",
+      "fundo": "rgb(11, 60, 93)",
+      "razao": 11.54711776572852,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Foco no submenu",
+      "seletor": ".submenu a:focus-visible",
+      "propriedade": "outlineColor",
+      "frente": "rgb(244, 185, 66)",
+      "fundo": "rgb(11, 60, 93)",
+      "razao": 6.5240520213791635,
+      "minimo": 3,
+      "aprovado": true
+    },
+    {
+      "caso": "Badge do card",
+      "seletor": ".projeto .selo",
+      "propriedade": "color",
+      "frente": "rgb(255, 255, 255)",
+      "fundo": "rgb(20, 99, 86)",
+      "razao": 7.121401607612063,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Ação do card",
+      "seletor": ".projeto a",
+      "propriedade": "color",
+      "frente": "rgb(11, 60, 93)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 11.54711776572852,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Hambúrguer",
+      "seletor": ".menu-toggle",
+      "propriedade": "color",
+      "frente": "rgb(255, 255, 255)",
+      "fundo": "rgb(11, 60, 93)",
+      "razao": 11.54711776572852,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Foco no hambúrguer",
+      "seletor": ".menu-toggle",
+      "propriedade": "outlineColor",
+      "frente": "rgb(244, 185, 66)",
+      "fundo": "rgb(11, 60, 93)",
+      "razao": 6.5240520213791635,
+      "minimo": 3,
+      "aprovado": true
+    },
+    {
+      "caso": "Botão limpar desabilitado",
+      "seletor": "#abrir-limpeza",
+      "propriedade": "color",
+      "frente": "rgb(75, 85, 99)",
+      "fundo": "rgb(245, 247, 250)",
+      "razao": 7.041758627585409,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Aviso estático",
+      "seletor": ".aviso",
+      "propriedade": "color",
+      "frente": "rgb(23, 43, 77)",
+      "fundo": "rgb(244, 185, 66)",
+      "razao": 7.967564565945105,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Campo",
+      "seletor": "input",
+      "propriedade": "color",
+      "frente": "rgb(23, 43, 77)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 14.102034448456891,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Ajuda",
+      "seletor": "#ajuda-nome",
+      "propriedade": "color",
+      "frente": "rgb(75, 85, 99)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 7.557378129674007,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Borda padrão",
+      "seletor": "input",
+      "propriedade": "borderTopColor",
+      "frente": "rgb(107, 114, 128)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 4.834490081424352,
+      "minimo": 3,
+      "aprovado": true
+    },
+    {
+      "caso": "Borda do campo em hover",
+      "seletor": "#nome",
+      "propriedade": "borderTopColor",
+      "frente": "rgb(11, 60, 93)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 11.54711776572852,
+      "minimo": 3,
+      "aprovado": true
+    },
+    {
+      "caso": "Foco do campo",
+      "seletor": "#nome",
+      "propriedade": "outlineColor",
+      "frente": "rgb(29, 78, 216)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 6.701618401398807,
+      "minimo": 3,
+      "aprovado": true
+    },
+    {
+      "caso": "Borda válida",
+      "seletor": "#nome",
+      "propriedade": "borderTopColor",
+      "frente": "rgb(22, 101, 52)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 7.130310076434003,
+      "minimo": 3,
+      "aprovado": true
+    },
+    {
+      "caso": "Texto de formato aceito",
+      "seletor": "#sucesso-nome",
+      "propriedade": "color",
+      "frente": "rgb(22, 101, 52)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 7.130310076434003,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Borda inválida",
+      "seletor": "#cpf",
+      "propriedade": "borderTopColor",
+      "frente": "rgb(180, 35, 24)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 6.57428861557707,
+      "minimo": 3,
+      "aprovado": true
+    },
+    {
+      "caso": "Texto de erro",
+      "seletor": "#erro-cpf",
+      "propriedade": "color",
+      "frente": "rgb(180, 35, 24)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 6.57428861557707,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Texto do modal",
+      "seletor": "#descricao-limpeza",
+      "propriedade": "color",
+      "frente": "rgb(23, 43, 77)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 14.102034448456891,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Título do modal",
+      "seletor": "#titulo-limpeza",
+      "propriedade": "color",
+      "frente": "rgb(11, 60, 93)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 11.54711776572852,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Mensagem de limpeza concluída",
+      "seletor": ".alerta--sucesso",
+      "propriedade": "color",
+      "frente": "rgb(22, 101, 52)",
+      "fundo": "rgb(255, 255, 255)",
+      "razao": 7.130310076434003,
+      "minimo": 4.5,
+      "aprovado": true
+    },
+    {
+      "caso": "Campo desabilitado (aplicado no teste)",
+      "seletor": "#nome",
+      "propriedade": "color",
+      "frente": "rgb(75, 85, 99)",
+      "fundo": "rgb(245, 247, 250)",
+      "razao": 7.041758627585409,
+      "minimo": 4.5,
+      "aprovado": true
+    }
+  ],
+  "limites": "Combinações observadas; não é auditoria integral. Campo desabilitado aplicado somente no teste."
+}
