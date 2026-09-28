@@ -1,42 +1,84 @@
 # OHTMLT — Organização HTML para Todos
 
-Projeto acadêmico da disciplina **Desenvolvimento Front-End**, da **Universidade Cruzeiro do Sul**. A proposta é reconstruir uma aplicação de uma organização fictícia voltada à inclusão e ao aprendizado digital, com apresentação, divulgação de projetos e cadastro demonstrativo de interessados.
+Projeto acadêmico de **Desenvolvimento Front-End**, da **Universidade Cruzeiro do Sul**. A OHTMLT é uma organização fictícia voltada à inclusão e ao aprendizado digital, com propostas para iniciantes e pessoas interessadas em compartilhar conhecimentos.
 
-**Estado: em reconstrução.** A etapa 0 prepara a documentação inicial e o versionamento. Esta base contém a apresentação do projeto e as regras de arquivos ignorados pelo Git. Ainda não há páginas HTML, estilos CSS, módulos JavaScript ou aplicação executável.
-
-O repositório remoto foi conferido e clonado vazio em **28/09/2026**. Não havia código anterior disponível nesta cópia para reaproveitar.
+**Estado: em reconstrução — etapa 1 implementada.** A aplicação tem três páginas HTML estáticas com apresentação, projetos demonstrativos e formulário com validação nativa. A aparência é a padrão do navegador; CSS, JavaScript, SPA e persistência serão desenvolvidos nas próximas etapas.
 
 [Repositório no GitHub](https://github.com/samuelescoval-tech/ohtmlt-front-end-ATT-Cruzeiro)
+
+## Executar localmente
+
+Requisito: Python 3 e um navegador. Na raiz do projeto:
+
+```bash
+python3 -m http.server 5500 --bind 127.0.0.1
+```
+
+Abra **http://127.0.0.1:5500/**. Para encerrar, use `Ctrl+C` no terminal do servidor. Se a porta estiver ocupada, use `5501` no comando e na URL. Não há instalação de dependências nem etapa de build.
+
+Para obter a versão em desenvolvimento a partir do GitHub:
+
+```bash
+git clone --branch develop https://github.com/samuelescoval-tech/ohtmlt-front-end-ATT-Cruzeiro.git
+cd ohtmlt-front-end-ATT-Cruzeiro
+```
+
+Também é possível abrir os arquivos HTML diretamente no navegador nesta fase estática. As verificações registradas foram executadas pelo servidor HTTP acima.
+
+## Páginas e funcionalidades
+
+| Página | Conteúdo |
+| --- | --- |
+| `index.html` | Apresentação, imagem com texto alternativo, seção “Quem somos” e formas de participação. |
+| `projetos.html` | Três propostas demonstrativas, organizadas em artigos com links para o cadastro. |
+| `cadastro.html` | Formulário com cinco campos obrigatórios, rótulos, grupos e instruções de formato. |
+
+A navegação entre as páginas é estática, com carregamento de um novo documento. Cada página identifica o link atual com `aria-current="page"` e oferece um link para pular ao conteúdo principal. Não há ofertas, turmas ou inscrições reais.
+
+## Formulário: regras e limites
+
+| Campo | Regra nativa |
+| --- | --- |
+| Nome | Obrigatório, até 100 caracteres; somente espaços são rejeitados. |
+| E-mail | Obrigatório, `type="email"`, até 254 caracteres. |
+| Telefone celular | Obrigatório, formato `(11)99999-9999`, sem espaços. |
+| CPF | Obrigatório, formato `000.000.000-00`. |
+| CEP | Obrigatório, formato `00000-000`. |
+
+Digite a pontuação indicada: `pattern` verifica o formato e não aplica máscaras. O e-mail usa `inputmode="email"`; os campos com pontuação manual usam `inputmode="text"` para permitir a digitação dos separadores. Não há consulta de endereço, confirmação de existência dos dados ou algoritmo de dígitos verificadores do CPF.
+
+**Use somente dados fictícios.** O botão aciona a validação do navegador. Quando os dados são válidos, o formulário usa `GET` para retornar a `cadastro.html#formulario`, incluindo os valores na URL. Esses valores podem aparecer no histórico do navegador e no log do servidor local. Esse envio não realiza uma inscrição e não cria uma lista de cadastros. Não há backend de cadastro ou uso de `localStorage`. As mensagens de validação são fornecidas pelo navegador e podem variar com seu idioma.
+
+Nas etapas de JavaScript, o envio será tratado na própria página e a simulação local receberá validação e feedback específicos.
 
 ## Estrutura versionada
 
 ```text
 ohtmlt-front-end-ATT-Cruzeiro/
 ├── .gitignore
-└── README.md
+├── README.md
+├── index.html
+├── projetos.html
+├── cadastro.html
+├── assets/
+│   └── imagens/
+│       └── inclusao-digital.svg
+└── docs/
+    ├── TESTES.md
+    └── evidencias/
+        └── etapa-1/
 ```
 
-As pastas e os arquivos de código serão acrescentados quando a etapa correspondente começar. As regras do `.gitignore` antecipam arquivos temporários e locais; elas não indicam uso de Node.js, build ou variáveis de ambiente.
+A imagem SVG foi criada para este projeto e é usada na apresentação e como ícone das páginas. Não depende de serviços externos. As evidências de navegador são arquivos PNG; os relatórios são JSON. Não há bibliotecas, frameworks ou fontes externas. Nenhuma licença de distribuição foi definida.
 
-## Como abrir esta base
+## Verificação
 
-Na pasta do projeto, executar:
+Em 28/09/2026, as três páginas passaram no W3C Nu HTML Checker sem erros ou avisos. No Chrome, 37 verificações cobriram estrutura, navegação, teclado, validação, envio demonstrativo, recursos e largura de 320 px.
 
-```bash
-code .
-git status
-```
+Consulte [os casos, a correção observada e as evidências](docs/TESTES.md). Esses resultados não equivalem a uma auditoria completa de acessibilidade ou compatibilidade entre navegadores.
 
-Também é possível abrir a pasta pelo menu **File > Open Folder** do VS Code. Por enquanto, o conteúdo disponível para consulta é a apresentação do projeto. As instruções de execução no navegador serão adicionadas após a criação e verificação das páginas.
+## Versionamento e próximos passos
 
-## Fluxo de desenvolvimento
+`main` contém a base documental e receberá versões aprovadas; `develop` integra as etapas de desenvolvimento; `feature/*` organiza mudanças verificadas em pull requests. O padrão de commits é semântico. Ainda não há release, tag de versão ou deploy.
 
-O projeto adota `main` para o bootstrap documental e as versões aprovadas, `develop` para integração e `feature/*` para cada etapa de implementação. Os commits devem descrever mudanças reais; as features serão revisadas em pull requests com destino a `develop`.
-
-Nenhuma versão funcional ou release foi publicada. O histórico desta reconstrução começa nesta base documental.
-
-## Próxima etapa e pendências
-
-A próxima etapa de implementação é a **1**, na branch `feature/estrutura-html`: criar `index.html`, `projetos.html` e `cadastro.html`, com navegação estática, conteúdo semântico e formulário com validação nativa. Verificar as páginas e registrar os resultados reais antes da integração.
-
-A exigência de framework na terceira experiência e os enunciados detalhados de acessibilidade, otimização e deploy na quarta experiência ainda precisam ser confirmados. Nenhuma dependência ou licença foi escolhida nesta etapa.
+A próxima etapa é o **Design System**: variáveis de cores, escala tipográfica, espaçamentos e regras de uso dos componentes. A exigência de framework na terceira experiência e os enunciados detalhados de acessibilidade, otimização e deploy na quarta experiência ainda precisam ser confirmados.
